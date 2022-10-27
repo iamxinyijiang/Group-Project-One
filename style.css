@@ -1,5 +1,24 @@
-Body{
-   }
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+
+/*my css starts here*/
 #simpleTodo{
     font-family: 'Lobster', cursive;
 }
