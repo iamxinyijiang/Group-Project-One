@@ -13,12 +13,21 @@
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous"/>
 
+    <!--My Css-->
+    <link href="style.css" rel="stylesheet"/>
+
+    <!--Web font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    /*font-family: 'Lobster', cursive;*/
+
 </head>
 <body>
     <!-- Jumbotron --> 
     <div class="jumbotron jumbotron-fluid mx-5"
     style="background:url(images/cute-bee-vector.jpg) no-repeat; background-size:cover;"
-    ><div class="text-white bg-dark text-center my-5"><h1 class="display-4">Simple To-do List</h1><p>Simple To-do List for you and your group.</p></div></div>
+    ><div class="text-white bg-dark text-center my-5"><h1 class="font-weight-bold display-4" id="simpleTodo">Simple To-do List</h1><span class="font-italic font-weight-bold">Simple To-do List for you and your group.</span></div></div>
 
     <!-- Container -->
     <div class="container"></div>
@@ -26,7 +35,7 @@
     <!--Intro-->
     <div class="row">
         <div class="col">
-            <h1 class="font-weight-normal text-center">Please create new task with this form.</h1>
+            <h1 class="font-weigt-normal text-center display-4">Please create new task with this form</h1>
             <h1><br></h1>
         </div>
     </div>
@@ -66,6 +75,7 @@
           <select class="form-control" id="exampleFormControlSelect1">
             <option>Planned</option>
             <option>In Progress</option>
+            <option>Review</option>
             <option>Done</option>
           </select>
         </div>
@@ -73,7 +83,7 @@
       </form>
     
     <!--Current Tasks-->
-    <h3 class="font-weigt-normal text-center display-4">Current Tasks</h3>
+    <h1 class="font-weigt-normal text-center display-4">Current Tasks</h1>
     <h1><br></h1>
     <h1><br></h1>
     <div class="row justify-content-center mx-10">
