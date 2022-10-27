@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do-do List</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous"/>
+
+</head>
+<body>
+    <!-- Jumbotron --> 
+    <div class="jumbotron jumbotron-fluid mx-5"
+    style="background:url(/images/cute-bee-vector.jpg) no-repeat; background-size:cover;"
+    ><div class="text-white bg-dark text-center my-5"><h1 class="display-4">Simple To-do List</h1><p>Simple To-do List for you and your group.</p></div></div>
+
+    <!-- Container -->
+    <div class="container"></div>
+
+    <!--Intro-->
+    <div class="row">
+        <div class="col">
+            <h1><br></h1>
+            <h1><br></h1>
+            <h2 class="font-weight-normal text-center">Please create new task with this form.</h2>
+            <h1><br></h1>
+        </div>
+    </div>
+   
+    <!--Form-->
+    <form class="bg-light mx-5 border-light">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Task Name</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Type in task name here">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Task Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descriptions of your task"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect2">Assigned to(multiple choice):</label>
+            <select multiple class="form-control" id="exampleFormControlSelect2">
+              <option>Harry Potter</option>
+              <option>Hermione Granger</option>
+              <option>Ron Weasley</option>
+              <option>Severus Snape</option>
+              <option>Albus Dumbledore</option>
+              <option>Neville Longbottom</option>
+              <option>Marvolo Riddle</option>
+              <option>Sirius Black</option>
+              <option>Draco Malfoy</option>
+              <option>Bellatrix Lestrange</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Due Date</label>
+            <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="Type in task name here">
+          </div>
+          <div class="form-group">
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Status</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>Planned</option>
+            <option>In Progress</option>
+            <option>Done</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    
+    <!--Current Tasks-->
+    <h3 class="font-weigt-normal text-center display-4">Current Tasks</h3>
+    <h1><br></h1>
+    <h1><br></h1>
+    <div class="row justify-content-center mx-10">
+        <!--first Card-->
+        <div class="col-12 col-md-6 col-xl-3">
+            <div class="card card border-light" style="width: 15rem;">
+                <img src="images/task.jpg" class="card-img-top" alt="Task icon">
+                <div class="card-body">
+                  <p class="card-text">Task One</p>
+                  <a href="#" class="card-link">Go to task</a>
+                </div>
+              </div>
+        </div>
+        <!--second Card-->
+        <div class="col-12 col-md-6 col-xl-3">
+            <div class="card card border-light" style="width: 15rem;">
+                <img src="images/task.jpg" class="card-img-top" alt="Task icon">
+                <div class="card-body">
+                  <p class="card-text">Task Two</p>
+                  <a href="#" class="card-link">Go to task</a>
+                </div>
+              </div>
+        </div>
+        <!--third Card-->
+        <div class="col-12 col-md-6 col-xl-3">
+            <div class="card card border-light" style="width: 15rem;">
+                <img src="images/task.jpg" class="card-img-top" alt="Task icon">
+                <div class="card-body">
+                  <p class="card-text">Task Three</p>
+                  <a href="#" class="card-link">Go to task</a>
+                </div>
+              </div>
+        </div>
+        <!--fourth Card-->
+        <div class="col-12 col-md-6 col-xl-3">
+            <div class="card card border-light" style="width: 15rem;">
+                <img src="images/task.jpg" class="card-img-top" alt="Task icon">
+                <div class="card-body">
+                  <p class="card-text">Task Four</p>
+                  <a href="#" class="card-link">Go to task</a>
+                </div>
+              </div>
+        </div>
+        <!--fifth Card-->
+        <div class="col-12 col-md-6 col-xl-3">
+            <div class="card card border-light" style="width: 15rem;">
+                <img src="images/task.jpg" class="card-img-top" alt="Task icon">
+                <div class="card-body">
+                  <p class="card-text">Task Five</p>
+                  <a href="#" class="card-link">Go to task</a>
+                </div>
+              </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <h1><br></h1>
+    <footer class="text-center font-italic font-weight-light">2022 Simple To-do List &copy;</footer>
+    
+</body>
+</html>
