@@ -34,3 +34,13 @@ footer{
     opacity: 0.5;
 }
 
+.clickHere{
+  max-block-size: 14em;
+}
+
+.formPara{
+  display:flex;
+  justify-content:center;
+  margin-top: 5em;
+  margin-bottom: 2em;
+}
