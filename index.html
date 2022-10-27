@@ -17,130 +17,163 @@
     <link href="style.css" rel="stylesheet"/>
 
     <!--Web font-->
+    <!--font-family: 'Lobster', cursive;-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <!--font-family: 'Lobster', cursive;-->
+    <!--font-family: 'Oswald', sans-serif;-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
     <!-- Jumbotron --> 
-    <div class="jumbotron jumbotron-fluid mx-5"
+    <div class="jumbotron jumbotron-fluid my-37"
     style="background:url(images/cute-bee-vector.jpg) no-repeat; background-size:cover;"
-    ><div class="text-white bg-dark text-center my-5"><h1 class="font-weight-bold display-4" id="simpleTodo">Simple To-do List</h1><span class="font-italic font-weight-bold">Simple To-do List for you and your group.</span></div></div>
+    ><div class="text-white bg-dark text-center my-5 border-dark"><h1 class="font-weight-bold display-3" id="simpleTodo">Simple To-do List</h1><h4 class="font-italic font-weight-bold mt-o">Simple To-do List for you and your group.</h4><br></div></div>
 
     <!-- Container -->
-    <div class="container"></div>
-
-    <!--Intro-->
-    <div class="row">
-        <div class="col">
-            <h1 class="font-weigt-normal text-center display-4">Please create new task with this form</h1>
-            <h1><br></h1>
+    <div class="container-fluid">
+          <!--Intro-->
+    <div class="row bg-light mx-5 border-light">
+      <div class="col">
+          <h1 class="font-weigt-light text-center display-4" id="formTitle">Please create new task with this form</h1>
+      </div>
+  </div>
+ 
+  <!--Form-->
+  <div class="row">
+    <div class="col-12">
+  <form class="bg-light mx-5 border-light">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Task Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Type in task name here">
+      </div>
+      <div class="form-group">
+          <label for="exampleFormControlTextarea1">Task Description</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descriptions of your task"></textarea>
         </div>
-    </div>
-   
-    <!--Form-->
-    <form class="bg-light mx-5 border-light">
         <div class="form-group">
-          <label for="exampleFormControlInput1">Task Name</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Type in task name here">
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">Task Description</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descriptions of your task"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlSelect2">Assigned to(multiple choice):</label>
-            <select multiple class="form-control" id="exampleFormControlSelect2">
-              <option>Harry Potter</option>
-              <option>Hermione Granger</option>
-              <option>Ron Weasley</option>
-              <option>Severus Snape</option>
-              <option>Albus Dumbledore</option>
-              <option>Neville Longbottom</option>
-              <option>Marvolo Riddle</option>
-              <option>Sirius Black</option>
-              <option>Draco Malfoy</option>
-              <option>Bellatrix Lestrange</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Due Date</label>
-            <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="Type in task name here">
-          </div>
-          <div class="form-group">
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Status</label>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>Planned</option>
-            <option>In Progress</option>
-            <option>Review</option>
-            <option>Done</option>
+          <label for="exampleFormControlSelect2">Assigned to(multiple choice):</label>
+          <select multiple class="form-control" id="exampleFormControlSelect2">
+            <option>Harry Potter</option>
+            <option>Hermione Granger</option>
+            <option>Ron Weasley</option>
+            <option>Severus Snape</option>
+            <option>Albus Dumbledore</option>
+            <option>Neville Longbottom</option>
+            <option>Marvolo Riddle</option>
+            <option>Sirius Black</option>
+            <option>Draco Malfoy</option>
+            <option>Bellatrix Lestrange</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    
-    <!--Current Tasks-->
-    <h1 class="font-weigt-normal text-center display-4">Current Tasks</h1>
-    <h1><br></h1>
-    <h1><br></h1>
-    <div class="row justify-content-center mx-10">
-        <!--first Card-->
-        <div class="col-12 col-md-6 col-xl-3">
-            <div class="card card border-light" style="width: 15rem;">
-                <img src="images/task.jpg" class="card-img-top" alt="Task icon">
-                <div class="card-body">
-                  <p class="card-text">Task One</p>
-                  <a href="#" class="card-link">Go to task</a>
-                </div>
-              </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Due Date</label>
+          <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="Type in task name here">
         </div>
-        <!--second Card-->
-        <div class="col-12 col-md-6 col-xl-3">
-            <div class="card card border-light" style="width: 15rem;">
-                <img src="images/task.jpg" class="card-img-top" alt="Task icon">
-                <div class="card-body">
-                  <p class="card-text">Task Two</p>
-                  <a href="#" class="card-link">Go to task</a>
-                </div>
+        <div class="form-group">
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Status</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>Planned</option>
+          <option>In Progress</option>
+          <option>Review</option>
+          <option>Done</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  </div>
+  
+  <!--Current Tasks (cards)-->
+  <div class="row justify-content-center mx-10 flex-wrap">
+    <div class="col-12">
+      <h1 class="font-weigt-light text-center display-4" id="taskTitle">Current Tasks</h1>
+      <h1><br></h1>
+      </div>
+      <!--first Card-->
+      <div class="col-12 col-sm-6 col-lg-3 mx-5">
+          <div class="card border-light mx-5" style="width: 15rem;">
+              <img src="images/task.jpg" class="card-img-top" alt="Task icon">
+              <div class="card-body mx-auto">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Task One</p>
+                <a href="#" class="card-link">Go to task</a>
               </div>
-        </div>
-        <!--third Card-->
-        <div class="col-12 col-md-6 col-xl-3">
-            <div class="card card border-light" style="width: 15rem;">
-                <img src="images/task.jpg" class="card-img-top" alt="Task icon">
-                <div class="card-body">
-                  <p class="card-text">Task Three</p>
-                  <a href="#" class="card-link">Go to task</a>
-                </div>
+            </div>
+      </div>
+      <!--second Card-->
+      <div class="col-12 col-sm-6 col-lg-3 mx-5">
+          <div class="card border-light mx-5" style="width: 15rem;">
+            <img src="images/task.jpg" class="card-img-top" alt="Task icon">
+              <div class="card-body mx-auto">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Task Two</p>
+                <a href="#" class="card-link">Go to task</a>
               </div>
-        </div>
-        <!--fourth Card-->
-        <div class="col-12 col-md-6 col-xl-3">
-            <div class="card card border-light" style="width: 15rem;">
-                <img src="images/task.jpg" class="card-img-top" alt="Task icon">
-                <div class="card-body">
-                  <p class="card-text">Task Four</p>
-                  <a href="#" class="card-link">Go to task</a>
-                </div>
+            </div>
+      </div>
+      <!--third Card-->
+      <div class="col-12 col-sm-6 col-lg-3 mx-5">
+          <div class="card border-light mx-5" style="width: 15rem;">
+              <img src="images/task.jpg" class="card-img-top" alt="Task icon">
+              <div class="card-body mx-auto">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Task Three</p>
+                <a href="#" class="card-link">Go to task</a>
               </div>
-        </div>
-        <!--fifth Card-->
-        <div class="col-12 col-md-6 col-xl-3">
-            <div class="card card border-light" style="width: 15rem;">
-                <img src="images/task.jpg" class="card-img-top" alt="Task icon">
-                <div class="card-body">
-                  <p class="card-text">Task Five</p>
-                  <a href="#" class="card-link">Go to task</a>
-                </div>
+            </div>
+      </div>
+      <!--fourth Card-->
+      <div class="col-12 col-sm-6 col-lg-3 mx-5">
+          <div class="card border-light mx-5" style="width: 15rem;">
+              <img src="images/task.jpg" class="card-img-top" alt="Task icon">
+              <div class="card-body mx-auto">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Task Four</p>
+                <a href="#" class="card-link">Go to task</a>
               </div>
-        </div>
+            </div>
+      </div>
+      <!--fifth Card-->
+      <div class="col-12 col-sm-6 col-lg-3 mx-5">
+          <div class="card border-light mx-5" style="width: 15rem;">
+              <img src="images/task.jpg" class="card-img-top" alt="Task icon">
+              <div class="card-body mx-auto">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Task Five</p>
+                <a href="#" class="card-link">Go to task</a>
+              </div>
+            </div>
+      </div>
+  </div>
     </div>
+
     <!-- Footer -->
-    <h1><br></h1>
-    <footer class="text-center font-italic font-weight-light">2022 Simple To-do List &copy;</footer>
+  <footer class="container-fluid">
+    <p class="font-italic font-weight-normal text-center">2022 Simple To-do List &copy;</p>
+  </footer>
+
+  <!-- Bootstrap's JavaScript Files -->
+<script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+<script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+<script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
     
 </body>
 </html>

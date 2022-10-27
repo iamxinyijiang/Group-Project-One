@@ -1,3 +1,17 @@
+Body{
+   }
 #simpleTodo{
     font-family: 'Lobster', cursive;
 }
+
+#formTitle,#taskTitle{
+    font-family: 'Oswald', sans-serif;
+}
+
+footer{
+    font-size: 30px;
+    color:white;
+    background-color:#343a40;
+    opacity: 0.5;
+}
+
