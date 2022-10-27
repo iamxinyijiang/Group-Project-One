@@ -41,6 +41,8 @@ footer{
 .formPara{
   display:flex;
   justify-content:center;
-  margin-top: 5em;
-  margin-bottom: 2em;
+  background-color: whitesmoke;
+  padding-top: 1em;
+  margin-left: 3em;
+  margin-right:3em;
 }
