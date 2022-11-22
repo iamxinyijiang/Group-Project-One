@@ -48,7 +48,7 @@ footer{
  font-size: small;
 }
 
-#dateContainer,#clockContainerS{
+#dateContainer,#clockContainer{
   margin: 16px;
 }
 
@@ -60,3 +60,9 @@ footer{
   margin-left: 3em;
   margin-right:3em;
 }
+
+#cardsContainer{
+  display: none;
+}
+
+/*task cards set to hidden*/ 
