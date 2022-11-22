@@ -34,8 +34,22 @@ footer{
     opacity: 0.5;
 }
 
-.clickHere{
-  max-block-size: 14em;
+#dateAndTime,.clickHere{
+  width: 12em;
+}
+
+#dateAndTime{
+ color: lime;
+ width: fit-content;
+ margin: auto;
+ background-color:black;
+ border: 1px inset grey;
+ font-family: 'Press Start 2P', cursive;
+ font-size: small;
+}
+
+#dateContainer,#clockContainerS{
+  margin: 16px;
 }
 
 .formPara{
