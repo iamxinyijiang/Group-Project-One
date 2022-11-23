@@ -63,6 +63,9 @@ footer{
 
 #cardsContainer{
   display: none;
-}
+}/*task cards set to hidden*/ 
 
-/*task cards set to hidden*/ 
+.errorMsg{
+  font-size: 0.9em;
+  font-style: italic;
+}
