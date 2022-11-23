@@ -34,8 +34,22 @@ footer{
     opacity: 0.5;
 }
 
-.clickHere{
-  max-block-size: 14em;
+#dateAndTime,.clickHere{
+  width: 12em;
+}
+
+#dateAndTime{
+ color: lime;
+ width: fit-content;
+ margin: auto;
+ background-color:black;
+ border: 1px inset grey;
+ font-family: 'Press Start 2P', cursive;
+ font-size: small;
+}
+
+#dateContainer,#clockContainer{
+  margin: 16px;
 }
 
 .formPara{
@@ -45,4 +59,13 @@ footer{
   padding-top: 1em;
   margin-left: 3em;
   margin-right:3em;
+}
+
+#cardsContainer{
+  display: none;
+}/*task cards set to hidden*/ 
+
+.errorMsg{
+  font-size: 0.9em;
+  font-style: italic;
 }
