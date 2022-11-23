@@ -20,7 +20,7 @@ function resetErrors() {
       errorElement[i].innerHTML = '';
   }
 }
-
+//validate Form at submission
 const submitBtn = document.getElementById("submit")
 submitBtn.addEventListener('click', (event) => {
   event.preventDefault();
@@ -34,19 +34,24 @@ const assignedTo = document.getElementById('assignedToMultipleSelect')
 const assignedToError =document.getElementById('errorMsgAssignedTo')
 const taskStatus = document.getElementById("statusSelect")
 const taskStatusError = document.getElementById("errorMsgStatus")
-//date related variables
-/*const dueDateError= document.getElementById('errorMsgDate')
-let today = new Date().getTime();
-let dueDateDay = document.getElementById("dateInput").value.getTime();*/
 
-  //checkName;
-  if(taskName.trim()=== ""||taskName.length< 3||taskName == null){
-    taskNameError.innerHTML="*Task Name must be more than 3 characters."
+//date related variables
+const dueDateError= document.getElementById('errorMsgDate')
+let today = new Date();
+let dueDateDay = new Date (document.querySelector('input[type="date"]').value)
+//to check is type is a number so isNaN()can be used later to set condition
+console.log(typeof(dueDateDay.getTime()))
+
+ 
+
+  //checkTaskName;
+  if(taskName.trim()=== ""||taskName.length> 8||taskName == null){
+    taskNameError.innerHTML="*Task Name must not be empty or longer than 8 characters.."
     taskNameError.style.color = 'red'
   }
   //checkDescription;
-  else if(description.trim()===""||taskName.length> 300||description == null){
-    descriptionError.innerHTML="*Must not be blank; <br>*Maximum length: 300 characters."
+  else if(description.trim()===""||taskName.length> 15||description == null){
+    descriptionError.innerHTML="*Must not be blank; <br>*Maximum length: 15 characters."
     descriptionError.style.color = "red"
   }
   //checkAssigned to
@@ -54,16 +59,17 @@ let dueDateDay = document.getElementById("dateInput").value.getTime();*/
     assignedToError.innerHTML="*Must select at least one person."
     assignedToError.style.color="red"
   } 
-  //check due date
-  /*else if(dueDateDay ===''||dueDateDay == null ||dueDateDay < today) {
-    dueDateError.innerHTML ="*Due date must not be empty.<br>* Due date must be set in the future."
+  //check due date(invalid date and date in the past are not allowed)
+  else if(isNaN(dueDateDay.getTime())||dueDateDay.getTime() < today.getTime()){
+    dueDateError.innerHTML ="*Due date must not be empty.<br>*Due date must be set in the future."
     dueDateError.style.color='red'
-  }*/
+  }
   //checkStatus;
   else if(taskStatus.selectedIndex == 0){
     taskStatusError.innerHTML="Status must be selected."
     taskStatusError.style.color="red"
   }
+  //else{function to store date}
 }, false)
 
 
