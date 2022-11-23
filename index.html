@@ -67,13 +67,13 @@
                     <label for="taskNameInput">Task Name</label>
                     <input type="text" class="form-control" id="taskNameInput"
                            placeholder="Type in task name here (8 characters max.)">
-                    <span class="errorMsg" id="errorMsgTaskName"></span>
+                    <span class="errorMsg" id="errorMsgTaskName" style="display: none">*Task Name must not be empty or longer than 8 characters.</span>
                 </div>
                 <div class="form-group">
                     <label for="taskDescriptionTextarea">Task Description</label>
                     <textarea class="form-control" id="taskDescriptionTextarea" rows="3"
                               placeholder="Describe your task briefly (15 characters max.)"></textarea>
-                    <span class="errorMsg" id="errorMsgDescription"></span>
+                    <span class="errorMsg" id="errorMsgDescription" style="display: none">*Must not be blank; <br>*Maximum length: 15 characters.</span>
                 </div>
                 <div class="form-group">
                     <label for="assignedToMultipleSelect">Assigned to [Press and hold CTRL to select/unselect one or
@@ -90,12 +90,12 @@
                         <option>Severus Snape</option>
                         <option>Sirius Black</option>
                     </select>
-                    <span class="errorMsg" id="errorMsgAssignedTo"></span>
+                    <span class="errorMsg" id="errorMsgAssignedTo" style="display: none">*Must select at least one person.</span>
                 </div>
                 <div class="form-group">
                     <label for="dateInput">Due Date</label>
                     <input type="date" class="form-control" id="dateInput">
-                    <span class="errorMsg" id="errorMsgDate"></span>
+                    <span class="errorMsg" id="errorMsgDate" style="display: none">*Due date must not be empty.<br>*Due date must be set in the future.</span>
                 </div>
 
                 <div class="form-group">
@@ -107,7 +107,7 @@
                         <option>Review</option>
                         <option>Done</option>
                     </select>
-                    <span class="errorMsg" id="errorMsgStatus"></span>
+                    <span class="errorMsg" id="errorMsgStatus" style="display: none">Status must be selected.</span>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary" id="submit">Submit</button>
