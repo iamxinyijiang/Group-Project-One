@@ -1,77 +1,84 @@
+import {TaskManager} from "./taskManager.js";
+
+//define tasks object contain all tasks
+const tasks = new TaskManager();
+
 //testing code to see if main.js is linked
 console.log('main.js is running.')
-//display current date and time on page
-function myClock() {         
-    setTimeout(function() {   
-      const d = new Date();
-      document.getElementById("dateContainer").innerHTML = `&#128198 Date: ${d.toLocaleDateString(
-        'default', {weekday: 'short'})} ${d.toLocaleDateString()}`; 
-      document.getElementById("clockContainer").innerHTML = `&#8986 Time: ${d.toLocaleTimeString()}`; 
-      myClock();             
-    }, 1000)
-  }
-  myClock();    
 
+window.addEventListener("load", () => {
+    setInterval(() => {
+        document.getElementById('dateContainer').innerHTML = `&#128198 Date: ${new Date().toLocaleDateString()}`;
+        document.getElementById('clockContainer').innerHTML = `&#8986 Time: ${new Date().toLocaleTimeString()}`;
+    }, 200);
+});
 
-function resetErrors() {
-  //empty error messages before validation start.
-  let errorElement = document.querySelectorAll('.errorMsg');
-  for (let i = 0; i < errorElement.length; ++i) {
-      errorElement[i].innerHTML = '';
-  }
+//data validate function
+function dataValidate(inputs) {
+    let valid = true;
+    for (let i = 0; i < inputs.length - 1; i++) {
+        const input = document.getElementById(inputs[i].children[1].id);
+        const errorMsg = document.getElementById(inputs[i].children[2].id);
+        let subValid = true;
+        switch (input.id) {
+            case 'taskNameInput':
+                subValid = !(input.value.trim() === "" || input.value.length > 8);
+                valid = valid && subValid;
+                break;
+            case 'taskDescriptionTextarea':
+                subValid = !(input.value.trim() === "" || input.value.length > 15);
+                valid = valid && subValid;
+                break;
+            case 'assignedToMultipleSelect':
+                subValid = !(input.selectedIndex === -1);
+                valid = valid && subValid;
+                break;
+            case 'dateInput':
+                subValid = !(input.value <= new Date().toLocaleDateString().replaceAll('/', '-'));
+                valid = valid && subValid;
+                break;
+            case 'statusSelect':
+                subValid = !(input.selectedIndex === 0);
+                valid = valid && subValid;
+                break;
+        }
+        showErrorMsg(subValid, errorMsg);
+    }
+    return valid;
 }
+
+//error message function display/hide message depend on condition
+function showErrorMsg(valid, msg) {
+    if (valid) msg.style.display = 'none'; else msg.style.display = '';
+}
+
 //validate Form at submission
-const submitBtn = document.getElementById("submit")
+const submitBtn = document.getElementById("submit");
 submitBtn.addEventListener('click', (event) => {
-  event.preventDefault();
-  resetErrors();
-  //declare variables
-const taskName = document.getElementById("taskNameInput").value;
-const taskNameError = document.getElementById("errorMsgTaskName")
-const description = document.getElementById("taskDescriptionTextarea").value;
-const descriptionError = document.getElementById("errorMsgDescription")
-const assignedTo = document.getElementById('assignedToMultipleSelect')
-const assignedToError =document.getElementById('errorMsgAssignedTo')
-const taskStatus = document.getElementById("statusSelect")
-const taskStatusError = document.getElementById("errorMsgStatus")
+    event.preventDefault();
+    const inputs = document.getElementsByClassName('form-group');
 
-//date related variables
-const dueDateError= document.getElementById('errorMsgDate')
-let today = new Date();
-let dueDateDay = new Date (document.querySelector('input[type="date"]').value)
-//to check is type is a number so isNaN()can be used later to set condition
-console.log(typeof(dueDateDay.getTime()))
+    if (dataValidate(inputs)) {
+        const taskInfo = [];
 
- 
-
-  //checkTaskName;
-  if(taskName.trim()=== ""||taskName.length> 8||taskName == null){
-    taskNameError.innerHTML="*Task Name must not be empty or longer than 8 characters.."
-    taskNameError.style.color = 'red'
-  }
-  //checkDescription;
-  else if(description.trim()===""||taskName.length> 15||description == null){
-    descriptionError.innerHTML="*Must not be blank; <br>*Maximum length: 15 characters."
-    descriptionError.style.color = "red"
-  }
-  //checkAssigned to
-  else if(assignedTo.selectedIndex == -1){
-    assignedToError.innerHTML="*Must select at least one person."
-    assignedToError.style.color="red"
-  } 
-  //check due date(invalid date and date in the past are not allowed)
-  else if(isNaN(dueDateDay.getTime())||dueDateDay.getTime() < today.getTime()){
-    dueDateError.innerHTML ="*Due date must not be empty.<br>*Due date must be set in the future."
-    dueDateError.style.color='red'
-  }
-  //checkStatus;
-  else if(taskStatus.selectedIndex == 0){
-    taskStatusError.innerHTML="Status must be selected."
-    taskStatusError.style.color="red"
-  }
-  //else{function to store date}
-}, false)
-
-
-
-
+        for (let i = 0; i < inputs.length - 1; i++) {
+            if (inputs[i].children[1].id === 'assignedToMultipleSelect') {
+                const options = inputs[i].children[1].options;
+                const selectValueArr = [];
+                for (let j = 0; j < options.length; j++) {
+                    if (options[j].selected) selectValueArr.push(options[j].value);
+                }
+                taskInfo.push(selectValueArr);
+                inputs[i].children[1].selectedIndex = -1;
+            } else if (inputs[i].children[1].id === 'statusSelect') {
+                taskInfo.push(inputs[i].children[1].value);
+                inputs[i].children[1].selectedIndex = 0;
+            } else {
+                taskInfo.push(inputs[i].children[1].value);
+                inputs[i].children[1].value = '';
+            }
+        }
+        tasks.addTask(taskInfo);
+    }
+    console.log(tasks);
+}, false);

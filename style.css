@@ -1,71 +1,76 @@
-
 /*
   1. Use a more-intuitive box-sizing model.
 */
 *, *::before, *::after {
     box-sizing: border-box;
-  }
-  /*
-    2. Remove default margin
-  */
-  * {
+}
+
+/*
+  2. Remove default margin
+*/
+* {
     margin: 0;
-  }
-  /*
-    3. Allow percentage-based heights in the application
-  */
-  html, body {
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
     height: 100%;
-  }
+}
 
 /*my css starts here*/
-#simpleTodo{
+#simpleTodo {
     font-family: 'Lobster', cursive;
 }
 
-#formTitle,#taskTitle{
+#formTitle, #taskTitle {
     font-family: 'Oswald', sans-serif;
 }
 
-footer{
+footer {
     font-size: 30px;
-    color:white;
-    background-color:#343a40;
+    color: white;
+    background-color: #343a40;
     opacity: 0.5;
 }
 
-#dateAndTime,.clickHere{
-  width: 12em;
+#dateAndTime, .clickHere {
+    width: 12em;
 }
 
-#dateAndTime{
- color: lime;
- width: fit-content;
- margin: auto;
- background-color:black;
- border: 1px inset grey;
- font-family: 'Press Start 2P', cursive;
- font-size: small;
+#dateAndTime {
+    color: lime;
+    width: fit-content;
+    margin: auto;
+    background-color: black;
+    border: 1px inset grey;
+    font-family: 'Press Start 2P', cursive;
+    font-size: small;
 }
 
-#dateContainer,#clockContainer{
-  margin: 16px;
+#dateContainer, #clockContainer {
+    margin: 16px;
 }
 
-.formPara{
-  display:flex;
-  justify-content:center;
-  background-color: whitesmoke;
-  padding-top: 1em;
-  margin-left: 3em;
-  margin-right:3em;
+.formPara {
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    padding-top: 1em;
+    margin-left: 3em;
+    margin-right: 3em;
 }
 
-#cardsContainer{
-  display: none;
-}/*task cards set to hidden*/ 
+#cardsContainer {
+    display: none;
+}
 
-.errorMsg{
-  font-size: 0.9em;
-  font-style: italic;
+/*task cards set to hidden*/
+
+.errorMsg {
+    font-size: 0.9em;
+    font-style: italic;
+    font-weight: bold;
+    color: red;
 }
