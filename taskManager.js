@@ -25,7 +25,6 @@ class TaskManager {
     }
 
     selectTask(key, value) {
-
     }
 }
 

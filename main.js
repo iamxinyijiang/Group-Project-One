@@ -1,5 +1,6 @@
 import {TaskManager} from "./taskManager.js";
 
+//define tasks object contain all tasks
 const tasks = new TaskManager();
 
 //testing code to see if main.js is linked
@@ -12,6 +13,7 @@ window.addEventListener("load", () => {
     }, 200);
 });
 
+//data validate function
 function dataValidate(inputs) {
     let valid = true;
     for (let i = 0; i < inputs.length - 1; i++) {
@@ -42,15 +44,12 @@ function dataValidate(inputs) {
         }
         showErrorMsg(subValid, errorMsg);
     }
-    console.log(valid);
     return valid;
 }
 
+//error message function display/hide message depend on condition
 function showErrorMsg(valid, msg) {
-    if (valid)
-        msg.style.display = 'none';
-    else
-        msg.style.display = '';
+    if (valid) msg.style.display = 'none'; else msg.style.display = '';
 }
 
 //validate Form at submission
@@ -58,12 +57,26 @@ const submitBtn = document.getElementById("submit");
 submitBtn.addEventListener('click', (event) => {
     event.preventDefault();
     const inputs = document.getElementsByClassName('form-group');
-    // if (dataValidate(inputs))
+
     if (dataValidate(inputs)) {
         const taskInfo = [];
+
         for (let i = 0; i < inputs.length - 1; i++) {
-            taskInfo.push(inputs[i].children[1].value);
-            // inputs[i].children[1].value=''
+            if (inputs[i].children[1].id === 'assignedToMultipleSelect') {
+                const options = inputs[i].children[1].options;
+                const selectValueArr = [];
+                for (let j = 0; j < options.length; j++) {
+                    if (options[j].selected) selectValueArr.push(options[j].value);
+                }
+                taskInfo.push(selectValueArr);
+                inputs[i].children[1].selectedIndex = -1;
+            } else if (inputs[i].children[1].id === 'statusSelect') {
+                taskInfo.push(inputs[i].children[1].value);
+                inputs[i].children[1].selectedIndex = 0;
+            } else {
+                taskInfo.push(inputs[i].children[1].value);
+                inputs[i].children[1].value = '';
+            }
         }
         tasks.addTask(taskInfo);
     }
