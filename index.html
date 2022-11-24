@@ -101,11 +101,11 @@
                 <div class="form-group">
                     <label for="statusSelect">Status</label>
                     <select class="form-control" id="statusSelect">
-                        <option class="text-muted" disabled selected hidden>--select here--</option>
-                        <option>To Do</option>
-                        <option>In Progress</option>
-                        <option>Review</option>
-                        <option>Done</option>
+                        <option class="text-muted" value="" disabled selected hidden>--select here--</option>
+                        <option value="todo">To Do</option>
+                        <option value="inprogress">In Progress</option>
+                        <option value="review">Review</option>
+                        <option value="done">Done</option>
                     </select>
                     <span class="errorMsg" id="errorMsgStatus" style="display: none">Status must be selected.</span>
                 </div>
@@ -526,7 +526,7 @@
     <p class="font-italic font-weight-normal text-center">2022 Simple To-do List &copy;</p>
 </footer>
 <!--Custom JavaScript-->
-<script src="main.js"></script>
+<script type="module" src="./main.js"></script>
 <!-- Bootstrap's JavaScript Files -->
 <script
         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

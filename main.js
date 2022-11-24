@@ -1,3 +1,7 @@
+import {TaskManager} from "./taskManager.js";
+
+const tasks = new TaskManager();
+
 //testing code to see if main.js is linked
 console.log('main.js is running.')
 
@@ -9,47 +13,59 @@ window.addEventListener("load", () => {
 });
 
 function dataValidate(inputs) {
+    let valid = true;
     for (let i = 0; i < inputs.length - 1; i++) {
         const input = document.getElementById(inputs[i].children[1].id);
         const errorMsg = document.getElementById(inputs[i].children[2].id);
-        let status;
+        let subValid = true;
         switch (input.id) {
             case 'taskNameInput':
-                status = input.value.trim() === "" || input.value.length > 8;
+                subValid = !(input.value.trim() === "" || input.value.length > 8);
+                valid = valid && subValid;
                 break;
             case 'taskDescriptionTextarea':
-                status = input.value.trim() === "" || input.value.length > 15;
+                subValid = !(input.value.trim() === "" || input.value.length > 15);
+                valid = valid && subValid;
                 break;
             case 'assignedToMultipleSelect':
-                status = input.selectedIndex === -1;
+                subValid = !(input.selectedIndex === -1);
+                valid = valid && subValid;
                 break;
             case 'dateInput':
-                status = input.value <= new Date().toLocaleDateString().replaceAll('/', '-');
+                subValid = !(input.value <= new Date().toLocaleDateString().replaceAll('/', '-'));
+                valid = valid && subValid;
                 break;
             case 'statusSelect':
-                status = input.selectedIndex === 0;
+                subValid = !(input.selectedIndex === 0);
+                valid = valid && subValid;
                 break;
         }
-        showErrorMsg(status, errorMsg);
+        showErrorMsg(subValid, errorMsg);
     }
+    console.log(valid);
+    return valid;
 }
 
-function showErrorMsg(status, msg) {
-    console.log('errorMsg function is working');
-    console.log(status);
-    console.log(msg.innerHTML);
-    console.log(msg.style.display);
-    if (status)
-        msg.style.display = '';
+function showErrorMsg(valid, msg) {
+    if (valid)
+        msg.style.display = 'none';
     else
-        msg.style.display = 'none'
-
+        msg.style.display = '';
 }
+
 //validate Form at submission
 const submitBtn = document.getElementById("submit");
 submitBtn.addEventListener('click', (event) => {
     event.preventDefault();
     const inputs = document.getElementsByClassName('form-group');
-    // resetErrors();
-    dataValidate(inputs);
+    // if (dataValidate(inputs))
+    if (dataValidate(inputs)) {
+        const taskInfo = [];
+        for (let i = 0; i < inputs.length - 1; i++) {
+            taskInfo.push(inputs[i].children[1].value);
+            // inputs[i].children[1].value=''
+        }
+        tasks.addTask(taskInfo);
+    }
+    console.log(tasks);
 }, false);
