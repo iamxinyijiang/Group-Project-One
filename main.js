@@ -41,7 +41,7 @@ function dataValidate(inputs) {
                 valid = valid && subValid;
                 break;
             case 'dateInput':
-                subValid = !(input.value <= new Date().toLocaleDateString().replaceAll('/', '-'));
+                subValid = !(isNaN(new Date(input.value).getTime()) || new Date(input.value).getTime() < new Date().getTime())
                 valid = valid && subValid;
                 break;
             case 'statusSelect':
