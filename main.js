@@ -6,12 +6,19 @@ const tasks = new TaskManager();
 //testing code to see if main.js is linked
 console.log('main.js is running.')
 
-window.addEventListener("load", () => {
-    setInterval(() => {
-        document.getElementById('dateContainer').innerHTML = `&#128198 Date: ${new Date().toLocaleDateString()}`;
-        document.getElementById('clockContainer').innerHTML = `&#8986 Time: ${new Date().toLocaleTimeString()}`;
-    }, 200);
-});
+//display current date and time on page
+window.addEventListener("load", myClock);
+function myClock() {         
+    setTimeout(function() {   
+      const d = new Date();
+      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      console.log(timezone);
+      document.getElementById("dateContainer").innerHTML = `&#128198 Today is ${d.toLocaleDateString(
+        'default', {weekday: 'long', day:'numeric', month:'long', year:'numeric' })}.`; 
+      document.getElementById("clockContainer").innerHTML = `&#8986 ${d.toLocaleTimeString('default', {hour12: true, hour:'2-digit', minute:'2-digit', second:'2-digit', dayPeriod: 'long'})} &#128205 ${timezone}`; 
+      myClock();             
+    }, 1000)
+  }  
 
 //data validate function
 function dataValidate(inputs) {
