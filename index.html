@@ -111,6 +111,7 @@
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                    <button type="button" class="btn btn-primary" id="clear">Clear</button>
                 </div>
             </form>
         </div>
@@ -121,403 +122,403 @@
 <!--Container Two-->
 <div class="container-fluid" id="cardsContainer">
     <!--Current Tasks (cards)-->
-    <div class="row justify-content-center mx-10 flex-wrap">
+    <div class="row justify-content-center mx-10 flex-wrap" id="todo">
         <div class="col-12">
             <h1 class="font-weigt-light text-center display-4" id="taskTitle">View Current Tasks</h1>
             <h1><br></h1>
         </div>
         <!--first Card-->
-        <div class="col-12 col-sm-6 col-lg-3 mx-5">
-            <div class="card border-light mx-5" style="width: 15rem;">
-                <img src="images/task.jpg" class="card-img-top" alt="Task icon">
-                <div class="card-body mx-auto">
-                    <h5 class="card-title">Muggle Studies Presentation</h5>
-                    <p class="card-text">Assigned to: R.Weasley; H.Granger; H.Porter<br>Due on: 28/10/2022</p>
+<!--        <div class="col-12 col-sm-6 col-lg-3 mx-5">-->
+<!--            <div class="card border-light mx-5" style="width: 15rem;">-->
+<!--                <img src="images/task.jpg" class="card-img-top" alt="Task icon">-->
+<!--                <div class="card-body mx-auto">-->
+<!--                    <h5 class="card-title">Muggle Studies Presentation</h5>-->
+<!--                    <p class="card-text">Assigned to: R.Weasley; H.Granger; H.Porter<br>Due on: 28/10/2022</p>-->
 
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter1">
-                        View Task Details
-                    </button>
-                    <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog"
-                         aria-labelledby="exampleModalCenterTitle" 1 aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle1">Task One</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <!--List group-->
-                                    <div class="list-group">
-                                        <a href="#" class="list-group-item list-group-item-action active">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Task Name</h5>
-                                                <small>3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">Muggle Studies Presentation</p>
-                                            <small>Donec id elit non mi porta.</small>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Description</h5>
-                                                <small class="text-muted">3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas
-                                                sed diam eget risus varius blandit.</p>
-                                            <small class="text-muted">Donec id elit non mi porta.</small>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Assigned to</h5>
-                                                <small class="text-muted">3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">Ron Weasley; Hermione Granger; Harry Porter</p>
-                                            <small class="text-muted">Donec id elit non mi porta.</small>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Due Date</h5>
-                                                <small class="text-muted">3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">28/10/2022</p>
-                                            <small>Donec id elit non mi porta.</small>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Status</h5>
-                                                <small class="text-muted">3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">In Progress</p>
-                                            <small>Donec id elit non mi porta.</small>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--second Card-->
-        <div class="col-12 col-sm-6 col-lg-3 mx-5">
-            <div class="card border-light mx-5" style="width: 15rem;">
-                <img src="images/task.jpg" class="card-img-top" alt="Task icon">
-                <div class="card-body mx-auto">
-                    <h5 class="card-title">History of Magic Essay</h5>
-                    <p class="card-text">Assigned to: H.Granger<br><br>Due on: 28/10/2022</p>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter2">
-                        View Task Details
-                    </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
-                         aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle2">Task Two</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <!--List group-->
-                                    <div class="list-group">
-                                        <a href="#" class="list-group-item list-group-item-action active">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Task Name</h5>
-                                                <small>3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">History of Magic Essay</p>
-                                            <small>Donec id elit non mi porta.</small>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Description</h5>
-                                                <small class="text-muted">3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas
-                                                sed diam eget risus varius blandit.</p>
-                                            <small class="text-muted">Donec id elit non mi porta.</small>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Assigned to</h5>
-                                                <small class="text-muted">3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">Hermione Granger</p>
-                                            <small class="text-muted">Donec id elit non mi porta.</small>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Due Date</h5>
-                                                <small>3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">28/10/2022</p>
-                                            <small class="text-muted">Donec id elit non mi porta.</small>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Status</h5>
-                                                <small>3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">Review</p>
-                                            <small class="text-muted">Donec id elit non mi porta.</small>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--third Card-->
-        <div class="col-12 col-sm-6 col-lg-3 mx-5">
-            <div class="card border-light mx-5" style="width: 15rem;">
-                <img src="images/task.jpg" class="card-img-top" alt="Task icon">
-                <div class="card-body mx-auto">
-                    <h5 class="card-title">Cast Unforgivable Curse</h5>
-                    <p class="card-text">Assigned to: B.Lestrange; S.Black<br>Due on: 28/10/2022</p>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter3">
-                        View Task Details
-                    </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog"
-                         aria-labelledby="exampleModalCenterTitle3" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle3">Task Three</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <!--List group-->
-                                    <div class="list-group">
-                                        <a href="#" class="list-group-item list-group-item-action active">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Task Name</h5>
-                                                <small>3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">Cast Unforgivable Curse</p>
-                                            <small>Donec id elit non mi porta.</small>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Description</h5>
-                                                <small class="text-muted">3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas
-                                                sed diam eget risus varius blandit.</p>
-                                            <small class="text-muted">Donec id elit non mi porta.</small>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Assigned to</h5>
-                                                <small class="text-muted">3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">Bellatrix Lestrange; Sirius Black</p>
-                                            <small class="text-muted">Donec id elit non mi porta.</small>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Due Date</h5>
-                                                <small>3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">28/10/2022</p>
-                                            <small class="text-muted">Donec id elit non mi porta.</small>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Status</h5>
-                                                <small>3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">Done</p>
-                                            <small class="text-muted">Donec id elit non mi porta.</small>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--fourth Card-->
-        <div class="col-12 col-sm-6 col-lg-3 mx-5">
-            <div class="card border-light mx-5" style="width: 15rem;">
-                <img src="images/task.jpg" class="card-img-top" alt="Task icon">
-                <div class="card-body mx-auto">
-                    <h5 class="card-title">One-on-one tutoring for Potions</h5>
-                    <p class="card-text">Assigned to: S.Snape; D.Malfoy<br>Due on: 28/10/2022</p>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter4">
-                        View Task Details
-                    </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog"
-                         aria-labelledby="exampleModalCenterTitle4" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle4">Task Four</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <ul>
-                                        <!--List group-->
-                                        <div class="list-group">
-                                            <a href="#" class="list-group-item list-group-item-action active">
-                                                <div class="d-flex w-100 justify-content-between">
-                                                    <h5 class="mb-1">Task Name</h5>
-                                                    <small>3 days ago</small>
-                                                </div>
-                                                <p class="mb-1">One-on-one tutoring for Potions</p>
-                                                <small>Donec id elit non mi porta.</small>
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                <div class="d-flex w-100 justify-content-between">
-                                                    <h5 class="mb-1">Description</h5>
-                                                    <small class="text-muted">3 days ago</small>
-                                                </div>
-                                                <p class="mb-1">Donec id elit non mi porta gravida at eget metus.
-                                                    Maecenas sed diam eget risus varius blandit.</p>
-                                                <small class="text-muted">Donec id elit non mi porta.</small>
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                <div class="d-flex w-100 justify-content-between">
-                                                    <h5 class="mb-1">Assigned to</h5>
-                                                    <small class="text-muted">3 days ago</small>
-                                                </div>
-                                                <p class="mb-1">Severus Snape; Draco Malfoy </p>
-                                                <small class="text-muted">Donec id elit non mi porta.</small>
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                <div class="d-flex w-100 justify-content-between">
-                                                    <h5 class="mb-1">Due Date</h5>
-                                                    <small class="text-muted">3 days ago</small>
-                                                </div>
-                                                <p class="mb-1">28/10/2022</p>
-                                                <small>Donec id elit non mi porta.</small>
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                <div class="d-flex w-100 justify-content-between">
-                                                    <h5 class="mb-1">Status</h5>
-                                                    <small class="text-muted">3 days ago</small>
-                                                </div>
-                                                <p class="mb-1">To Do</p>
-                                                <small class="text-muted">Donec id elit non mi porta.</small>
-                                            </a>
-                                        </div>
-                                    </ul>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--fifth Card-->
-        <div class="col-12 col-sm-6 col-lg-3 mx-5">
-            <div class="card border-light mx-5" style="width: 15rem;">
-                <img src="images/task.jpg" class="card-img-top" alt="Task icon">
-                <div class="card-body mx-auto">
-                    <h5 class="card-title">Meeting with the Headmaster</h5>
-                    <p class="card-text">Assigned to: A.Dumbledore; N.Longbottom<br>Due on: 28/10/2022</p>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter5">
-                        View Task Details
-                    </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog"
-                         aria-labelledby="exampleModalCenterTitle5" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle5">Task Five</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <!--List group-->
-                                    <div class="list-group">
-                                        <a href="#" class="list-group-item list-group-item-action active">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Task Name</h5>
-                                                <small>3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">Meeting with the Headmaster</p>
-                                            <small>Donec id elit non mi porta.</small>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Description</h5>
-                                                <small class="text-muted">3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas
-                                                sed diam eget risus varius blandit.</p>
-                                            <small class="text-muted">Donec id elit non mi porta.</small>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Assigned to</h5>
-                                                <small class="text-muted">3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">Albus Dumbledore; Nervill Longbottom</p>
-                                            <small class="text-muted">Donec id elit non mi porta.</small>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Due Date</h5>
-                                                <small>3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">28/10/2022</p>
-                                            <small class="text-muted">Donec id elit non mi porta.</small>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Status</h5>
-                                                <small>3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">Done</p>
-                                            <small class="text-muted">Donec id elit non mi porta.</small>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--                    &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter1">-->
+<!--                        View Task Details-->
+<!--                    </button>-->
+<!--                    <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog"-->
+<!--                         aria-labelledby="exampleModalCenterTitle" 1 aria-hidden="true">-->
+<!--                        <div class="modal-dialog modal-dialog-centered" role="document">-->
+<!--                            <div class="modal-content">-->
+<!--                                <div class="modal-header">-->
+<!--                                    <h5 class="modal-title" id="exampleModalLongTitle1">Task One</h5>-->
+<!--                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                                        <span aria-hidden="true">&times;</span>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                                <div class="modal-body">-->
+<!--                                    &lt;!&ndash;List group&ndash;&gt;-->
+<!--                                    <div class="list-group">-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action active">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Task Name</h5>-->
+<!--                                                <small>3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">Muggle Studies Presentation</p>-->
+<!--                                            <small>Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Description</h5>-->
+<!--                                                <small class="text-muted">3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas-->
+<!--                                                sed diam eget risus varius blandit.</p>-->
+<!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Assigned to</h5>-->
+<!--                                                <small class="text-muted">3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">Ron Weasley; Hermione Granger; Harry Porter</p>-->
+<!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Due Date</h5>-->
+<!--                                                <small class="text-muted">3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">28/10/2022</p>-->
+<!--                                            <small>Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Status</h5>-->
+<!--                                                <small class="text-muted">3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">In Progress</p>-->
+<!--                                            <small>Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="modal-footer">-->
+<!--                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+<!--                                    <button type="button" class="btn btn-primary">Save changes</button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;second Card&ndash;&gt;-->
+<!--        <div class="col-12 col-sm-6 col-lg-3 mx-5">-->
+<!--            <div class="card border-light mx-5" style="width: 15rem;">-->
+<!--                <img src="images/task.jpg" class="card-img-top" alt="Task icon">-->
+<!--                <div class="card-body mx-auto">-->
+<!--                    <h5 class="card-title">History of Magic Essay</h5>-->
+<!--                    <p class="card-text">Assigned to: H.Granger<br><br>Due on: 28/10/2022</p>-->
+<!--                    &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter2">-->
+<!--                        View Task Details-->
+<!--                    </button>-->
+<!--                    &lt;!&ndash; Modal &ndash;&gt;-->
+<!--                    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"-->
+<!--                         aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">-->
+<!--                        <div class="modal-dialog modal-dialog-centered" role="document">-->
+<!--                            <div class="modal-content">-->
+<!--                                <div class="modal-header">-->
+<!--                                    <h5 class="modal-title" id="exampleModalLongTitle2">Task Two</h5>-->
+<!--                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                                        <span aria-hidden="true">&times;</span>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                                <div class="modal-body">-->
+<!--                                    &lt;!&ndash;List group&ndash;&gt;-->
+<!--                                    <div class="list-group">-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action active">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Task Name</h5>-->
+<!--                                                <small>3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">History of Magic Essay</p>-->
+<!--                                            <small>Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Description</h5>-->
+<!--                                                <small class="text-muted">3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas-->
+<!--                                                sed diam eget risus varius blandit.</p>-->
+<!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Assigned to</h5>-->
+<!--                                                <small class="text-muted">3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">Hermione Granger</p>-->
+<!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Due Date</h5>-->
+<!--                                                <small>3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">28/10/2022</p>-->
+<!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Status</h5>-->
+<!--                                                <small>3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">Review</p>-->
+<!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="modal-footer">-->
+<!--                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+<!--                                    <button type="button" class="btn btn-primary">Save changes</button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;third Card&ndash;&gt;-->
+<!--        <div class="col-12 col-sm-6 col-lg-3 mx-5">-->
+<!--            <div class="card border-light mx-5" style="width: 15rem;">-->
+<!--                <img src="images/task.jpg" class="card-img-top" alt="Task icon">-->
+<!--                <div class="card-body mx-auto">-->
+<!--                    <h5 class="card-title">Cast Unforgivable Curse</h5>-->
+<!--                    <p class="card-text">Assigned to: B.Lestrange; S.Black<br>Due on: 28/10/2022</p>-->
+<!--                    &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter3">-->
+<!--                        View Task Details-->
+<!--                    </button>-->
+<!--                    &lt;!&ndash; Modal &ndash;&gt;-->
+<!--                    <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog"-->
+<!--                         aria-labelledby="exampleModalCenterTitle3" aria-hidden="true">-->
+<!--                        <div class="modal-dialog modal-dialog-centered" role="document">-->
+<!--                            <div class="modal-content">-->
+<!--                                <div class="modal-header">-->
+<!--                                    <h5 class="modal-title" id="exampleModalLongTitle3">Task Three</h5>-->
+<!--                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                                        <span aria-hidden="true">&times;</span>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                                <div class="modal-body">-->
+<!--                                    &lt;!&ndash;List group&ndash;&gt;-->
+<!--                                    <div class="list-group">-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action active">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Task Name</h5>-->
+<!--                                                <small>3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">Cast Unforgivable Curse</p>-->
+<!--                                            <small>Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Description</h5>-->
+<!--                                                <small class="text-muted">3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas-->
+<!--                                                sed diam eget risus varius blandit.</p>-->
+<!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Assigned to</h5>-->
+<!--                                                <small class="text-muted">3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">Bellatrix Lestrange; Sirius Black</p>-->
+<!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Due Date</h5>-->
+<!--                                                <small>3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">28/10/2022</p>-->
+<!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Status</h5>-->
+<!--                                                <small>3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">Done</p>-->
+<!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="modal-footer">-->
+<!--                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+<!--                                    <button type="button" class="btn btn-primary">Save changes</button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;fourth Card&ndash;&gt;-->
+<!--        <div class="col-12 col-sm-6 col-lg-3 mx-5">-->
+<!--            <div class="card border-light mx-5" style="width: 15rem;">-->
+<!--                <img src="images/task.jpg" class="card-img-top" alt="Task icon">-->
+<!--                <div class="card-body mx-auto">-->
+<!--                    <h5 class="card-title">One-on-one tutoring for Potions</h5>-->
+<!--                    <p class="card-text">Assigned to: S.Snape; D.Malfoy<br>Due on: 28/10/2022</p>-->
+<!--                    &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter4">-->
+<!--                        View Task Details-->
+<!--                    </button>-->
+<!--                    &lt;!&ndash; Modal &ndash;&gt;-->
+<!--                    <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog"-->
+<!--                         aria-labelledby="exampleModalCenterTitle4" aria-hidden="true">-->
+<!--                        <div class="modal-dialog modal-dialog-centered" role="document">-->
+<!--                            <div class="modal-content">-->
+<!--                                <div class="modal-header">-->
+<!--                                    <h5 class="modal-title" id="exampleModalLongTitle4">Task Four</h5>-->
+<!--                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                                        <span aria-hidden="true">&times;</span>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                                <div class="modal-body">-->
+<!--                                    <ul>-->
+<!--                                        &lt;!&ndash;List group&ndash;&gt;-->
+<!--                                        <div class="list-group">-->
+<!--                                            <a href="#" class="list-group-item list-group-item-action active">-->
+<!--                                                <div class="d-flex w-100 justify-content-between">-->
+<!--                                                    <h5 class="mb-1">Task Name</h5>-->
+<!--                                                    <small>3 days ago</small>-->
+<!--                                                </div>-->
+<!--                                                <p class="mb-1">One-on-one tutoring for Potions</p>-->
+<!--                                                <small>Donec id elit non mi porta.</small>-->
+<!--                                            </a>-->
+<!--                                            <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                                <div class="d-flex w-100 justify-content-between">-->
+<!--                                                    <h5 class="mb-1">Description</h5>-->
+<!--                                                    <small class="text-muted">3 days ago</small>-->
+<!--                                                </div>-->
+<!--                                                <p class="mb-1">Donec id elit non mi porta gravida at eget metus.-->
+<!--                                                    Maecenas sed diam eget risus varius blandit.</p>-->
+<!--                                                <small class="text-muted">Donec id elit non mi porta.</small>-->
+<!--                                            </a>-->
+<!--                                            <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                                <div class="d-flex w-100 justify-content-between">-->
+<!--                                                    <h5 class="mb-1">Assigned to</h5>-->
+<!--                                                    <small class="text-muted">3 days ago</small>-->
+<!--                                                </div>-->
+<!--                                                <p class="mb-1">Severus Snape; Draco Malfoy </p>-->
+<!--                                                <small class="text-muted">Donec id elit non mi porta.</small>-->
+<!--                                            </a>-->
+<!--                                            <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                                <div class="d-flex w-100 justify-content-between">-->
+<!--                                                    <h5 class="mb-1">Due Date</h5>-->
+<!--                                                    <small class="text-muted">3 days ago</small>-->
+<!--                                                </div>-->
+<!--                                                <p class="mb-1">28/10/2022</p>-->
+<!--                                                <small>Donec id elit non mi porta.</small>-->
+<!--                                            </a>-->
+<!--                                            <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                                <div class="d-flex w-100 justify-content-between">-->
+<!--                                                    <h5 class="mb-1">Status</h5>-->
+<!--                                                    <small class="text-muted">3 days ago</small>-->
+<!--                                                </div>-->
+<!--                                                <p class="mb-1">To Do</p>-->
+<!--                                                <small class="text-muted">Donec id elit non mi porta.</small>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                                <div class="modal-footer">-->
+<!--                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+<!--                                    <button type="button" class="btn btn-primary">Save changes</button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;fifth Card&ndash;&gt;-->
+<!--        <div class="col-12 col-sm-6 col-lg-3 mx-5">-->
+<!--            <div class="card border-light mx-5" style="width: 15rem;">-->
+<!--                <img src="images/task.jpg" class="card-img-top" alt="Task icon">-->
+<!--                <div class="card-body mx-auto">-->
+<!--                    <h5 class="card-title">Meeting with the Headmaster</h5>-->
+<!--                    <p class="card-text">Assigned to: A.Dumbledore; N.Longbottom<br>Due on: 28/10/2022</p>-->
+<!--                    &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter5">-->
+<!--                        View Task Details-->
+<!--                    </button>-->
+<!--                    &lt;!&ndash; Modal &ndash;&gt;-->
+<!--                    <div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog"-->
+<!--                         aria-labelledby="exampleModalCenterTitle5" aria-hidden="true">-->
+<!--                        <div class="modal-dialog modal-dialog-centered" role="document">-->
+<!--                            <div class="modal-content">-->
+<!--                                <div class="modal-header">-->
+<!--                                    <h5 class="modal-title" id="exampleModalLongTitle5">Task Five</h5>-->
+<!--                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                                        <span aria-hidden="true">&times;</span>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                                <div class="modal-body">-->
+<!--                                    &lt;!&ndash;List group&ndash;&gt;-->
+<!--                                    <div class="list-group">-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action active">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Task Name</h5>-->
+<!--                                                <small>3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">Meeting with the Headmaster</p>-->
+<!--                                            <small>Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Description</h5>-->
+<!--                                                <small class="text-muted">3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas-->
+<!--                                                sed diam eget risus varius blandit.</p>-->
+<!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Assigned to</h5>-->
+<!--                                                <small class="text-muted">3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">Albus Dumbledore; Nervill Longbottom</p>-->
+<!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Due Date</h5>-->
+<!--                                                <small>3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">28/10/2022</p>-->
+<!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+<!--                                            <div class="d-flex w-100 justify-content-between">-->
+<!--                                                <h5 class="mb-1">Status</h5>-->
+<!--                                                <small>3 days ago</small>-->
+<!--                                            </div>-->
+<!--                                            <p class="mb-1">Done</p>-->
+<!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="modal-footer">-->
+<!--                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+<!--                                    <button type="button" class="btn btn-primary">Save changes</button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </div>
 
