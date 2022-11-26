@@ -31,7 +31,6 @@ function createTaskHTML(task) {
                                                     <small>3 days ago</small>
                                                 </div>
                                                 <p class="mb-1">${task.name}</p>
-                                                <small>Donec id elit non mi porta.</small>
                                             </a>
                                             <a href="#" class="list-group-item list-group-item-action">
                                                 <div class="d-flex w-100 justify-content-between">
@@ -39,7 +38,7 @@ function createTaskHTML(task) {
                                                     <small class="text-muted">3 days ago</small>
                                                 </div>
                                                 <p class="mb-1">${task.description}</p>
-                                                <small class="text-muted">Donec id elit non mi porta.</small>
+                                                
                                             </a>
                                             <a href="#" class="list-group-item list-group-item-action">
                                                 <div class="d-flex w-100 justify-content-between">
@@ -47,7 +46,7 @@ function createTaskHTML(task) {
                                                     <small class="text-muted">3 days ago</small>
                                                 </div>
                                                 <p class="mb-1">${assigned}</p>
-                                                <small class="text-muted">Donec id elit non mi porta.</small>
+                                                
                                             </a>
                                             <a href="#" class="list-group-item list-group-item-action">
                                                 <div class="d-flex w-100 justify-content-between">
@@ -55,7 +54,7 @@ function createTaskHTML(task) {
                                                     <small class="text-muted">3 days ago</small>
                                                 </div>
                                                 <p class="mb-1">${task.dueDate}</p>
-                                                <small>Donec id elit non mi porta.</small>
+                                                
                                             </a>
                                             <a href="#" class="list-group-item list-group-item-action">
                                                 <div class="d-flex w-100 justify-content-between">
@@ -63,7 +62,7 @@ function createTaskHTML(task) {
                                                     <small class="text-muted">3 days ago</small>
                                                 </div>
                                                 <p class="mb-1">${task.status}</p>
-                                                <small>Donec id elit non mi porta.</small>
+                                                
                                             </a>
                                         </div>
                                     </div>
