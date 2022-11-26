@@ -13,7 +13,8 @@ function myClock() {
       document.getElementById("clockContainer").innerHTML = `&#8986 ${d.toLocaleTimeString('default', {hour12: true, hour:'2-digit', minute:'2-digit', second:'2-digit', dayPeriod: 'long'})} &#128205 ${timezone}`; 
       myClock();             
     }, 1000)
-  }  
+  } 
+  myClock()
 
 //import from module
 import {TaskManager} from "./taskManager.js";
@@ -27,6 +28,7 @@ if (window.localStorage.getItem('tasks') !== null) {
     const tasks_back = JSON.parse(window.localStorage.getItem('tasks'));
     tasks.id = tasks_back._id;
     tasks.tasks = tasks_back._tasks;
+}
 
 //data validate function
 function dataValidate(inputs) {
