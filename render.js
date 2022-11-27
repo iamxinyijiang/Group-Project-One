@@ -1,9 +1,29 @@
 function createTaskHTML(task) {
     const assigned = task.assignedTo.length > 1 ? task.assignedTo.join(', ') : task.assignedTo[0];
 
-    return `<div class="col-12 col-sm-6 col-lg-3 mx-5" style="margin-bottom:2em;">
+    const toDoBg = 'images/Sticky-Note-01-Yellow.svg'
+    const inProgressBg = 'images/Sticky-Note-02-Pink.svg'
+    const reviewBg = 'images/Sticky-Note-04-Purple.svg'
+    const doneBg ='images/Sticky-Note-02-Green.svg'
+    let stickyNote = ""
+        if( `${task.status}` === "To Do"){
+            stickyNote = toDoBg
+        };
+        if(`${task.status}` === "In Progress"){
+            stickyNote = inProgressBg
+        };
+        if(`${task.status}` === "Review"){
+            stickyNote = reviewBg
+        };
+        if(`${task.status}` === "Done"){
+            stickyNote = doneBg
+        };
+    
+    
+
+    return `<div class="col-12 col-sm-4 col-lg-2 mx-3" style="margin:2em !important;">
                 <div class="card mx-5" style="width: 15rem; background-color: lightsteelblue; border:none;" >
-                    <div class="card-body mx-auto" style="background:url(images/Sticky-Note-01-Yellow.svg) no-repeat; background-size:cover; border: none;">
+                    <div class="card-body mx-auto" style="background:url(${stickyNote}) no-repeat; background-size:cover; border: none;">
                         <div id="card-content-wrapper">
                         <h5 class="card-title">&#x1F4CC ${task.name}</h5>
                         <p class="card-text">${task.description}</p>

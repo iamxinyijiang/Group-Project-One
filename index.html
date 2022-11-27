@@ -22,14 +22,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <!--font-family: 'Oswald', sans-serif;-->
+    <!--font-family: 'Lobster Two', cursive;-->>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"> 
     <!--font-family: 'Press Start 2P', cursive;-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!--font-family: 'Caveat', cursive;-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
 </head>
 
@@ -110,7 +115,7 @@
                                 <select class="form-control" id="statusSelect">
                                     <option class="text-muted" value="" disabled selected hidden>--select here--</option>
                                     <option value="To Do">To Do</option>
-                                    <option value="In progress">In Progress</option>
+                                    <option value="In Progress">In Progress</option>
                                     <option value="Review">Review</option>
                                     <option value="Done">Done</option>
                                 </select>
@@ -139,8 +144,14 @@
     <div class="row justify-content-center mx-10 flex-wrap" id="todo">
         <div class="col-12">
             <br>
-            <h2 class="font-weigt-light text-center" id="taskTitle">&#x2B07 Once added, tasks will appear here.&#x2B07</h2>
+            <h3 class="font-weigt-light text-center" id="taskTitle">&#x2B07 Once added, tasks will appear here.&#x2B07</h3>
             <br>
+            <div class="row justify-content-center mx-10 flex-wrap" id="legend-of-color">
+                <span class="legend-item" style ="background-color: #FFFF90;">&#x1F4CC<br>To do</span>
+                <span class="legend-item" style ="background-color: #FCC3C9;">&#x1F4CC<br>In progress</span>
+                <span class="legend-item" style ="background-color: #DC88DD;">&#x1F4CC<br>Under review</span>
+                <span class="legend-item" style ="background-color: #CAED9D;">&#x1F4CC<br>Done</span>
+            </div>
         </div>
         <!--first Card-->
 <!--        <div class="col-12 col-sm-6 col-lg-3 mx-5">-->
