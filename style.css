@@ -30,7 +30,11 @@ html, body {
     padding-bottom: 2em;
     max-height: 30em;
     margin-bottom: 0;
+    background-image: url("./images/radiant-gradient.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 
 #container-one{
     background-color: lightsteelblue;
@@ -42,6 +46,9 @@ html, body {
 #titleDiv{
     margin-top: 0 !important;
     margin-bottom: 1em !important;
+    color: papayawhip;
+    text-shadow: 3px 3px 8px maroon;
+    opacity: 0.95;
 }
 
 #taskTitle {
@@ -128,6 +135,7 @@ footer {
     font-style: italic;
     font-weight: bold;
     color: red;
+    display: none;
 }
 
 #Github-link{

@@ -8,13 +8,6 @@ import {render} from "./render.js";
 //define tasks object contain all tasks
 let tasks = new TaskManager();
 
-//check exist tasks local storage
-if (window.localStorage.getItem('tasks') !== null) {
-    const tasks_back = JSON.parse(window.localStorage.getItem('tasks'));
-    tasks.id = tasks_back._id;
-    tasks.tasks = tasks_back._tasks;
-}
-
 //data validate function
 function dataValidate(inputs) {
     let valid = true;
@@ -44,6 +37,7 @@ function dataValidate(inputs) {
                 valid = valid && subValid;
                 break;
         }
+
         showErrorMsg(subValid, errorMsg);
     }
     return valid;
@@ -51,7 +45,7 @@ function dataValidate(inputs) {
 
 //error message function display/hide message depend on condition
 function showErrorMsg(valid, msg) {
-    valid ? msg.style.display = 'none' : msg.style.display = '';
+    valid ? msg.style.display = 'none' : msg.style.display = 'block';
 }
 
 window.addEventListener("load", () => {
@@ -74,8 +68,13 @@ window.addEventListener("load", () => {
         document.getElementById("timezoneContainer").innerHTML = timeZoneReading
     }, 500);
     //render when window load
-    for (let i = 0; i < tasks.tasks.length; i++) {
-        render(tasks.tasks[i]);
+    if (window.localStorage.getItem('tasks') !== null) {
+        const tasks_back = JSON.parse(window.localStorage.getItem('tasks'));
+        tasks.id = tasks_back._id;
+        tasks.task = tasks_back._task;
+    }
+    for (let i = 0; i < tasks.task.length; i++) {
+        render(tasks.task[i]);
     }
 });
 
@@ -106,11 +105,10 @@ document.getElementById("submit").addEventListener('click', (event) => {
         }
         //create new task
         tasks.addTask(taskInfo);
-        //hide modal after valid submission
+        // hide modal after valid submission
         // $('#addTaskModal').hide('hide');
         // $('body').removeClass('modal-open');
         // $('.modal-backdrop').remove();
-        // render(tasks.tasks[0]);
         window.localStorage.setItem('tasks', JSON.stringify(tasks));
 
     }
