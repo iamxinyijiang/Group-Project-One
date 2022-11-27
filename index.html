@@ -29,7 +29,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
-
+    <!--font-family: 'Caveat', cursive;-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 
 <body>
@@ -61,6 +65,7 @@
     <!--Form modal-->
     <div class="modal fade" data-backdrop="static" tabindex="-1" role="dialog" id="addTaskModal">
         <div class="modal-dialog" role="document">
+
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -73,16 +78,20 @@
                             <form class="bg-light mx-5 border-light"><!--action="url" method="post"-->
                                 <div class="form-group">
                                     <label for="taskNameInput">Task Name</label>
-                                    <input type="text" class="form-control" placeholder="Type in task name here (8 characters max.)" id="taskNameInput"/>
+                                    <input type="text" class="form-control"
+                                           placeholder="Type in task name here (8 characters max.)" id="taskNameInput"/>
                                     <span class="errorMsg" id="errorMsgTaskName">*Task Name must not be empty or longer than 8 characters.</span>
                                 </div>
                                 <div class="form-group">
                                     <label for="taskDescriptionTextarea">Task Description</label>
-                                    <textarea class="form-control" rows="3" placeholder="Describe your task briefly (15 characters max.)" id="taskDescriptionTextarea"></textarea>
+                                    <textarea class="form-control" rows="3"
+                                              placeholder="Describe your task briefly (15 characters max.)"
+                                              id="taskDescriptionTextarea"></textarea>
                                     <span class="errorMsg" id="errorMsgDescription">*Must not be blank;<br>*Maximum length: 15 characters.</span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="assignedToMultipleSelect">Assigned to [Press and hold CTRL to select/unselect one or more choice(s)]</label>
+                                    <label for="assignedToMultipleSelect">Assigned to [Press and hold CTRL to
+                                        select/unselect one or more choice(s)]</label>
                                     <select multiple class="form-control" id="assignedToMultipleSelect">
                                         <option value="Albus Dumbledore">Albus Dumbledore</option>
                                         <option value="Bellatrix Lestrange">Bellatrix Lestrange</option>
@@ -95,7 +104,8 @@
                                         <option value="Severus Snape">Severus Snape</option>
                                         <option value="Sirius Black">Sirius Black</option>
                                     </select>
-                                    <span class="errorMsg" id="errorMsgAssignedTo">*Must select at least one person.</span>
+                                    <span class="errorMsg"
+                                          id="errorMsgAssignedTo">*Must select at least one person.</span>
                                 </div>
                                 <div class="form-group">
                                     <label for="dateInput">Due Date</label>
@@ -109,7 +119,7 @@
                                         <option class="text-muted" value="" disabled selected hidden>--select here--
                                         </option>
                                         <option value="To Do">To Do</option>
-                                        <option value="In progress">In Progress</option>
+                                        <option value="In Progress">In Progress</option>
                                         <option value="Review">Review</option>
                                         <option value="Done">Done</option>
                                     </select>
@@ -122,103 +132,30 @@
                             </form>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
+                    <div class="modal-footer"></div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
-
 
 <!--Container Two-->
 <div class="container-fluid" id="cardsContainer">
     <!--Current Tasks (cards)-->
-    <div class="row justify-content-center mx-10 flex-wrap" id="todo">
+    <div class="row justify-content-center mx-10 flex-wrap" style="gap: 5px;" id="todo">
         <div class="col-12">
             <br>
-            <h2 class="font-weight-light text-center" id="taskTitle">&#x2B07 Once added, tasks will appear here.&#x2B07</h2>
+            <h3 class="font-weight-light text-center" id="taskTitle">&#x2B07 Once added, tasks will appear
+                here.&#x2B07</h3>
             <br>
+            <div class="row justify-content-center mx-10 flex-wrap" id="legend-of-color">
+                <span class="legend-item" style="background-color: #FFFF90;">&#x1F4CC<br>To do</span>
+                <span class="legend-item" style="background-color: #FCC3C9;">&#x1F4CC<br>In progress</span>
+                <span class="legend-item" style="background-color: #DC88DD;">&#x1F4CC<br>Under review</span>
+                <span class="legend-item" style="background-color: #CAED9D;">&#x1F4CC<br>Done</span>
+            </div>
         </div>
-        <!--first Card-->
-        <!--        <div class="col-12 col-sm-6 col-lg-3 mx-5">-->
-        <!--            <div class="card border-light mx-5" style="width: 15rem;">-->
-        <!--                <img src="images/task.jpg" class="card-img-top" alt="Task icon">-->
-        <!--                <div class="card-body mx-auto">-->
-        <!--                    <h5 class="card-title">Muggle Studies Presentation</h5>-->
-        <!--                    <p class="card-text">Assigned to: R.Weasley; H.Granger; H.Porter<br>Due on: 28/10/2022</p>-->
 
-        <!--                    &lt;!&ndash; Button trigger modal &ndash;&gt;-->
-        <!--                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter1">-->
-        <!--                        View Task Details-->
-        <!--                    </button>-->
-        <!--                    <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog"-->
-        <!--                         aria-labelledby="exampleModalCenterTitle" 1 aria-hidden="true">-->
-        <!--                        <div class="modal-dialog modal-dialog-centered" role="document">-->
-        <!--                            <div class="modal-content">-->
-        <!--                                <div class="modal-header">-->
-        <!--                                    <h5 class="modal-title" id="exampleModalLongTitle1">Task One</h5>-->
-        <!--                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-        <!--                                        <span aria-hidden="true">&times;</span>-->
-        <!--                                    </button>-->
-        <!--                                </div>-->
-        <!--                                <div class="modal-body">-->
-        <!--                                    &lt;!&ndash;List group&ndash;&gt;-->
-        <!--                                    <div class="list-group">-->
-        <!--                                        <a href="#" class="list-group-item list-group-item-action active">-->
-        <!--                                            <div class="d-flex w-100 justify-content-between">-->
-        <!--                                                <h5 class="mb-1">Task Name</h5>-->
-        <!--                                                <small>3 days ago</small>-->
-        <!--                                            </div>-->
-        <!--                                            <p class="mb-1">Muggle Studies Presentation</p>-->
-        <!--                                            <small>Donec id elit non mi porta.</small>-->
-        <!--                                        </a>-->
-        <!--                                        <a href="#" class="list-group-item list-group-item-action">-->
-        <!--                                            <div class="d-flex w-100 justify-content-between">-->
-        <!--                                                <h5 class="mb-1">Description</h5>-->
-        <!--                                                <small class="text-muted">3 days ago</small>-->
-        <!--                                            </div>-->
-        <!--                                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas-->
-        <!--                                                sed diam eget risus varius blandit.</p>-->
-        <!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
-        <!--                                        </a>-->
-        <!--                                        <a href="#" class="list-group-item list-group-item-action">-->
-        <!--                                            <div class="d-flex w-100 justify-content-between">-->
-        <!--                                                <h5 class="mb-1">Assigned to</h5>-->
-        <!--                                                <small class="text-muted">3 days ago</small>-->
-        <!--                                            </div>-->
-        <!--                                            <p class="mb-1">Ron Weasley; Hermione Granger; Harry Porter</p>-->
-        <!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
-        <!--                                        </a>-->
-        <!--                                        <a href="#" class="list-group-item list-group-item-action">-->
-        <!--                                            <div class="d-flex w-100 justify-content-between">-->
-        <!--                                                <h5 class="mb-1">Due Date</h5>-->
-        <!--                                                <small class="text-muted">3 days ago</small>-->
-        <!--                                            </div>-->
-        <!--                                            <p class="mb-1">28/10/2022</p>-->
-        <!--                                            <small>Donec id elit non mi porta.</small>-->
-        <!--                                        </a>-->
-        <!--                                        <a href="#" class="list-group-item list-group-item-action">-->
-        <!--                                            <div class="d-flex w-100 justify-content-between">-->
-        <!--                                                <h5 class="mb-1">Status</h5>-->
-        <!--                                                <small class="text-muted">3 days ago</small>-->
-        <!--                                            </div>-->
-        <!--                                            <p class="mb-1">In Progress</p>-->
-        <!--                                            <small>Donec id elit non mi porta.</small>-->
-        <!--                                        </a>-->
-        <!--                                    </div>-->
-        <!--                                </div>-->
-        <!--                                <div class="modal-footer">-->
-        <!--                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-        <!--                                    <button type="button" class="btn btn-primary">Save changes</button>-->
-        <!--                                </div>-->
-        <!--                            </div>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </div>-->
     </div>
 </div>
 <!--filler-->
@@ -226,7 +163,8 @@
 <!-- Footer -->
 <footer class="container-fluid">
     <p class="font-italic font-weight-normal text-center">2022 Simple To-do List &copy;</p>
-    <a rel="noreferrer noopener" href="https://github.com/iamxinyijiang/Group-Project-One" target="_blank" class="text-white" id="Github-link">
+    <a rel="noreferrer noopener" href="https://github.com/iamxinyijiang/Group-Project-One" target="_blank"
+       class="text-white" id="Github-link">
         <img src="images/GitHub-Mark-Light-32px.png" style="width:1.5em;" alt="Github logo">
     </a>
 </footer>

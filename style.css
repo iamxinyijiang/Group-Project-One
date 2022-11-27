@@ -25,6 +25,12 @@ html, body {
 
 /*my css starts here*/
 
+
+/*!!!!!!!!clear button hidden for now*/
+#clear{
+    display:none;
+}
+
 .jumbotron {
     padding-top: 1em;
     padding-bottom: 2em;
@@ -52,7 +58,7 @@ html, body {
 }
 
 #taskTitle {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Lobster Two', cursive;
     text-shadow: 1px 1px 2px wheat;
 }
 
@@ -92,11 +98,9 @@ footer {
 #addBtn{
     border-width: thick !important;
     background-color: palevioletred;
-    font-family: 'Oswald', sans-serif;
 }
 #addBtn:hover{
     background-color: wheat;
-    transform: scale(1.1);
 }
 .formPara {
     display: flex;
@@ -107,12 +111,36 @@ footer {
     margin-bottom: 0;
 }
 
-#cardsContainer{ 
- background-color:LightSteelBlue;
+#legend-of-color{
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-left: 3em;
+    margin-right: 3em;
+    margin-bottom: 2em;
+    
+}
+.legend-item{
+    display: flex;
+    width: 7em;
+    height: 7em;
+    margin: 0 3em 3em;
+    padding:2em;
+    font-size: small;
+    font-weight: bold;
+    text-align: center;
+    border: 2px double lightsteelblue;
 }
 
-#post-it-note-wrapper:hover{
-    transform: scale(1.05);
+.legend-item:hover{
+    transform: scale(1.4);
+}
+
+#cardsContainer{ 
+ background-color:LightSteelBlue;
+ font-family:'Caveat', cursive;
+ font-size: 21px;
 }
 
 #todo{
