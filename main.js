@@ -29,7 +29,7 @@ function dataValidate(inputs) {
                 valid = valid && subValid;
                 break;
             case 'dateInput':
-                subValid = input.value > moment().format('YYYY-MM-DD');
+                subValid = !(isNaN(new Date(input.value).getTime()) || new Date(input.value).getTime() < new Date().getTime());
                 valid = valid && subValid;
                 break;
             case 'statusSelect':
