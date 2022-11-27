@@ -60,7 +60,7 @@ window.addEventListener("load", () => {
     const d = new Date();
     let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     let dateReading = `&#128198 ${d.toLocaleDateString(
-        'default', {weekday: 'long', day:'numeric', month:'long', year:'numeric' })}.`;
+        'default', {weekday: 'long', day:'numeric', month:'long', year:'numeric' })}`;
     let timeReading = `&#8986 ${d.toLocaleTimeString('default', {hour12: true, hour:'2-digit', minute:'2-digit', second:'2-digit', dayPeriod: 'long'})}`
     let timeZoneReading = `&#128205 ${timezone}`
     document.getElementById("dateContainer").innerHTML = dateReading

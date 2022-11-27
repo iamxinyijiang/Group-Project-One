@@ -2,12 +2,16 @@ function createTaskHTML(task) {
     const assigned = task.assignedTo.length > 1 ? task.assignedTo.join(', ') : task.assignedTo[0];
 
     return `<div class="col-12 col-sm-6 col-lg-3 mx-5">
-                <div class="card border-light mx-5" style="width: 15rem;">
-                    <img src="images/task.jpg" class="card-img-top" alt="Task icon">
-                    <div class="card-body mx-auto">
-                        <h5 class="card-title">${task.name}</h5>
-                        <p class="card-text">Assigned to: ${assigned}<br>Due on: ${task.dueDate}</p>
-    
+                <div class="card mx-5" style="width: 15rem; background-color: lightsteelblue; border:none;" >
+                    <div class="card-body mx-auto" style="background:url(images/Sticky-Note-01-Yellow.svg) no-repeat; background-size:cover; border: none;">
+                        <div id="card-content-wrapper">
+                        <h5 class="card-title">&#x1F4CC ${task.name}</h5>
+                        <p class="card-text">${task.description}</p>
+                        <p class="card-text">Assigned to: ${assigned}</p>
+                        <p class="card-text">Due on: ${task.dueDate}</p>
+                        <p class="card-text">Status: ${task.status} </p>
+                        <br>
+                        </div>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#task${task.id}">
                             View Task Details
