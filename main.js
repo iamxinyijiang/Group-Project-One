@@ -106,9 +106,9 @@ document.getElementById("submit").addEventListener('click', (event) => {
         //create new task
         tasks.addTask(taskInfo);
         // hide modal after valid submission
-        // $('#addTaskModal').hide('hide');
-        // $('body').removeClass('modal-open');
-        // $('.modal-backdrop').remove();
+        $('#addTaskModal').hide('hide');
+        $('body').removeClass('modal-open');
+        $('.modal-backdrop').remove();
         window.localStorage.setItem('tasks', JSON.stringify(tasks));
 
     }
