@@ -122,5 +122,5 @@ document.getElementById("submit").addEventListener('click', (event) => {
     }
 }, false);
 
-//clear Local storage
+//clear Local storage (use chrome devtool instead)
 //document.getElementById('clear').addEventListener("click", () => window.localStorage.clear());
