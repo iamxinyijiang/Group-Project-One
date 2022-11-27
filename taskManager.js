@@ -2,20 +2,20 @@ import {render} from "./render.js";
 
 class TaskManager {
     constructor() {
-        this._tasks = [];
+        this._task = [];
         this._id = 1;
     }
 
-    get tasks() {
-        return this._tasks;
+    get task() {
+        return this._task;
     }
 
     get id() {
         return this._id;
     }
 
-    set tasks(tasks){
-        this._tasks=tasks;
+    set task(taskArray){
+        this._task=taskArray;
     }
 
     set id(id){
@@ -31,7 +31,7 @@ class TaskManager {
             dueDate: taskInfo[3],
             status: taskInfo[4],
         }
-        this._tasks.push(task);
+        this._task.push(task);
         render(task);
     }
 

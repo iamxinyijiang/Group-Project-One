@@ -6,20 +6,21 @@ function createTaskHTML(task) {
     const reviewBg = 'images/Sticky-Note-04-Purple.svg'
     const doneBg ='images/Sticky-Note-02-Green.svg'
     let stickyNote = ""
-        if( `${task.status}` === "To Do"){
-            stickyNote = toDoBg
-        };
-        if(`${task.status}` === "In Progress"){
-            stickyNote = inProgressBg
-        };
-        if(`${task.status}` === "Review"){
-            stickyNote = reviewBg
-        };
-        if(`${task.status}` === "Done"){
-            stickyNote = doneBg
-        };
-    
-    
+
+    switch (task.status) {
+        case 'To Do':
+            stickyNote=toDoBg;
+            break;
+        case 'In Progress':
+            stickyNote = inProgressBg;
+            break;
+        case 'Review':
+            stickyNote = reviewBg;
+            break;
+        case 'Done':
+            stickyNote = doneBg;
+            break;
+    }
 
     return `<div class="col-12 col-sm-4 col-lg-2 mx-3" style="margin:2em !important;">
                 <div class="card mx-5" style="width: 15rem; background-color: lightsteelblue; border:none;" >
