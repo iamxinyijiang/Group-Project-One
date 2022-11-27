@@ -29,7 +29,7 @@ function dataValidate(inputs) {
                 valid = valid && subValid;
                 break;
             case 'dateInput':
-                subValid = !(isNaN(new Date(input.value).getTime()) || new Date(input.value).getTime() < new Date().getTime());
+                subValid = input.value > formatDateStr(new Date());
                 valid = valid && subValid;
                 break;
             case 'statusSelect':
@@ -41,6 +41,14 @@ function dataValidate(inputs) {
         showErrorMsg(subValid, errorMsg);
     }
     return valid;
+}
+
+//transfer current date to YYYY-MM-DD string
+function formatDateStr(currentDate) {
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() < 9 ? `0${currentDate.getMonth() + 1}` : currentDate.getMonth() + 1;
+    const day = currentDate.getDate() < 9 ? `0${currentDate.getDate()}` : currentDate.getDate();
+    return `${year}-${month}-${day}`;
 }
 
 //error message function display/hide message depend on condition
