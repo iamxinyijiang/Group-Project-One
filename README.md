@@ -1,4 +1,4 @@
-# Group-Project-OneCancel changes
+# Group-Project-One
 Group of Xinyi "Sinyee" Jiang, Jiazhen "Jimmy" Weng, Nathan Elmer, Mitchell Foster 
 
 Link to wireframe:
