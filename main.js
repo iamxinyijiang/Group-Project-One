@@ -36,7 +36,7 @@ function dataValidate(inputs) {
                 valid = valid && subValid;
                 break;
             case 'dateInput':
-                subValid = new Date(input.value).toLocaleDateString() > new Date().toLocaleDateString() && input.value !== '';
+                subValid = input.value > moment().format('YYYY-MM-DD');
                 valid = valid && subValid;
                 break;
             case 'statusSelect':
@@ -51,25 +51,30 @@ function dataValidate(inputs) {
 
 //error message function display/hide message depend on condition
 function showErrorMsg(valid, msg) {
-    if (valid) msg.style.display = 'none'; else msg.style.display = '';
+    valid ? msg.style.display = 'none' : msg.style.display = '';
 }
 
 window.addEventListener("load", () => {
     //clock
-    setInterval(()=> {      
-    const d = new Date();
-    let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    let dateReading = `&#128198 ${d.toLocaleDateString(
-        'default', {weekday: 'long', day:'numeric', month:'long', year:'numeric'})}`;
-    let timeReading = `&#8986 ${d.toLocaleTimeString('default', {hour12: true, hour:'2-digit', minute:'2-digit', second:'2-digit', dayPeriod: 'long'})}`
-    let timeZoneReading = `&#128205 ${timezone}`
-    document.getElementById("dateContainer").innerHTML = dateReading
-    document.getElementById("clockContainer").innerHTML = timeReading
-    document.getElementById("timezoneContainer").innerHTML = timeZoneReading
-    }, 1000);
+    setInterval(() => {
+        const d = new Date();
+        let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        let dateReading = `&#128198 ${d.toLocaleDateString(
+            'default', {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'})}`;
+        let timeReading = `&#8986 ${d.toLocaleTimeString('default', {
+            hour12: true,
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            dayPeriod: 'long'
+        })}`
+        let timeZoneReading = `&#128205 ${timezone}`
+        document.getElementById("dateContainer").innerHTML = dateReading
+        document.getElementById("clockContainer").innerHTML = timeReading
+        document.getElementById("timezoneContainer").innerHTML = timeZoneReading
+    }, 500);
     //render when window load
-    console.log(tasks);
-    for (let i = 0; i <tasks.tasks.length; i++) {
+    for (let i = 0; i < tasks.tasks.length; i++) {
         render(tasks.tasks[i]);
     }
 });
@@ -102,13 +107,13 @@ document.getElementById("submit").addEventListener('click', (event) => {
         //create new task
         tasks.addTask(taskInfo);
         //hide modal after valid submission
-        $('#addTaskModal').hide('hide'); 
-        $('body').removeClass('modal-open');
-        $('.modal-backdrop').remove();  
+        // $('#addTaskModal').hide('hide');
+        // $('body').removeClass('modal-open');
+        // $('.modal-backdrop').remove();
         // render(tasks.tasks[0]);
-        window.localStorage.setItem('tasks', JSON.stringify(tasks));  
-        
-    } 
+        window.localStorage.setItem('tasks', JSON.stringify(tasks));
+
+    }
 }, false);
 
 //clear Local storage

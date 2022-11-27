@@ -5,30 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-do List</title>
-    <link rel="icon" type="image/x-icon" href="/images/star.ico">
+    <link type="image/x-icon" href="/images/star.ico" rel="icon">
 
     <!-- Bootstrap CSS -->
-    <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-            crossorigin="anonymous"/>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous"/>
 
     <!--My Css-->
     <link href="style.css" rel="stylesheet"/>
 
     <!--Web font-->
     <!--font-family: 'Lobster', cursive;-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <!--font-family: 'Lobster Two', cursive;-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"> 
     <!--font-family: 'Press Start 2P', cursive;-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <!--font-family: 'Caveat', cursive;-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,10 +39,12 @@
 
 <body>
 <!-- Jumbotron -->
-<div class="jumbotron jumbotron-fluid"
-     style="background:url(images/radiant-gradient.svg) no-repeat; background-size:cover">
-    <div class="text-center my-5 " style="opacity: 0.95; color:papayawhip; text-shadow: 3px 3px 8px Maroon;" id="titleDiv"><br><h1 class="font-weight-bold" id="simpleTodo">
-        &#x2B50;Simple To-do List&#x2B50;</h1><h5 class="font-italic font-weight-bold mt-o" >A simple To-do List manager for you and your group.</h5><br>
+<div class="jumbotron jumbotron-fluid" style="background:url(images/radiant-gradient.svg) no-repeat; background-size:cover">
+    <div class="text-center my-5 " style="opacity: 0.95; color:papayawhip; text-shadow: 3px 3px 8px Maroon;"
+         id="titleDiv"><br>
+        <h1 class="font-weight-bold" id="simpleTodo">&#x2B50;Simple To-do List&#x2B50;</h1>
+        <h5 class="font-italic font-weight-bold mt-o">A simple To-do List manager for you and your group.</h5>
+        <br>
     </div>
     <div class="font-weight-normal text-center rounded" id="dateAndTime">
         <p id="dateContainer"></p>
@@ -51,20 +52,20 @@
         <p id="timezoneContainer"></p>
     </div>
 </div>
-
 <!-- Container One-->
 <div class="container-fluid" id="container-one">
-   <!--Form-->
-    <p class="formPara">
-    <!-- Button trigger form modal -->
-    <button type="button" class="btn btn-outline-primary border-dark" data-toggle="modal" data-target="#addTaskModal" id="addBtn">
-    <span class="display-2">&#x1F4DD </span>
-    <h4>&#x2795 Add new task</h4>
-  </button>
-    </p>
+    <!--Form-->
+    <div class="formPara">
+        <!-- Button trigger form modal -->
+        <button type="button" class="btn btn-outline-primary border-dark" data-toggle="modal" data-target="#addTaskModal" id="addBtn">
+            <span class="display-2">&#x1F4DD </span>
+            <h5>&#x2795 Add new task</h5>
+        </button>
+    </div>
     <!--Form modal-->
     <div class="modal" tabindex="-1" role="dialog" id="addTaskModal">
         <div class="modal-dialog" role="document">
+
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -128,12 +129,11 @@
                         </form>
                     </div>
                 </div>
+                <div class="modal-footer">
+                </div>
             </div>
-            <div class="modal-footer">
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
 </div>
 
@@ -154,95 +154,98 @@
             </div>
         </div>
         <!--first Card-->
-<!--        <div class="col-12 col-sm-6 col-lg-3 mx-5">-->
-<!--            <div class="card border-light mx-5" style="width: 15rem;">-->
-<!--                <img src="images/task.jpg" class="card-img-top" alt="Task icon">-->
-<!--                <div class="card-body mx-auto">-->
-<!--                    <h5 class="card-title">Muggle Studies Presentation</h5>-->
-<!--                    <p class="card-text">Assigned to: R.Weasley; H.Granger; H.Porter<br>Due on: 28/10/2022</p>-->
+        <!--        <div class="col-12 col-sm-6 col-lg-3 mx-5">-->
+        <!--            <div class="card border-light mx-5" style="width: 15rem;">-->
+        <!--                <img src="images/task.jpg" class="card-img-top" alt="Task icon">-->
+        <!--                <div class="card-body mx-auto">-->
+        <!--                    <h5 class="card-title">Muggle Studies Presentation</h5>-->
+        <!--                    <p class="card-text">Assigned to: R.Weasley; H.Granger; H.Porter<br>Due on: 28/10/2022</p>-->
 
-<!--                    &lt;!&ndash; Button trigger modal &ndash;&gt;-->
-<!--                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter1">-->
-<!--                        View Task Details-->
-<!--                    </button>-->
-<!--                    <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog"-->
-<!--                         aria-labelledby="exampleModalCenterTitle" 1 aria-hidden="true">-->
-<!--                        <div class="modal-dialog modal-dialog-centered" role="document">-->
-<!--                            <div class="modal-content">-->
-<!--                                <div class="modal-header">-->
-<!--                                    <h5 class="modal-title" id="exampleModalLongTitle1">Task One</h5>-->
-<!--                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-<!--                                        <span aria-hidden="true">&times;</span>-->
-<!--                                    </button>-->
-<!--                                </div>-->
-<!--                                <div class="modal-body">-->
-<!--                                    &lt;!&ndash;List group&ndash;&gt;-->
-<!--                                    <div class="list-group">-->
-<!--                                        <a href="#" class="list-group-item list-group-item-action active">-->
-<!--                                            <div class="d-flex w-100 justify-content-between">-->
-<!--                                                <h5 class="mb-1">Task Name</h5>-->
-<!--                                                <small>3 days ago</small>-->
-<!--                                            </div>-->
-<!--                                            <p class="mb-1">Muggle Studies Presentation</p>-->
-<!--                                            <small>Donec id elit non mi porta.</small>-->
-<!--                                        </a>-->
-<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
-<!--                                            <div class="d-flex w-100 justify-content-between">-->
-<!--                                                <h5 class="mb-1">Description</h5>-->
-<!--                                                <small class="text-muted">3 days ago</small>-->
-<!--                                            </div>-->
-<!--                                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas-->
-<!--                                                sed diam eget risus varius blandit.</p>-->
-<!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
-<!--                                        </a>-->
-<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
-<!--                                            <div class="d-flex w-100 justify-content-between">-->
-<!--                                                <h5 class="mb-1">Assigned to</h5>-->
-<!--                                                <small class="text-muted">3 days ago</small>-->
-<!--                                            </div>-->
-<!--                                            <p class="mb-1">Ron Weasley; Hermione Granger; Harry Porter</p>-->
-<!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
-<!--                                        </a>-->
-<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
-<!--                                            <div class="d-flex w-100 justify-content-between">-->
-<!--                                                <h5 class="mb-1">Due Date</h5>-->
-<!--                                                <small class="text-muted">3 days ago</small>-->
-<!--                                            </div>-->
-<!--                                            <p class="mb-1">28/10/2022</p>-->
-<!--                                            <small>Donec id elit non mi porta.</small>-->
-<!--                                        </a>-->
-<!--                                        <a href="#" class="list-group-item list-group-item-action">-->
-<!--                                            <div class="d-flex w-100 justify-content-between">-->
-<!--                                                <h5 class="mb-1">Status</h5>-->
-<!--                                                <small class="text-muted">3 days ago</small>-->
-<!--                                            </div>-->
-<!--                                            <p class="mb-1">In Progress</p>-->
-<!--                                            <small>Donec id elit non mi porta.</small>-->
-<!--                                        </a>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="modal-footer">-->
-<!--                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-<!--                                    <button type="button" class="btn btn-primary">Save changes</button>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+        <!--                    &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+        <!--                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter1">-->
+        <!--                        View Task Details-->
+        <!--                    </button>-->
+        <!--                    <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog"-->
+        <!--                         aria-labelledby="exampleModalCenterTitle" 1 aria-hidden="true">-->
+        <!--                        <div class="modal-dialog modal-dialog-centered" role="document">-->
+        <!--                            <div class="modal-content">-->
+        <!--                                <div class="modal-header">-->
+        <!--                                    <h5 class="modal-title" id="exampleModalLongTitle1">Task One</h5>-->
+        <!--                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+        <!--                                        <span aria-hidden="true">&times;</span>-->
+        <!--                                    </button>-->
+        <!--                                </div>-->
+        <!--                                <div class="modal-body">-->
+        <!--                                    &lt;!&ndash;List group&ndash;&gt;-->
+        <!--                                    <div class="list-group">-->
+        <!--                                        <a href="#" class="list-group-item list-group-item-action active">-->
+        <!--                                            <div class="d-flex w-100 justify-content-between">-->
+        <!--                                                <h5 class="mb-1">Task Name</h5>-->
+        <!--                                                <small>3 days ago</small>-->
+        <!--                                            </div>-->
+        <!--                                            <p class="mb-1">Muggle Studies Presentation</p>-->
+        <!--                                            <small>Donec id elit non mi porta.</small>-->
+        <!--                                        </a>-->
+        <!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+        <!--                                            <div class="d-flex w-100 justify-content-between">-->
+        <!--                                                <h5 class="mb-1">Description</h5>-->
+        <!--                                                <small class="text-muted">3 days ago</small>-->
+        <!--                                            </div>-->
+        <!--                                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas-->
+        <!--                                                sed diam eget risus varius blandit.</p>-->
+        <!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
+        <!--                                        </a>-->
+        <!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+        <!--                                            <div class="d-flex w-100 justify-content-between">-->
+        <!--                                                <h5 class="mb-1">Assigned to</h5>-->
+        <!--                                                <small class="text-muted">3 days ago</small>-->
+        <!--                                            </div>-->
+        <!--                                            <p class="mb-1">Ron Weasley; Hermione Granger; Harry Porter</p>-->
+        <!--                                            <small class="text-muted">Donec id elit non mi porta.</small>-->
+        <!--                                        </a>-->
+        <!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+        <!--                                            <div class="d-flex w-100 justify-content-between">-->
+        <!--                                                <h5 class="mb-1">Due Date</h5>-->
+        <!--                                                <small class="text-muted">3 days ago</small>-->
+        <!--                                            </div>-->
+        <!--                                            <p class="mb-1">28/10/2022</p>-->
+        <!--                                            <small>Donec id elit non mi porta.</small>-->
+        <!--                                        </a>-->
+        <!--                                        <a href="#" class="list-group-item list-group-item-action">-->
+        <!--                                            <div class="d-flex w-100 justify-content-between">-->
+        <!--                                                <h5 class="mb-1">Status</h5>-->
+        <!--                                                <small class="text-muted">3 days ago</small>-->
+        <!--                                            </div>-->
+        <!--                                            <p class="mb-1">In Progress</p>-->
+        <!--                                            <small>Donec id elit non mi porta.</small>-->
+        <!--                                        </a>-->
+        <!--                                    </div>-->
+        <!--                                </div>-->
+        <!--                                <div class="modal-footer">-->
+        <!--                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+        <!--                                    <button type="button" class="btn btn-primary">Save changes</button>-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
     </div>
 </div>
 <!--filler-->
 <div class="filler"></div>
 <!-- Footer -->
 <footer class="container-fluid">
-
     <p class="font-italic font-weight-normal text-center">2022 Simple To-do List &copy;</p>
-    <a href="https://github.com/iamxinyijiang/Group-Project-One" target="_blank" rel="noreferrer noopener" class="text-white" id="Github-link"><img src="images/GitHub-Mark-Light-32px.png" style="width:1.5em; " alt="Github logo"> Github Repository for this page.</a>
+    <a href="https://github.com/iamxinyijiang/Group-Project-One" rel="noreferrer noopener" target="_blank" class="text-white" id="Github-link">
+        <img src="images/GitHub-Mark-Light-32px.png" style="width:1.5em;" alt="Github logo">
+    </a>
 </footer>
 <!--Custom JavaScript-->
+<script src="moment.js"></script>
 <script type="module" src="./main.js"></script>
+
 <!-- Bootstrap's JavaScript Files -->
 <script
         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
