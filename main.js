@@ -117,4 +117,4 @@ document.getElementById("submit").addEventListener('click', (event) => {
 }, false);
 
 //clear Local storage
-document.getElementById('clear').addEventListener("click", () => window.localStorage.clear());
+//document.getElementById('clear').addEventListener("click", () => window.localStorage.clear());

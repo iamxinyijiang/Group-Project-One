@@ -21,14 +21,19 @@
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <!--font-family: 'Oswald', sans-serif;-->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <!--font-family: 'Lobster Two', cursive;-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"> 
     <!--font-family: 'Press Start 2P', cursive;-->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!--font-family: 'Caveat', cursive;-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
 </head>
 
@@ -47,7 +52,6 @@
         <p id="timezoneContainer"></p>
     </div>
 </div>
-
 <!-- Container One-->
 <div class="container-fluid" id="container-one">
     <!--Form-->
@@ -61,70 +65,68 @@
     <!--Form modal-->
     <div class="modal" tabindex="-1" role="dialog" id="addTaskModal">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-12">
-                            <form class="bg-light mx-5 border-light"><!--action="url" method="post"-->
-                                <div class="form-group">
-                                    <label for="taskNameInput">Task Name</label>
-                                    <input type="text" class="form-control" id="taskNameInput"
-                                           placeholder="Type in task name here (8 characters max.)">
-                                    <span class="errorMsg" id="errorMsgTaskName" style="display: none">*Task Name must not be empty or longer than 8 characters.</span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="taskDescriptionTextarea">Task Description</label>
-                                    <textarea class="form-control" id="taskDescriptionTextarea" rows="3"
-                                              placeholder="Describe your task briefly (15 characters max.)"></textarea>
-                                    <span class="errorMsg" id="errorMsgDescription" style="display: none">*Must not be blank; <br>*Maximum length: 15 characters.</span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="assignedToMultipleSelect">Assigned to [Press and hold CTRL to
-                                        select/unselect one or
-                                        more choice(s)]</label>
-                                    <select multiple class="form-control" id="assignedToMultipleSelect">
-                                        <option value="Albus Dumbledore">Albus Dumbledore</option>
-                                        <option value="Bellatrix Lestrange">Bellatrix Lestrange</option>
-                                        <option value="Draco Malfoy">Draco Malfoy</option>
-                                        <option value="Harry Potter">Harry Potter</option>
-                                        <option value="Hermione Granger">Hermione Granger</option>
-                                        <option value="Marvolo Riddle">Marvolo Riddle</option>
-                                        <option value="Neville Longbottom">Neville Longbottom</option>
-                                        <option value="Ron Weasley">Ron Weasley</option>
-                                        <option value="Severus Snape">Severus Snape</option>
-                                        <option value="Sirius Black">Sirius Black</option>
-                                    </select>
-                                    <span class="errorMsg" id="errorMsgAssignedTo" style="display: none">*Must select at least one person.</span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="dateInput">Due Date</label>
-                                    <input type="date" class="form-control" id="dateInput">
-                                    <span class="errorMsg" id="errorMsgDate" style="display: none">*Due date must not be empty.<br>*Due date must be set in the future.</span>
-                                </div>
 
-                                <div class="form-group">
-                                    <label for="statusSelect">Status</label>
-                                    <select class="form-control" id="statusSelect">
-                                        <option class="text-muted" value="" disabled selected hidden>--select here--
-                                        </option>
-                                        <option value="To Do">To Do</option>
-                                        <option value="In progress">In Progress</option>
-                                        <option value="Review">Review</option>
-                                        <option value="Done">Done</option>
-                                    </select>
-                                    <span class="errorMsg" id="errorMsgStatus" style="display: none">Status must be selected.</span>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-                                    <button type="button" class="btn btn-primary" id="clear">Clear</button>
-                                </div>
-                            </form>
-                        </div>
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <form class="bg-light mx-5 border-light"><!--action="url" method="post"-->
+                            <div class="form-group">
+                                <label for="taskNameInput">Task Name</label>
+                                <input type="text" class="form-control" id="taskNameInput"
+                                       placeholder="Type in task name here (8 characters max.)">
+                                <span class="errorMsg" id="errorMsgTaskName" style="display: none">*Task Name must not be empty or longer than 8 characters.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="taskDescriptionTextarea">Task Description</label>
+                                <textarea class="form-control" id="taskDescriptionTextarea" rows="3"
+                                          placeholder="Describe your task briefly (15 characters max.)"></textarea>
+                                <span class="errorMsg" id="errorMsgDescription" style="display: none">*Must not be blank; <br>*Maximum length: 15 characters.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="assignedToMultipleSelect">Assigned to [Press and hold CTRL to select/unselect one or
+                                    more choice(s)]</label>
+                                <select multiple class="form-control" id="assignedToMultipleSelect">
+                                    <option value="Albus Dumbledore">Albus Dumbledore</option>
+                                    <option value="Bellatrix Lestrange">Bellatrix Lestrange</option>
+                                    <option value="Draco Malfoy">Draco Malfoy</option>
+                                    <option value="Harry Potter">Harry Potter</option>
+                                    <option value="Hermione Granger">Hermione Granger</option>
+                                    <option value="Marvolo Riddle">Marvolo Riddle</option>
+                                    <option value="Neville Longbottom">Neville Longbottom</option>
+                                    <option value="Ron Weasley">Ron Weasley</option>
+                                    <option value="Severus Snape">Severus Snape</option>
+                                    <option value="Sirius Black">Sirius Black</option>
+                                </select>
+                                <span class="errorMsg" id="errorMsgAssignedTo" style="display: none">*Must select at least one person.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="dateInput">Due Date</label>
+                                <input type="date" class="form-control" id="dateInput">
+                                <span class="errorMsg" id="errorMsgDate" style="display: none">*Due date must not be empty.<br>*Due date must be set in the future.</span>
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="statusSelect">Status</label>
+                                <select class="form-control" id="statusSelect">
+                                    <option class="text-muted" value="" disabled selected hidden>--select here--</option>
+                                    <option value="To Do">To Do</option>
+                                    <option value="In Progress">In Progress</option>
+                                    <option value="Review">Review</option>
+                                    <option value="Done">Done</option>
+                                </select>
+                                <span class="errorMsg" id="errorMsgStatus" style="display: none">Status must be selected.</span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                                <button type="button" class="btn btn-primary" id="clear">Clear</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -139,11 +141,17 @@
 <!--Container Two-->
 <div class="container-fluid" id="cardsContainer">
     <!--Current Tasks (cards)-->
-    <div class="row justify-content-center mx-10 flex-wrap" id="todo">
+    <div class="row justify-content-center mx-10 flex-wrap" style="gap: 5px;" id="todo">
         <div class="col-12">
             <br>
-            <h2 class="font-weight-light text-center" id="taskTitle">&#x2B07 Once added, tasks will appear here.&#x2B07</h2>
+            <h3 class="font-weigt-light text-center" id="taskTitle">&#x2B07 Once added, tasks will appear here.&#x2B07</h3>
             <br>
+            <div class="row justify-content-center mx-10 flex-wrap" id="legend-of-color">
+                <span class="legend-item" style ="background-color: #FFFF90;">&#x1F4CC<br>To do</span>
+                <span class="legend-item" style ="background-color: #FCC3C9;">&#x1F4CC<br>In progress</span>
+                <span class="legend-item" style ="background-color: #DC88DD;">&#x1F4CC<br>Under review</span>
+                <span class="legend-item" style ="background-color: #CAED9D;">&#x1F4CC<br>Done</span>
+            </div>
         </div>
         <!--first Card-->
         <!--        <div class="col-12 col-sm-6 col-lg-3 mx-5">-->
