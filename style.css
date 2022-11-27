@@ -26,7 +26,10 @@ html, body {
 /*my css starts here*/
 
 .jumbotron {
-    margin-bottom: 0.5em;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    max-height: 30em;
+    margin-bottom: 0;
 }
 
 #container-one{
@@ -34,6 +37,11 @@ html, body {
 }
 #simpleTodo {
     font-family: 'Lobster', cursive;
+}
+
+#titleDiv{
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
 }
 
 #taskTitle {
@@ -49,16 +57,17 @@ footer {
     padding-bottom: 5px;
 }
 
-#dateAndTime, .clickHere {
+#dateAndTime{
     width: 12em;
+    margin-top: 0;
 }
 
 #dateAndTime {
-    color: white;
+    color: ghostwhite;
     width: fit-content;
     margin: auto;
     background-color:DarkSlateBlue;
-    border: 1px inset grey;
+    border: 2px inset darkgrey;
     font-family: 'Press Start 2P', cursive;
     font-size:1rem;
 }
@@ -88,6 +97,7 @@ footer {
     padding-top: 1em;
     margin-left: 3em;
     margin-right: 3em;
+    margin-bottom: 0;
 }
 
 #cardsContainer{ 
