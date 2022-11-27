@@ -59,11 +59,13 @@ window.addEventListener("load", () => {
     setInterval(()=> {      
     const d = new Date();
     let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    let dateReading = `&#128198 Today is ${d.toLocaleDateString(
+    let dateReading = `&#128198 ${d.toLocaleDateString(
         'default', {weekday: 'long', day:'numeric', month:'long', year:'numeric' })}.`;
-    let timeReading = `&#8986 ${d.toLocaleTimeString('default', {hour12: true, hour:'2-digit', minute:'2-digit', second:'2-digit', dayPeriod: 'long'})} &#128205 ${timezone}`
+    let timeReading = `&#8986 ${d.toLocaleTimeString('default', {hour12: true, hour:'2-digit', minute:'2-digit', second:'2-digit', dayPeriod: 'long'})}`
+    let timeZoneReading = `&#128205 ${timezone}`
     document.getElementById("dateContainer").innerHTML = dateReading
     document.getElementById("clockContainer").innerHTML = timeReading
+    document.getElementById("timezoneContainer").innerHTML = timeZoneReading
     }, 1000);
     //render when window load
     console.log(tasks);
@@ -99,9 +101,14 @@ document.getElementById("submit").addEventListener('click', (event) => {
         }
         //create new task
         tasks.addTask(taskInfo);
+        //hide modal after valid submission
+        $('#addTaskModal').hide('hide'); 
+        $('body').removeClass('modal-open');
+        $('.modal-backdrop').remove();  
         // render(tasks.tasks[0]);
-        window.localStorage.setItem('tasks', JSON.stringify(tasks));
-    }
+        window.localStorage.setItem('tasks', JSON.stringify(tasks));  
+        
+    } 
 }, false);
 
 //clear Local storage

@@ -9,7 +9,7 @@
   2. Remove default margin
 */
 * {
-    margin: 0;
+    margin:0;
 }
 
 /*
@@ -17,22 +17,36 @@
 */
 html, body {
     height: 100%;
+    min-width: 321px; 
+    width: 100%;
+    margin: 0;
+    background-color: lightsteelblue;
 }
 
 /*my css starts here*/
+
+.jumbotron {
+    margin-bottom: 0.5em;
+}
+
+#container-one{
+    background-color: lightsteelblue;
+}
 #simpleTodo {
     font-family: 'Lobster', cursive;
 }
 
-#formTitle, #taskTitle {
+#taskTitle {
     font-family: 'Oswald', sans-serif;
+    text-shadow: 1px 1px 2px wheat;
 }
 
 footer {
-    font-size: 30px;
+    font-size: 14px;
     color: white;
     background-color: #343a40;
     opacity: 0.5;
+    padding-bottom: 5px;
 }
 
 #dateAndTime, .clickHere {
@@ -40,37 +54,64 @@ footer {
 }
 
 #dateAndTime {
-    color: lime;
+    color: white;
     width: fit-content;
     margin: auto;
-    background-color: black;
+    background-color:DarkSlateBlue;
     border: 1px inset grey;
     font-family: 'Press Start 2P', cursive;
-    font-size: small;
+    font-size:1rem;
+}
+#dateAndTime:hover{
+    transform: scale(1.1);
+    background-color: black;
+    color: lime;
 }
 
-#dateContainer, #clockContainer {
-    margin: 16px;
+#dateContainer, #clockContainer,#timezoneContainer {
+    display: flex;
+    margin: 10px;
 }
 
+#addBtn{
+    border-width: thick !important;
+    background-color: palevioletred;
+    font-family: 'Oswald', sans-serif;
+}
+#addBtn:hover{
+    background-color: wheat;
+    transform: scale(1.1);
+}
 .formPara {
     display: flex;
     justify-content: center;
-    background-color: whitesmoke;
     padding-top: 1em;
     margin-left: 3em;
     margin-right: 3em;
 }
 
-#cardsContainer {
-    /*display: none;*/
+#cardsContainer{ 
+ background-color:LightSteelBlue;
+}
+#todo{
+    padding-bottom: 20px;
 }
 
-/*task cards set to hidden*/
+.filler{
+    margin:0;
+    background-color: lightsteelblue;
+    height: calc(100% - 100px);
+}
+
 
 .errorMsg {
     font-size: 0.9em;
     font-style: italic;
     font-weight: bold;
     color: red;
+}
+
+#Github-link{
+    display: flex;
+    justify-content: center;
 }
