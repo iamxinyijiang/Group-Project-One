@@ -22,8 +22,8 @@ function createTaskHTML(task) {
             break;
     }
 
-    return `<div class="col-12 col-sm-6 col-lg-3 col-xl-2 mx-2" style="margin:2em !important;">
-                <div class="card mx-5" style="width: 15rem; background-color: lightsteelblue; border:none;" >
+    return `<div class="col-12 col-sm-6 col-lg-3 col-xl-2 mx-1" style="margin:2em !important;">
+                <div class="card mx-0" style="width: 15rem; background-color: lightsteelblue; border:none; max-width:300px;">
                     <div class="card-body mx-auto" style="background:url(${stickyNote}) no-repeat; background-size:cover; border: none;">
                         <div id="card-content-wrapper">
                         <h5 class="card-title">&#x1F4CC ${task.name}</h5>
