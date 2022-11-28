@@ -34,7 +34,7 @@ function createTaskHTML(task) {
                         <br>
                         </div>
                         <!-- Button trigger modal -->
-                        <button type="button" class="card-button btn btn-success" data-toggle="modal"  id="doneBtn-${task.id}">
+                        <button type="button" class="card-button btn btn-outline-success" data-toggle="modal"  id="doneBtn-${task.id}">
                         Mark as done
                         </button>
                         <br>
