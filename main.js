@@ -124,3 +124,23 @@ document.getElementById("submit").addEventListener('click', (event) => {
 
 //clear Local storage (use chrome devtool instead)
 //document.getElementById('clear').addEventListener("click", () => window.localStorage.clear());
+
+//clear button to reset form
+document.getElementById('clear').addEventListener('click', resetForm);
+function resetForm() {
+    let errorMsg = document.getElementsByClassName('errorMsg');
+    for(let i = 0, length = errorMsg.length; i < length; i++) {
+        errorMsg[i].style.display = 'none';
+       };
+       document.getElementById("taskForm").reset();
+    }
+
+  
+
+
+
+//edit task
+//document.getElementById("editBtn-${task.id}").addEventListener(click,)
+
+//document.getElementById("taskForm"").innerHTML=
+

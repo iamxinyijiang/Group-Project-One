@@ -28,7 +28,7 @@ html, body {
 
 /*!!!!!!!!clear button hidden for now*/
 #clear{
-    display:none;
+
 }
 
 .jumbotron {
@@ -152,6 +152,10 @@ footer {
 
 #card-content-wrapper{
     padding:1em;
+}
+
+.card-button{
+    font-family:'Times New Roman', Times, serif;
 }
 
 .filler{

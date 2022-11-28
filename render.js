@@ -1,6 +1,6 @@
 function createTaskHTML(task) {
     const assigned = task.assignedTo.length > 1 ? task.assignedTo.join(', ') : task.assignedTo[0];
-
+    //use different background color for different task status
     const toDoBg = 'images/Sticky-Note-01-Yellow.svg'
     const inProgressBg = 'images/Sticky-Note-02-Pink.svg'
     const reviewBg = 'images/Sticky-Note-04-Purple.svg'
@@ -34,8 +34,14 @@ function createTaskHTML(task) {
                         <br>
                         </div>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#task${task.id}">
-                            View Task Details
+                        <button type="button" class="card-button btn btn-success" data-toggle="modal" data-target="#task${task.id}">
+                        View 
+                        </button>
+                        <button type="button" class="card-button btn btn-primary" data-toggle="modal" data-target="#addTaskModal" id="editBtn-${task.id}">
+                        Edit
+                        </button>
+                        <button type="button" class="card-button btn btn-danger">
+                        Delete
                         </button>
                         <div class="modal fade" id="task${task.id}" tabindex="-1" role="dialog"
                              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
