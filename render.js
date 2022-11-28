@@ -34,12 +34,12 @@ function createTaskHTML(task) {
                         <br>
                         </div>
                         <!-- Button trigger modal -->
-                        <button type="button" class="card-button btn btn-info" data-toggle="modal" data-target="#task${task.id}">
-                        View 
+                        <button type="button" class="card-button btn btn-success" data-toggle="modal"  id="doneBtn-${task.id}">
+                        Mark as done
                         </button>
                         <br>
-                        <button type="button" class="card-button btn btn-success" data-toggle="modal"  id="doneBtn-${task.id}">
-                        Done
+                        <button type="button" class="card-button btn btn-info" data-toggle="modal" data-target="#task${task.id}">
+                        View 
                         </button>
                         <button type="button" class="card-button btn btn-primary" data-toggle="modal" data-target="#addTaskModal" id="editBtn-${task.id}">
                         Edit
