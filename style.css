@@ -68,6 +68,8 @@ footer {
     background-color: #343a40;
     opacity: 0.5;
     padding-bottom: 5px;
+    position: absolute;
+    bottom: 0;
 }
 
 #dateAndTime{
@@ -154,7 +156,8 @@ footer {
 .filler{
     margin:0;
     background-color: lightsteelblue;
-    height: calc(100% - 100px);
+    height: 100%;
+    position:relative;
 }
 
 
