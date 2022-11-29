@@ -149,6 +149,7 @@ function markAsDone(event) {
         event.target.style.visibility='hidden';
         refreshTaskCard(tasks.task[taskIndex]);
         window.localStorage.setItem('tasks', JSON.stringify(tasks));
+        window.location.reload();
     }
 }
 
