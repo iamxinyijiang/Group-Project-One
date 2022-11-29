@@ -138,11 +138,14 @@ document.getElementById('todo').addEventListener("click", (event)=>{
     const taskId=event.target.id.substring(8);
     if (eventTarget==='doneBtn'){
         const taskIndex=tasks.task.findIndex((element)=>element.id===parseInt(taskId));
-        tasks.updateTask(taskIndex);
-        document.getElementById(`card-body-${taskId}`).style.backgroundImage='url(images/Sticky-Note-02-Green.svg)';
-        event.target.style.visibility='hidden';
-        window.localStorage.setItem('tasks', JSON.stringify(tasks));
-        refreshTaskCard();
+        let markDoneConfirm = confirm('Are you sure want to mark this task as done?');
+        if (markDoneConfirm){
+            tasks.updateTask(taskIndex);
+            document.getElementById(`card-body-${taskId}`).style.backgroundImage='url(images/Sticky-Note-02-Green.svg)';
+            event.target.style.visibility='hidden';
+            window.localStorage.setItem('tasks', JSON.stringify(tasks));
+            refreshTaskCard();
+        } 
     }
 });
 
