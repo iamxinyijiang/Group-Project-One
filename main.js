@@ -156,14 +156,12 @@ document.getElementById('todo').addEventListener("click", (event) =>{
         if (deleteConfirm) {
             alert('Task deleted successfully!');
             let taskObj = JSON.parse(localStorage.getItem("tasks"))
-            let taskArr = taskObj._task
-            taskArr.splice(taskIndex, 1)
-            let taskArrNew = taskArr
-            taskArrNew = taskObj._task
+            let taskArr = taskObj._task.splice(taskIndex, 1)
+            taskArr = taskObj._task
             localStorage.setItem('tasks', JSON.stringify(taskObj))
             refreshTaskCard();
         } else {
-            alert('Action cancelled; task was not deleted.');
+            alert('Action cancelled. Task was not deleted.');
         }
     }
 });
