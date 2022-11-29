@@ -14,12 +14,12 @@ class TaskManager {
         return this._id;
     }
 
-    set task(taskArray){
-        this._task=taskArray;
+    set task(taskArray) {
+        this._task = taskArray;
     }
 
-    set id(id){
-        this._id=id;
+    set id(id) {
+        this._id = id;
     }
 
     addTask(taskInfo) {
@@ -35,10 +35,20 @@ class TaskManager {
         render(task);
     }
 
-    updateTask(taskIndex){
-        this._task[taskIndex].status='Done';
+    doneTask(taskIndex) {
+        this._task[taskIndex].status = 'Done';
     }
-    selectTask(key, value) {
+
+    updateTask(taskInfo, taskIndex) {
+        this._task[taskIndex].name = taskInfo[0];
+        this._task[taskIndex].description = taskInfo[1];
+        this._task[taskIndex].assignedTo = taskInfo[2];
+        this._task[taskIndex].dueDate = taskInfo[3];
+        this._task[taskIndex].status = taskInfo[4];
+    }
+
+    deleteTask(taskIndex) {
+        this._task=this._task.splice(taskIndex,1);
     }
 }
 

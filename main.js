@@ -3,10 +3,11 @@ console.log('main.js is running.');
 
 //import from module
 import {TaskManager} from "./taskManager.js";
-import {render,refreshTaskCard} from "./render.js";
+import {render, refreshTaskCard} from "./render.js";
 
+let actionCode;
 //define tasks object contain all tasks
-let tasks = new TaskManager();
+const tasks = new TaskManager();
 
 //data validate function
 function dataValidate(inputs) {
@@ -51,6 +52,15 @@ function formatDateStr(currentDate) {
     return `${year}-${month}-${day}`;
 }
 
+//reset Task form clean input disable error message
+function resetForm() {
+    let errorMsg = document.getElementsByClassName('errorMsg');
+    for (let i = 0, length = errorMsg.length; i < length; i++) {
+        errorMsg[i].style.display = 'none';
+    }
+    document.getElementById("taskForm").reset();
+}
+
 //error message function display/hide message depend on condition
 function showErrorMsg(valid, msg) {
     valid ? msg.style.display = 'none' : msg.style.display = 'block';
@@ -86,6 +96,12 @@ window.addEventListener("load", () => {
     }
 });
 
+document.getElementById('addBtn').addEventListener("click", () => {
+    actionCode = -1;
+    document.getElementById('addTaskModalTitle').innerHTML = 'New Task';
+    resetForm();
+});
+
 //validate Form at submission
 document.getElementById("submit").addEventListener('click', (event) => {
     event.preventDefault();
@@ -100,7 +116,10 @@ document.getElementById("submit").addEventListener('click', (event) => {
                 const options = inputs[i].children[1].options;
                 const selectValueArr = [];
                 for (let j = 0; j < options.length; j++) {
-                    if (options[j].selected) selectValueArr.push(options[j].value);
+                    if (options[j].selected)
+                        selectValueArr.push(options[j].value);
+                    else
+                        selectValueArr.push('');
                 }
                 taskInfo.push(selectValueArr);
                 inputs[i].children[1].selectedIndex = -1;
@@ -112,36 +131,59 @@ document.getElementById("submit").addEventListener('click', (event) => {
                 inputs[i].children[1].value = '';
             }
         }
-        //create new task
-        tasks.addTask(taskInfo);
+        if (actionCode === -1)
+            //create new task
+            tasks.addTask(taskInfo);
+        else
+            //update exist task
+            tasks.updateTask(taskInfo, actionCode);
+
         // hide modal after valid submission
         $('#addTaskModal').hide('hide');
         $('body').removeClass('modal-open');
         $('.modal-backdrop').remove();
         window.localStorage.setItem('tasks', JSON.stringify(tasks));
+        refreshTaskCard();
     }
 }, false);
 
 //clear button to reset form
 document.getElementById('clear').addEventListener('click', resetForm);
-function resetForm() {
-    let errorMsg = document.getElementsByClassName('errorMsg');
-    for(let i = 0, length = errorMsg.length; i < length; i++) {
-        errorMsg[i].style.display = 'none';
-       }
-       document.getElementById("taskForm").reset();
-    };
 
 //set task status to Done update local storage data render task card
-document.getElementById('todo').addEventListener("click", (event)=>{
-    const eventTarget=event.target.id.substring(0,7);
-    const taskId=event.target.id.substring(8);
-    if (eventTarget==='doneBtn'){
-        const taskIndex=tasks.task.findIndex((element)=>element.id===parseInt(taskId));
-        tasks.updateTask(taskIndex);
-        document.getElementById(`card-body-${taskId}`).style.backgroundImage='url(images/Sticky-Note-02-Green.svg)';
-        event.target.style.visibility='hidden';
+document.getElementById('todo').addEventListener("click", (event) => {
+    const eventTarget = event.target.id.substring(0, event.target.id.indexOf('-'));
+    const taskId = event.target.id.substring(event.target.id.indexOf('-') + 1);
+    const taskIndex = tasks.task.findIndex((element) => element.id === parseInt(taskId));
+    console.log(taskId);
+    console.log(taskIndex);
+
+    if (eventTarget === 'doneBtn') {
+        tasks.doneTask(taskIndex);
+        document.getElementById(`card-body-${taskId}`).style.backgroundImage = 'url(images/Sticky-Note-02-Green.svg)';
+        event.target.style.visibility = 'hidden';
         window.localStorage.setItem('tasks', JSON.stringify(tasks));
         refreshTaskCard();
+    } else if (eventTarget === 'deleteBtn') {
+        console.log(taskIndex);
+        console.log(tasks);
+        tasks.deleteTask(taskIndex);
+        window.localStorage.setItem('tasks', JSON.stringify(tasks));
+        // refreshTaskCard();
+    } else if (eventTarget === 'editBtn') {
+        actionCode = taskIndex;
+        document.getElementById('addTaskModalTitle').innerHTML = 'Edit Task';
+        console.log('Edit button clicked!');
+        document.getElementById('taskNameInput').value = tasks.task[taskIndex].name;
+        document.getElementById('taskDescriptionTextarea').value = tasks.task[taskIndex].description;
+        document.getElementById('dateInput').value = tasks.task[taskIndex].dueDate;
+        document.getElementById('statusSelect').value = tasks.task[taskIndex].status;
+
+        const options = document.getElementById('assignedToMultipleSelect').options;
+        for (let i = 0; i < options.length; i++) {
+            if (tasks.task[taskIndex].assignedTo[i] !== '')
+                options[i].selected = true;
+        }
     }
 });
+

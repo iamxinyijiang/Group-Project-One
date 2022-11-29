@@ -32,7 +32,7 @@ function createTaskHTML(task) {
                         <div id="taskDetail-${task.id}">
                             <h5 class="card-title">&#x1F4CC ${task.name}</h5>
                             <p class="card-text">${task.description}</p>
-                            <p class="card-text">Assigned to: ${task.assignedTo.join(', ')}</p>
+                            <p class="card-text">Assigned to: ${task.assignedTo.filter(name => name !== '').join(', ')}</p>
                             <p class="card-text">Due on: ${task.dueDate}</p>
                             <p class="card-text">Status: ${task.status}</p>
                             <br>
@@ -74,7 +74,7 @@ function createTaskHTML(task) {
                                                 <div class="d-flex w-100 justify-content-between">
                                                     <h5 class="mb-1">Assigned to</h5>
                                                 </div>
-                                                <p class="mb-1">${task.assignedTo.join(', ')}</p>
+                                                <p class="mb-1">${task.assignedTo.filter(name => name !== '').join(', ')}</p>
                                                 
                                             </a>
                                             <a href="#" class="list-group-item list-group-item-action">

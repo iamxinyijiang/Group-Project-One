@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-do List</title>
-    <link type="image/x-icon" rel="icon" href="https://lh3.googleusercontent.com/4vbbJ8MSnSOwxknMjwR5b68qUr1_Ujs3Ru8gnsoV7x_2kDZHRzXArYLu2-3_QNZ8ghM=w2400"/>
+    <link type="image/x-icon" rel="icon"
+          href="https://lh3.googleusercontent.com/4vbbJ8MSnSOwxknMjwR5b68qUr1_Ujs3Ru8gnsoV7x_2kDZHRzXArYLu2-3_QNZ8ghM=w2400"/>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet"
@@ -57,7 +58,8 @@
     <!--Form-->
     <div class="formPara">
         <!-- Button trigger form modal -->
-        <button type="button" class="btn btn-outline-primary border-dark" data-toggle="modal" data-target="#addTaskModal" id="addBtn">
+        <button type="button" class="btn btn-outline-primary border-dark" data-toggle="modal"
+                data-target="#addTaskModal" id="addBtn">
             <span class="display-4">&#x1F4DD</span>
             <br>
             <span class="display-5">&#x2795 Add new task</span>
@@ -68,7 +70,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addTaskModalTitle">Create a task</h5>
+                    <h5 class="modal-title" id="addTaskModalTitle"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -92,7 +94,8 @@
                                     <span class="errorMsg" id="errorMsgDescription">*Must not be blank;<br>*Maximum length: 15 characters.</span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="assignedToMultipleSelect">Assigned to [Press and hold CTRL to select/unselect one or more choice(s)]</label>
+                                    <label for="assignedToMultipleSelect">Assigned to [Press and hold CTRL to
+                                        select/unselect one or more choice(s)]</label>
                                     <select multiple class="form-control" id="assignedToMultipleSelect">
                                         <option value="Albus Dumbledore">Albus Dumbledore</option>
                                         <option value="Bellatrix Lestrange">Bellatrix Lestrange</option>
@@ -105,7 +108,8 @@
                                         <option value="Severus Snape">Severus Snape</option>
                                         <option value="Sirius Black">Sirius Black</option>
                                     </select>
-                                    <span class="errorMsg" id="errorMsgAssignedTo">*Must select at least one person.</span>
+                                    <span class="errorMsg"
+                                          id="errorMsgAssignedTo">*Must select at least one person.</span>
                                 </div>
                                 <div class="form-group">
                                     <label for="dateInput">Due Date</label>
@@ -152,7 +156,8 @@
             <span class="legend-item" style="background-color: #DC88DD;">&#x1F4CC<br>Under review</span>
             <span class="legend-item" style="background-color: #CAED9D;">&#x1F4CC<br>Done</span>
         </div>
-        <h5 class="text-center font-italic" id="legend-text">Tasks cards will be ordered by status. (To do > In Progress > Review > Done)</h5>
+        <h5 class="text-center font-italic" id="legend-text">Tasks cards will be ordered by status. (To do > In Progress
+            > Review > Done)</h5>
     </div>
     <!--Current Tasks (cards)-->
     <div class="row justify-content-center mx-10 flex-wrap" style="gap: 5px;" id="todo">
@@ -160,15 +165,15 @@
 </div>
 <!--filler-->
 <div class="filler">
-<!-- Footer -->
-<footer class="container-fluid">
-    <p class="font-italic font-weight-normal text-center">2022 Simple To-do List &copy;</p>
-    <a rel="noreferrer noopener" href="https://github.com/iamxinyijiang/Group-Project-One" target="_blank"
-       class="text-white" id="Github-link">
-        <img src="images/GitHub-Mark-Light-32px.png" style="width:1.5em;" alt="Github logo">
-        GitHub Repo for this page
-    </a>
-</footer>
+    <!-- Footer -->
+    <footer class="container-fluid">
+        <p class="font-italic font-weight-normal text-center">2022 Simple To-do List &copy;</p>
+        <a rel="noreferrer noopener" href="https://github.com/iamxinyijiang/Group-Project-One" target="_blank"
+           class="text-white" id="Github-link">
+            <img src="images/GitHub-Mark-Light-32px.png" style="width:1.5em;" alt="Github logo">
+            GitHub Repo for this page
+        </a>
+    </footer>
 </div>
 <!--Custom JavaScript-->
 <script type="module" src="./main.js"></script>
