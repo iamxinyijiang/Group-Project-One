@@ -6,6 +6,7 @@ function createTaskHTML(task) {
     const reviewBg = 'images/Sticky-Note-04-Purple.svg'
     const doneBg ='images/Sticky-Note-02-Green.svg'
     let stickyNote = ""
+    let alreadyDone = ""
 
     switch (task.status) {
         case 'To Do':
@@ -19,6 +20,8 @@ function createTaskHTML(task) {
             break;
         case 'Done':
             stickyNote = doneBg;
+            alreadyDone = "none"; //do not show mark as done for already done card
+            console.log(alreadyDone)
             break;
     }
 
@@ -34,7 +37,7 @@ function createTaskHTML(task) {
                             <br>
                         </div>
                         <!-- Button trigger modal -->
-                        <button type="button" class="card-button btn btn-outline-success" id="doneBtn-${task.id}">Mark as done</button>
+                        <button type="button" class="card-button btn btn-outline-success" id="doneBtn-${task.id}" style="display: ${alreadyDone};">Mark as done</button>
                         <br>
                         <button type="button" class="card-button btn btn-info" data-toggle="modal" data-target="#task${task.id}">View</button>
                         <button type="button" class="card-button btn btn-primary" data-toggle="modal" data-target="#addTaskModal" id="editBtn-${task.id}">Edit</button>
