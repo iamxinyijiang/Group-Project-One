@@ -35,6 +35,9 @@ class TaskManager {
         render(task);
     }
 
+    updateTask(taskIndex){
+        this._task[taskIndex].status='Done';
+    }
     selectTask(key, value) {
     }
 }
