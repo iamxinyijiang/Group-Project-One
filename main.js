@@ -145,3 +145,26 @@ document.getElementById('todo').addEventListener("click", (event)=>{
         refreshTaskCard();
     }
 });
+
+//delete task
+document.getElementById('todo').addEventListener("click", (event) =>{
+    const eventTarget=event.target.id.substring(0,9);
+    const taskId=event.target.id.substring(10);
+    if (eventTarget==='deleteBtn'){
+        const taskIndex=tasks.task.findIndex((element)=>element.id===parseInt(taskId));
+        console.log(taskIndex)
+        let deleteConfirm = confirm('Are you sure you want to delete this task?');
+        if (deleteConfirm) {
+            alert('Task deleted successfully!');
+            let taskObj = JSON.parse(localStorage.getItem("tasks"))
+            let taskArr = taskObj._task
+            taskArr.splice(taskIndex, 1)
+            let taskArrNew = taskArr
+            taskArrNew = taskObj._task
+            localStorage.setItem('tasks', JSON.stringify(taskObj))
+            refreshTaskCard();
+        } else {
+            alert('Action cancelled; task was not deleted.');
+        }
+    }
+});
