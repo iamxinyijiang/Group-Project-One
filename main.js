@@ -168,3 +168,34 @@ document.getElementById('todo').addEventListener("click", (event) =>{
         }
     }
 });
+
+//edit task
+//click event
+document.getElementById('todo').addEventListener("click", (event) =>{
+    const eventTarget=event.target.id.substring(0,7);
+    const taskId=event.target.id.substring(8);
+    const taskIndex=tasks.task.findIndex((element)=>element.id===parseInt(taskId))  
+    if (eventTarget==='editBtn'){
+        console.log(`${eventTarget}-${taskId}`);
+        $("#addTaskModal").modal("show")//show modal for editing
+        document.getElementById("addTaskModalTitle").innerHTML = "Edit current task"//change modal title from create to edit
+        resetForm()//clear the form automatically
+        //get data entry for selected task from local storage
+        let taskObj = JSON.parse(localStorage.getItem("tasks"))
+        let taskArr = taskObj._task[taskIndex]
+        console.log(taskArr)
+        console.log(taskArr.name)
+        //populate form value
+        document.getElementById("taskNameInput").value = taskArr.name
+        document.getElementById("taskDescriptionTextarea").value = taskArr.description
+        document.getElementById("assignedToMultipleSelect").value = taskArr.assignedTo 
+        document.getElementById("dateInput").value = taskArr.dueDate
+        document.getElementById("statusSelect").value = taskArr.status
+        console.log(taskArr.id)
+         }
+        //edit value
+        //validate and write over the original entry in local storage (keep the same task id?)
+        
+});
+
+
