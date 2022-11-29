@@ -9,7 +9,7 @@
   2. Remove default margin
 */
 * {
-    margin:0;
+    margin: 0;
 }
 
 /*
@@ -17,7 +17,7 @@
 */
 html, body {
     height: 100%;
-    min-width: 321px; 
+    min-width: 321px;
     width: 100%;
     margin: 0;
     background-color: lightsteelblue;
@@ -37,14 +37,15 @@ html, body {
 }
 
 
-#container-one{
+#container-one {
     background-color: lightsteelblue;
 }
+
 #simpleTodo {
     font-family: 'Lobster', cursive;
 }
 
-#titleDiv{
+#titleDiv {
     margin-top: 0 !important;
     margin-bottom: 1em !important;
     color: papayawhip;
@@ -67,7 +68,7 @@ footer {
     bottom: 0;
 }
 
-#dateAndTime{
+#dateAndTime {
     width: 12em;
     margin-top: 0;
 }
@@ -76,29 +77,32 @@ footer {
     color: ghostwhite;
     width: fit-content;
     margin: auto;
-    background-color:DarkSlateBlue;
+    background-color: DarkSlateBlue;
     border: 2px inset darkgrey;
     font-family: 'Press Start 2P', cursive;
-    font-size:0.8rem;
+    font-size: 0.8rem;
 }
-#dateAndTime:hover{
+
+#dateAndTime:hover {
     transform: scale(1.1);
     background-color: black;
     color: lime;
 }
 
-#dateContainer, #clockContainer,#timezoneContainer {
+#dateContainer, #clockContainer, #timezoneContainer {
     display: flex;
     margin: 10px;
 }
 
-#addBtn{
+#addBtn {
     border-width: thick !important;
     background-color: palevioletred;
 }
-#addBtn:hover{
+
+#addBtn:hover {
     background-color: wheat;
 }
+
 .formPara {
     display: flex;
     justify-content: center;
@@ -108,7 +112,7 @@ footer {
     margin-bottom: 0;
 }
 
-#legend-of-color{
+#legend-of-color {
     display: flex;
     justify-content: center;
     padding-top: 1em;
@@ -116,48 +120,49 @@ footer {
     margin-left: 3em;
     margin-right: 3em;
     margin-bottom: 2em;
-    
+
 }
-.legend-item{
+
+.legend-item {
     display: flex;
     width: 7em;
     height: 7em;
     margin: 0 3em 3em;
-    padding:2em;
+    padding: 2em;
     font-size: small;
     font-weight: bold;
     text-align: center;
     border: 2px double lightsteelblue;
 }
 
-.legend-item:hover{
+.legend-item:hover {
     transform: scale(1.4);
 }
 
-#cardsContainer{ 
- background-color:LightSteelBlue;
- font-family:'Caveat', cursive;
- font-size: 21px;
+#cardsContainer {
+    background-color: LightSteelBlue;
+    font-family: 'Caveat', cursive;
+    font-size: 21px;
 }
 
-#todo{
+#todo {
     padding-bottom: 20px;
     overflow: auto;
 }
 
-#card-content-wrapper{
-    padding:1em;
+#card-content-wrapper {
+    padding: 1em;
 }
 
-.card-button{
-    font-family:'Times New Roman', Times, serif;
+.card-button {
+    font-family: 'Times New Roman', Times, serif;
 }
 
-.filler{
-    margin:0;
+.filler {
+    margin: 0;
     background-color: lightsteelblue;
     height: 100%;
-    position:relative;
+    position: relative;
 }
 
 
@@ -169,7 +174,13 @@ footer {
     display: none;
 }
 
-#Github-link{
+#Github-link {
     display: flex;
     justify-content: center;
+}
+
+.card-body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
 }
