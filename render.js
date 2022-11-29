@@ -5,12 +5,12 @@ function createTaskHTML(task) {
     const reviewBg = 'images/Sticky-Note-04-Purple.svg'
     const doneBg = 'images/Sticky-Note-02-Green.svg'
     let stickyNote = ""
-    let alreadyDone = ""
+    /*let alreadyDone = ""*/
     let flexOrder = ""
 
     switch (task.status) {
         case 'To Do':
-            stickyNote=toDoBg;
+            stickyNote = toDoBg;
             flexOrder = "1";
             break;
         case 'In Progress':
@@ -24,12 +24,12 @@ function createTaskHTML(task) {
         case 'Done':
             stickyNote = doneBg;
             flexOrder = "4";
-            alreadyDone = "none"; //do not show mark as done for already done card
-            console.log(alreadyDone)
+            /*alreadyDone = "none"; //do not show mark as done for already done card*/
+            /*console.log(alreadyDone)*/
             break;
     }
 
-    return `<div class="col-12 col-sm-6 col-lg-3 col-xl-2 mx-1" style="margin:2em !important; order: ${flexOrder}">    
+    return `<div class="col-12 col-sm-6 col-lg-3 col-xl-2 mx-1" style="margin:2em !important; order: ${flexOrder}" id="cardWrapper-${task.id}">    
                 <div class="card mx-0" style="width: 15rem; background-color: lightsteelblue; border:none; max-width:300px;">
                     <div class="card-body mx-auto" style="background-image: url(${stickyNote});" id="card-body-${task.id}">
                         <div id="taskDetail-${task.id}">

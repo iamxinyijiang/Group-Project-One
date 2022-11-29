@@ -152,10 +152,3 @@ function markAsDone(event) {
         window.location.reload();
     }
 }
-
-
-//edit task
-//document.getElementById("editBtn-${task.id}").addEventListener(click,)
-
-//document.getElementById("taskForm"").innerHTML=
-
