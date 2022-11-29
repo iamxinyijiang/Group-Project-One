@@ -152,7 +152,6 @@ document.getElementById('todo').addEventListener("click", (event) =>{
     const taskId=event.target.id.substring(10);
     if (eventTarget==='deleteBtn'){
         const taskIndex=tasks.task.findIndex((element)=>element.id===parseInt(taskId));
-        console.log(taskIndex)
         let deleteConfirm = confirm('Are you sure you want to delete this task?');
         if (deleteConfirm) {
             alert('Task deleted successfully!');
