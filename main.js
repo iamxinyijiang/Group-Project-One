@@ -170,7 +170,6 @@ document.getElementById('todo').addEventListener("click", (event) =>{
 });
 
 //edit task
-//click event
 document.getElementById('todo').addEventListener("click", (event) =>{
     const eventTarget=event.target.id.substring(0,7);
     const taskId=event.target.id.substring(8);
@@ -198,4 +197,8 @@ document.getElementById('todo').addEventListener("click", (event) =>{
         
 });
 
-
+//reset modal title for new task
+document.getElementById("addBtn").addEventListener("click", (event) =>{
+document.getElementById("addTaskModalTitle").innerHTML = "Create a new task"
+resetForm()
+})
