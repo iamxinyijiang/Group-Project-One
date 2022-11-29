@@ -3,7 +3,7 @@ console.log('main.js is running.');
 
 //import from module
 import {TaskManager} from "./taskManager.js";
-import {render} from "./render.js";
+import {render,refreshTaskCard} from "./render.js";
 
 //define tasks object contain all tasks
 let tasks = new TaskManager();
@@ -131,9 +131,9 @@ function resetForm() {
     let errorMsg = document.getElementsByClassName('errorMsg');
     for(let i = 0, length = errorMsg.length; i < length; i++) {
         errorMsg[i].style.display = 'none';
-       };
+       }
        document.getElementById("taskForm").reset();
-    };
+    }
 
 
 
@@ -141,11 +141,14 @@ document.getElementById('todo').addEventListener("click", markAsDone);
 function markAsDone(event) {
     console.log(event.target.id);
     const eventTarget=event.target.id.substring(0,7);
-    const taskIndex=event.target.id.substring(8);
+    const taskId=event.target.id.substring(8);
     if (eventTarget==='doneBtn'){
-        console.log('Mark done 1 is clicked');
-        document.getElementById(`card-body-${taskIndex}`).style.backgroundImage='url(images/Sticky-Note-02-Green.svg)';
-        event.target.style.display='none';
+        const taskIndex=tasks.task.findIndex((element)=>element.id===parseInt(taskId));
+        tasks.updateTask(taskIndex);
+        document.getElementById(`card-body-${taskId}`).style.backgroundImage='url(images/Sticky-Note-02-Green.svg)';
+        event.target.style.visibility='hidden';
+        refreshTaskCard(tasks.task[taskIndex]);
+        window.localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 }
 
