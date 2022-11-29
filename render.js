@@ -1,16 +1,15 @@
 function createTaskHTML(task) {
     //use different background color for different task status
-    const toDoBg = 'images/Sticky-Note-01-Yellow.svg'
-    const inProgressBg = 'images/Sticky-Note-02-Pink.svg'
-    const reviewBg = 'images/Sticky-Note-04-Purple.svg'
-    const doneBg = 'images/Sticky-Note-02-Green.svg'
-    let stickyNote = ""
-    let alreadyDone = ""
-    let flexOrder = ""
+    const toDoBg = 'images/Sticky-Note-01-Yellow.svg';
+    const inProgressBg = 'images/Sticky-Note-02-Pink.svg';
+    const reviewBg = 'images/Sticky-Note-04-Purple.svg';
+    const doneBg = 'images/Sticky-Note-02-Green.svg';
+    let stickyNote = "";
+    let flexOrder = "";
 
     switch (task.status) {
         case 'To Do':
-            stickyNote=toDoBg;
+            stickyNote = toDoBg;
             flexOrder = "1";
             break;
         case 'In Progress':
@@ -24,8 +23,6 @@ function createTaskHTML(task) {
         case 'Done':
             stickyNote = doneBg;
             flexOrder = "4";
-            alreadyDone = "none"; //do not show mark as done for already done card
-            console.log(alreadyDone)
             break;
     }
 
@@ -111,14 +108,9 @@ function render(task) {
     document.getElementById('todo').innerHTML = document.getElementById('todo').innerHTML + createTaskHTML(task);
 }
 
-function refreshTaskCard(task) {
-    const taskDetail = document.getElementById(`taskDetail-${task.id}`);
-    taskDetail.children[0].innerHTML=`&#x1F4CC ${task.name}`;
-    taskDetail.children[1].innerHTML=`${task.description}`;
-    taskDetail.children[2].innerHTML=`Assigned to: ${task.assignedTo.join(', ')}`;
-    taskDetail.children[3].innerHTML=`Due on: ${task.dueDate}`;
-    taskDetail.children[4].innerHTML=`Status: ${task.status}`;
-    console.log(taskDetail.children[1]);
+function refreshTaskCard() {
+    window.location.reload();
 }
+
 
 export {render, refreshTaskCard};
