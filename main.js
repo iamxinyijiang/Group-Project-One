@@ -91,6 +91,7 @@ document.getElementById("submit").addEventListener('click', (event) => {
     event.preventDefault();
     const inputs = document.getElementsByClassName('form-group');
 
+    //get task info from input form assign into array use as parameters of addTask function
     if (dataValidate(inputs)) {
         const taskInfo = [];
         for (let i = 0; i < inputs.length - 1; i++) {
@@ -118,12 +119,8 @@ document.getElementById("submit").addEventListener('click', (event) => {
         $('body').removeClass('modal-open');
         $('.modal-backdrop').remove();
         window.localStorage.setItem('tasks', JSON.stringify(tasks));
-
     }
 }, false);
-
-//clear Local storage (use chrome devtool instead)
-//document.getElementById('clear').addEventListener("click", () => window.localStorage.clear());
 
 //clear button to reset form
 document.getElementById('clear').addEventListener('click', resetForm);
@@ -133,13 +130,10 @@ function resetForm() {
         errorMsg[i].style.display = 'none';
        }
        document.getElementById("taskForm").reset();
-    }
+    };
 
-
-
-document.getElementById('todo').addEventListener("click", markAsDone);
-function markAsDone(event) {
-    console.log(event.target.id);
+//set task status to Done update local storage data render task card
+document.getElementById('todo').addEventListener("click", (event)=>{
     const eventTarget=event.target.id.substring(0,7);
     const taskId=event.target.id.substring(8);
     if (eventTarget==='doneBtn'){
@@ -147,8 +141,7 @@ function markAsDone(event) {
         tasks.updateTask(taskIndex);
         document.getElementById(`card-body-${taskId}`).style.backgroundImage='url(images/Sticky-Note-02-Green.svg)';
         event.target.style.visibility='hidden';
-        refreshTaskCard(tasks.task[taskIndex]);
         window.localStorage.setItem('tasks', JSON.stringify(tasks));
-        window.location.reload();
+        refreshTaskCard();
     }
-}
+});

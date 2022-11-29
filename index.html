@@ -24,7 +24,7 @@
     <!--font-family: 'Lobster Two', cursive;-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap">
     <!--font-family: 'Press Start 2P', cursive;-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,8 +58,9 @@
     <div class="formPara">
         <!-- Button trigger form modal -->
         <button type="button" class="btn btn-outline-primary border-dark" data-toggle="modal" data-target="#addTaskModal" id="addBtn">
-            <span class="display-2">&#x1F4DD </span>
-            <h5>&#x2795 Add new task</h5>
+            <span class="display-4">&#x1F4DD</span>
+            <br>
+            <span class="display-5">&#x2795 Add new task</span>
         </button>
     </div>
     <!--Form modal-->
@@ -79,7 +80,8 @@
                                 <div class="form-group">
                                     <label for="taskNameInput">Task Name</label>
                                     <input type="text" class="form-control"
-                                           placeholder="Type in task name here (8 characters max.)" id="taskNameInput"/>
+                                           placeholder="Type in task name here (8 characters max.)"
+                                           id="taskNameInput"/>
                                     <span class="errorMsg" id="errorMsgTaskName">*Task Name must not be empty or longer than 8 characters.</span>
                                 </div>
                                 <div class="form-group">
@@ -90,8 +92,7 @@
                                     <span class="errorMsg" id="errorMsgDescription">*Must not be blank;<br>*Maximum length: 15 characters.</span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="assignedToMultipleSelect">Assigned to [Press and hold CTRL to
-                                        select/unselect one or more choice(s)]</label>
+                                    <label for="assignedToMultipleSelect">Assigned to [Press and hold CTRL to select/unselect one or more choice(s)]</label>
                                     <select multiple class="form-control" id="assignedToMultipleSelect">
                                         <option value="Albus Dumbledore">Albus Dumbledore</option>
                                         <option value="Bellatrix Lestrange">Bellatrix Lestrange</option>
@@ -104,8 +105,7 @@
                                         <option value="Severus Snape">Severus Snape</option>
                                         <option value="Sirius Black">Sirius Black</option>
                                     </select>
-                                    <span class="errorMsg"
-                                          id="errorMsgAssignedTo">*Must select at least one person.</span>
+                                    <span class="errorMsg" id="errorMsgAssignedTo">*Must select at least one person.</span>
                                 </div>
                                 <div class="form-group">
                                     <label for="dateInput">Due Date</label>
