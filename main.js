@@ -151,6 +151,7 @@ document.getElementById("submit").addEventListener('click', (event) => {
 document.getElementById('clear').addEventListener('click', resetForm);
 
 //set task status to Done update local storage data render task card
+
 document.getElementById('todo').addEventListener("click", (event) => {
     const eventTarget = event.target.id.substring(0, event.target.id.indexOf('-'));
     const taskId = event.target.id.substring(event.target.id.indexOf('-') + 1);
@@ -186,4 +187,3 @@ document.getElementById('todo').addEventListener("click", (event) => {
         }
     }
 });
-

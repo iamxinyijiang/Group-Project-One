@@ -41,7 +41,7 @@ function createTaskHTML(task) {
                         <button type="button" class="card-button btn btn-outline-success" style="visibility: ${task.status === 'Done' ? "hidden" : "visible"}" id="doneBtn-${task.id}">Mark as done</button>
                         <br>
                         <button type="button" class="card-button btn btn-info" data-toggle="modal" data-target="#task${task.id}">View</button>
-                        <button type="button" class="card-button btn btn-primary" data-toggle="modal" data-target="#addTaskModal" id="editBtn-${task.id}">Edit</button>
+                        <button type="button" class="card-button btn btn-primary" id="editBtn-${task.id}">Edit</button>
                         <button type="button" class="card-button btn btn-danger" id="deleteBtn-${task.id}">Delete</button>
                     </div>
                     <div class="modal fade" id="task${task.id}" tabindex="-1" role="dialog"
