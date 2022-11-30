@@ -119,6 +119,7 @@ document.getElementById("submit").addEventListener('click', (event) => {
         $('body').removeClass('modal-open');
         $('.modal-backdrop').remove();
         window.localStorage.setItem('tasks', JSON.stringify(tasks));
+        window.location.reload()//refresh page after adding a new task so things like edit work properly
     }
 }, false);
 
@@ -198,7 +199,7 @@ document.getElementById('todo').addEventListener("click", (event) =>{
 });
 
 //reset modal title for new task
-document.getElementById("addBtn").addEventListener("click", (event) =>{
+document.getElementById("addBtn").addEventListener("click", () =>{
 document.getElementById("addTaskModalTitle").innerHTML = "Create a new task"
 resetForm()
 })

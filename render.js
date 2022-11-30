@@ -6,22 +6,27 @@ function createTaskHTML(task) {
     const doneBg = 'images/Sticky-Note-02-Green.svg';
     let stickyNote = "";
     let flexOrder = "";
+    let statusColor = ""
 
     switch (task.status) {
         case 'To Do':
             stickyNote = toDoBg;
+            statusColor = "#FFFF90"
             flexOrder = "1";
             break;
         case 'In Progress':
             stickyNote = inProgressBg;
+            statusColor= "#FCC3C9"
             flexOrder = "2";
             break;
         case 'Review':
             stickyNote = reviewBg;
+            statusColor = "#DC88DD"
             flexOrder = "3";
             break;
         case 'Done':
             stickyNote = doneBg;
+            statusColor = "#CAED9D"
             flexOrder = "4";
             break;
     }
@@ -47,9 +52,9 @@ function createTaskHTML(task) {
                     <div class="modal fade" id="task${task.id}" tabindex="-1" role="dialog"
                              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
+                                <div class="modal-content"  style="font-family:-system; font-size: normal;">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle1">Task ID: ${task.id}</h5>
+                                        <h5 class="modal-title" id="exampleModalLongTitle1">Task UID: ${task.id}</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -57,7 +62,7 @@ function createTaskHTML(task) {
                                     <div class="modal-body">
                                         <!--List group-->
                                         <div class="list-group">
-                                            <a href="#" class="list-group-item list-group-item-action active">
+                                            <a href="#" class="list-group-item list-group-item-action">
                                                 <div class="d-flex w-100 justify-content-between">
                                                     <h5 class="mb-1">Task Name</h5>
                                                 </div>
@@ -88,14 +93,13 @@ function createTaskHTML(task) {
                                                 <div class="d-flex w-100 justify-content-between">
                                                     <h5 class="mb-1">Status</h5>
                                                 </div>
-                                                <p class="mb-1">${task.status}</p>
+                                                <p class="mb-1" style = "background-color: ${statusColor};">${task.status}</p>
                                                 
                                             </a>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
                                     </div>
                                 </div>
                             </div>
