@@ -125,7 +125,7 @@
                                         <option value="Review">Review</option>
                                         <option value="Done">Done</option>
                                     </select>
-                                    <span class="errorMsg" id="errorMsgStatus">Status must be selected.</span>
+                                    <span class="errorMsg" id="errorMsgStatus">*Status must be selected.</span>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary" id="submit">Submit</button>
@@ -150,16 +150,23 @@
             here.&#x2B07</h3>
         <br>
         <div class="row justify-content-center mx-10 flex-wrap" id="legend-of-color">
-            <span class="legend-item" style="background-color: #FFFF90;">&#x1F4CC<br>To do</span>
-            <span class="legend-item" style="background-color: #FCC3C9;">&#x1F4CC<br>In progress</span>
-            <span class="legend-item" style="background-color: #DC88DD;">&#x1F4CC<br>Under review</span>
-            <span class="legend-item" style="background-color: #CAED9D;">&#x1F4CC<br>Done</span>
+            <span class="legend-item" id="legend-todo" style="background-color: #FFFF90;">&#x1F4CC<br>To do</span>
+            <span class="legend-item" id="legend-progress" style="background-color: #FCC3C9;">&#x1F4CC<br>In progress</span>
+            <span class="legend-item" id="legend-review" style="background-color: #DC88DD;">&#x1F4CC<br>Under review</span>
+            <span class="legend-item" id="legend-done" style="background-color: #CAED9D;">&#x1F4CC<br>Done</span>
         </div>
-        <h5 class="text-center font-italic" id="legend-text">Tasks cards will be ordered by status. (To do > In Progress
-            > Review > Done)</h5>
+        <h5 class="text-center font-italic" id="legend-text">
+            Tasks cards will be ordered by status. 
+            (<span style = "background-color:#FFFF90;">To do</span> > <span style = "background-color:#FCC3C9;">In Progress</span> 
+            > <span style = "background-color:#DC88DD;">Review</span> > <span style = "background-color:#CAED9D;">Done</span>)
+        </h5>
     </div>
     <!--Current Tasks (cards)-->
     <div class="row justify-content-center mx-10 flex-wrap" style="gap: 5px;" id="todo">
+        <div class = "row" style="width: 100%;" id = "todo-row"></div>
+        <div class = "row" style="width: 100%;" id = "progress-row"></div>
+        <div class = "row" style="width: 100%;" id = "review-row"></div>
+        <div class = "row" style="width: 100%;" id = "done-row"></div>
     </div>
 </div>
 <!--filler-->

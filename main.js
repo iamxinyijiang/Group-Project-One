@@ -2,8 +2,8 @@
 console.log('main.js is running.');
 
 //import from module
-import {TaskManager} from "./taskManager.js";
-import {render, refreshTaskCard} from "./render.js";
+import { TaskManager } from "./taskManager.js";
+import { render, refreshTaskCard } from "./render.js";
 
 let actionCode;
 //define tasks object contain all tasks
@@ -72,7 +72,7 @@ window.addEventListener("load", () => {
         const d = new Date();
         let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         let dateReading = `&#128198 ${d.toLocaleDateString(
-            'default', {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'})}`;
+            'default', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}`;
         let timeReading = `&#8986 ${d.toLocaleTimeString('default', {
             hour12: true,
             hour: '2-digit',
@@ -159,26 +159,27 @@ document.getElementById('todo').addEventListener("click", (event) => {
     console.log(taskId);
     console.log(taskIndex);
 
-    if (eventTarget === 'doneBtn'){
+    if (eventTarget === 'doneBtn') {
         let markDoneConfirm = confirm('Are you sure want to mark this task as done?');
-        if (markDoneConfirm){
-        tasks.doneTask(taskIndex);
-        document.getElementById(`card-body-${taskId}`).style.backgroundImage = 'url(images/Sticky-Note-02-Green.svg)';
-        event.target.style.visibility = 'hidden';
-        window.localStorage.setItem('tasks', JSON.stringify(tasks));
-        refreshTaskCard();
+        if (markDoneConfirm) {
+            tasks.doneTask(taskIndex);
+            document.getElementById(`card-body-${taskId}`).style.backgroundImage = 'url(images/Sticky-Note-02-Green.svg)';
+            event.target.style.visibility = 'hidden';
+            window.localStorage.setItem('tasks', JSON.stringify(tasks));
+            refreshTaskCard();
         }
     } else if (eventTarget === 'deleteBtn') {
         let deleteConfirm = confirm('Are you sure you want to delete this task?');
         if (deleteConfirm) {
-        console.log(taskIndex);
-        console.log(tasks);
-        tasks.deleteTask(taskIndex);
-        window.localStorage.setItem('tasks', JSON.stringify(tasks));
-        refreshTaskCard();
-    } else {
-        alert('Action cancelled. Task was not deleted.');
-    }
+            alert('Task deleted successfully!');
+            console.log(taskIndex);
+            console.log(tasks);
+            tasks.deleteTask(taskIndex);
+            window.localStorage.setItem('tasks', JSON.stringify(tasks));
+            refreshTaskCard();
+        } else {
+            alert('Action cancelled. Task was not deleted.');
+        }
     } else if (eventTarget === 'editBtn') {
         actionCode = taskIndex;
         document.getElementById('addTaskModalTitle').innerHTML = 'Edit Task';

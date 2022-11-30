@@ -16,7 +16,7 @@ function createTaskHTML(task) {
             break;
         case 'In Progress':
             stickyNote = inProgressBg;
-            statusColor= "#FCC3C9"
+            statusColor = "#FCC3C9"
             flexOrder = "2";
             break;
         case 'Review':
@@ -109,7 +109,22 @@ function createTaskHTML(task) {
 }
 
 function render(task) {
-    document.getElementById('todo').innerHTML = document.getElementById('todo').innerHTML + createTaskHTML(task);
+    let cardRow = ""
+    switch (task.status) {
+        case 'To Do':
+            cardRow = "todo-row"
+            break;
+        case 'In Progress':
+            cardRow = "progress-row"
+            break;
+        case 'Review':
+            cardRow = "review-row"
+            break;
+        case 'Done':
+            cardRow = "done-row"
+            break;
+}
+document.getElementById(`${cardRow}`).innerHTML = document.getElementById(`${cardRow}`).innerHTML + createTaskHTML(task);
 }
 
 function refreshTaskCard() {
@@ -117,4 +132,4 @@ function refreshTaskCard() {
 }
 
 
-export {render, refreshTaskCard};
+export { render, refreshTaskCard };
