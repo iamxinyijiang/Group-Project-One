@@ -48,7 +48,7 @@ class TaskManager {
     }
 
     deleteTask(taskIndex) {
-        this._task=this._task.splice(taskIndex,1);
+        this._task.splice(taskIndex, 1);
     }
 }
 

@@ -169,7 +169,7 @@ document.getElementById('todo').addEventListener("click", (event) => {
         console.log(tasks);
         tasks.deleteTask(taskIndex);
         window.localStorage.setItem('tasks', JSON.stringify(tasks));
-        // refreshTaskCard();
+        refreshTaskCard();
     } else if (eventTarget === 'editBtn') {
         actionCode = taskIndex;
         document.getElementById('addTaskModalTitle').innerHTML = 'Edit Task';
