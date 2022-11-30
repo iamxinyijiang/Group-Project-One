@@ -36,10 +36,10 @@ function createTaskHTML(task) {
                     <div class="card-body mx-auto" style="background-image: url(${stickyNote});" id="card-body-${task.id}">
                         <div id="taskDetail-${task.id}">
                             <h5 class="card-title"  id="cardTaskName">&#x1F4CC ${task.name}</h5>
-                            <p class="card-text">${task.description}</p>
-                            <p class="card-text">Assigned to: ${task.assignedTo.filter(name => name !== '').join(', ')}</p>
-                            <p class="card-text">Due on: ${task.dueDate}</p>
-                            <p class="card-text">Status: ${task.status}</p>
+                            <p class="card-text">。${task.description}</p>
+                            <p class="card-text">。Assigned to: ${task.assignedTo.filter(name => name !== '').join(', ')}</p>
+                            <p class="card-text">。Due on: ${task.dueDate}</p>
+                            <p class="card-text">。Status: ${task.status}</p>
                             <br>
                         </div>
                         <!-- Button trigger modal -->
