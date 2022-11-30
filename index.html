@@ -150,10 +150,10 @@
             here.&#x2B07</h3>
         <br>
         <div class="row justify-content-center mx-10 flex-wrap" id="legend-of-color">
-            <span class="legend-item" id="legend-todo" style="background-color: #FFFF90;">&#x1F4CC<br>To do</span>
-            <span class="legend-item" id="legend-progress" style="background-color: #FCC3C9;">&#x1F4CC<br>In progress</span>
-            <span class="legend-item" id="legend-review" style="background-color: #DC88DD;">&#x1F4CC<br>Under review</span>
-            <span class="legend-item" id="legend-done" style="background-color: #CAED9D;">&#x1F4CC<br>Done</span>
+            <a class="legend-item" href="#todo-row" id="legend-todo" style="background-color: #FFFF90;">&#x1F4CC<br>To do</a>
+            <a class="legend-item" href="#progress-row" id="legend-progress" style="background-color: #FCC3C9;">&#x1F4CC<br>In progress</a>
+            <a class="legend-item" href="#review-row" id="legend-review" style="background-color: #DC88DD;">&#x1F4CC<br>Under review</a>
+            <a class="legend-item" href="#done-row" id="legend-done" style="background-color: #CAED9D;">&#x1F4CC<br>Done</a>
         </div>
         <h5 class="text-center font-italic" id="legend-text">
             Tasks cards will be ordered by status. 
@@ -171,6 +171,15 @@
 </div>
 <!--filler-->
 <div class="filler">
+<!--back button-->
+<div class="btn-group" role="group" aria-label="Navigation Buttons" id="btnGroup">
+    <a class="btn btn-secondary" href="#container-one" role="button">Back to top</a>
+    <a class="btn btn-secondary" href="#todo-row" role="button" style = "color:#FFFF90;">To Do</a>
+    <a class="btn btn-secondary" href="#progress-row" role="button" style = "color:#FCC3C9;">In Progress</a>
+    <a class="btn btn-secondary" href="#review-row" role="button" style = "color:#DC88DD;">Review</a>
+    <a class="btn btn-secondary" href="#done-row" role="button" style = "color:#CAED9D;">Done</a>
+</div>
+
     <!-- Footer -->
     <footer class="container-fluid">
         <p class="font-italic font-weight-normal text-center">2022 Simple To-do List &copy;</p>

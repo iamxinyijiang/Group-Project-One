@@ -142,6 +142,7 @@ footer {
 
 .legend-item:hover {
     transform: scale(1.4);
+    text-decoration-line: none;
 }
 
 #cardsContainer {
@@ -174,7 +175,6 @@ footer {
 .errorMsg {
     font-size: 0.9em;
     font-style: italic;
-    /*font-weight: bold;*/
     color: red;
     display: none;
 }
@@ -192,4 +192,7 @@ footer {
 
 #cardTaskName{
     text-decoration: underline;
+}
+#btnGroup{
+margin-left: 30%;
 }
