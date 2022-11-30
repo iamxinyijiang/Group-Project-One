@@ -196,9 +196,4 @@ document.getElementById('todo').addEventListener("click", (event) => {
     }
 });
 
-//reset modal title for new task
-document.getElementById("addBtn").addEventListener("click", () =>{
-document.getElementById("addTaskModalTitle").innerHTML = "Create a new task"
-resetForm()
-})
 
