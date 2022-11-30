@@ -179,7 +179,6 @@ document.getElementById('todo').addEventListener("click", (event) => {
         document.getElementById('taskDescriptionTextarea').value = tasks.task[taskIndex].description;
         document.getElementById('dateInput').value = tasks.task[taskIndex].dueDate;
         document.getElementById('statusSelect').value = tasks.task[taskIndex].status;
-
         const options = document.getElementById('assignedToMultipleSelect').options;
         for (let i = 0; i < options.length; i++) {
             if (tasks.task[taskIndex].assignedTo[i] !== '')
@@ -187,3 +186,10 @@ document.getElementById('todo').addEventListener("click", (event) => {
         }
     }
 });
+
+//reset modal title for new task
+document.getElementById("addBtn").addEventListener("click", () =>{
+document.getElementById("addTaskModalTitle").innerHTML = "Create a new task"
+resetForm()
+})
+

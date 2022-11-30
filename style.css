@@ -101,10 +101,15 @@ footer {
 #addBtn {
     border-width: thick !important;
     background-color: palevioletred;
+    color: black;
+    font-weight: bold;
+    border-radius: 35px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #addBtn:hover {
     background-color: wheat;
+    color:orangered;
 }
 
 .formPara {
