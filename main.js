@@ -159,22 +159,31 @@ document.getElementById('todo').addEventListener("click", (event) => {
     console.log(taskId);
     console.log(taskIndex);
 
-    if (eventTarget === 'doneBtn') {
+    if (eventTarget === 'doneBtn'){
+        let markDoneConfirm = confirm('Are you sure want to mark this task as done?');
+        if (markDoneConfirm){
         tasks.doneTask(taskIndex);
         document.getElementById(`card-body-${taskId}`).style.backgroundImage = 'url(images/Sticky-Note-02-Green.svg)';
         event.target.style.visibility = 'hidden';
         window.localStorage.setItem('tasks', JSON.stringify(tasks));
         refreshTaskCard();
+        }
     } else if (eventTarget === 'deleteBtn') {
+        let deleteConfirm = confirm('Are you sure you want to delete this task?');
+        if (deleteConfirm) {
         console.log(taskIndex);
         console.log(tasks);
         tasks.deleteTask(taskIndex);
         window.localStorage.setItem('tasks', JSON.stringify(tasks));
         refreshTaskCard();
+    } else {
+        alert('Action cancelled. Task was not deleted.');
+    }
     } else if (eventTarget === 'editBtn') {
         actionCode = taskIndex;
         document.getElementById('addTaskModalTitle').innerHTML = 'Edit Task';
         console.log('Edit button clicked!');
+        $("#addTaskModal").modal("show")
         document.getElementById('taskNameInput').value = tasks.task[taskIndex].name;
         document.getElementById('taskDescriptionTextarea').value = tasks.task[taskIndex].description;
         document.getElementById('dateInput').value = tasks.task[taskIndex].dueDate;
