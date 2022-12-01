@@ -42,167 +42,177 @@
 <!--    <a class="navbar-brand" href="#">Sticky top</a>-->
 <!--</nav>-->
 <!-- Jumbotron -->
-    <div class="jumbotron jumbotron-fluid" style="width: 100%;">
-        <div class="text-center my-5" id="titleDiv">
-            <br>
-            <h1 class="font-weight-bold" id="simpleTodo">&#x2B50;Simple To-do List&#x2B50;</h1>
-            <h5 class="font-italic font-weight-bold mt-o">A simple To-do List manager for you and your group.</h5>
-            <br>
-        </div>
-        <div class="font-weight-normal text-center rounded" id="dateAndTime">
-            <p id="dateContainer"></p>
-            <p id="clockContainer"></p>
-            <p id="timezoneContainer"></p>
-        </div>
-    </div> 
+<div class="jumbotron jumbotron-fluid" style="width: 100%;">
+    <div class="text-center my-5" id="titleDiv">
+        <br>
+        <h1 class="font-weight-bold" id="simpleTodo">&#x2B50;Simple To-do List&#x2B50;</h1>
+        <h5 class="font-italic font-weight-bold mt-o">A simple To-do List manager for you and your group.</h5>
+        <br>
+    </div>
+    <div class="font-weight-normal text-center rounded" id="dateAndTime">
+        <p id="dateContainer"></p>
+        <p id="clockContainer"></p>
+        <p id="timezoneContainer"></p>
+    </div>
+</div>
 
- <!--vertical nav area-->
+<!--vertical nav area-->
 <div class="container-fluid">
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
-     <!-- Container One-->
-    <div class="container-fluid" id="container-one">
-    <!--Form-->
-    <div class="formPara">
-        <!-- Button trigger form modal -->
-        <button type="button" style = "line-height: 2.1em;"class="btn btn-outline-primary border-dark" data-toggle="modal" data-target="#addTaskModal" id="addBtn">
-            <span style = "font-size:3.2em">&#x1F4DD</span>
-            <br><span style = "font-size:1.5em">&#x2795</span>
-            <br><span>Add new task</span>
-        </button>
-    </div>
-    <!--Form modal-->
-    <div class="modal fade" data-backdrop="static" tabindex="-1" role="dialog" id="addTaskModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addTaskModalTitle"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+            <!-- Container One-->
+            <div class="container-fluid" id="container-one">
+                <!--Form-->
+                <div class="formPara">
+                    <!-- Button trigger form modal -->
+                    <button type="button" style="line-height: 2.1em;" class="btn btn-outline-primary border-dark"
+                            data-toggle="modal" data-target="#addTaskModal" id="addBtn">
+                        <span style="font-size:3.2em">&#x1F4DD</span>
+                        <br><span style="font-size:1.5em">&#x2795</span>
+                        <br><span>Add new task</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-12">
-                            <form class="bg-light mx-5 border-light" id="taskForm"><!--action="url" method="post"-->
-                                <div class="form-group">
-                                    <label for="taskNameInput">Task Name</label>
-                                    <input type="text" class="form-control"
-                                           placeholder="Type in task name here (8 characters max.)"
-                                           id="taskNameInput"/>
-                                    <span class="errorMsg" id="errorMsgTaskName">*Task Name must not be empty or longer than 8 characters.</span>
+                <!--Form modal-->
+                <div class="modal fade" data-backdrop="static" tabindex="-1" role="dialog" id="addTaskModal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addTaskModalTitle"></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <form class="bg-light mx-5 border-light" id="taskForm">
+                                            <!--action="url" method="post"-->
+                                            <div class="form-group">
+                                                <label for="taskNameInput">Task Name</label>
+                                                <input type="text" class="form-control"
+                                                       placeholder="Type in task name here (8 characters max.)"
+                                                       id="taskNameInput"/>
+                                                <span class="errorMsg" id="errorMsgTaskName">*Task Name must not be empty or longer than 8 characters.</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="taskDescriptionTextarea">Task Description</label>
+                                                <textarea class="form-control" rows="3"
+                                                          placeholder="Describe your task briefly (15 characters max.)"
+                                                          id="taskDescriptionTextarea"></textarea>
+                                                <span class="errorMsg" id="errorMsgDescription">*Must not be blank;<br>*Maximum length: 15 characters.</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="assignedToMultipleSelect">Assigned to [Press and hold CTRL
+                                                    to
+                                                    select/unselect one or more choice(s)]</label>
+                                                <select multiple class="form-control" id="assignedToMultipleSelect">
+                                                    <option value="Albus Dumbledore">Albus Dumbledore</option>
+                                                    <option value="Bellatrix Lestrange">Bellatrix Lestrange</option>
+                                                    <option value="Draco Malfoy">Draco Malfoy</option>
+                                                    <option value="Harry Potter">Harry Potter</option>
+                                                    <option value="Hermione Granger">Hermione Granger</option>
+                                                    <option value="Marvolo Riddle">Marvolo Riddle</option>
+                                                    <option value="Neville Longbottom">Neville Longbottom</option>
+                                                    <option value="Ron Weasley">Ron Weasley</option>
+                                                    <option value="Severus Snape">Severus Snape</option>
+                                                    <option value="Sirius Black">Sirius Black</option>
+                                                </select>
+                                                <span class="errorMsg"
+                                                      id="errorMsgAssignedTo">*Must select at least one person.</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="dateInput">Due Date</label>
+                                                <input type="date" class="form-control" id="dateInput">
+                                                <span class="errorMsg"
+                                                      id="errorMsgDate">*Due date must not be empty.<br>*Due date must be set in the future.</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="statusSelect">Status</label>
+                                                <select class="form-control" id="statusSelect">
+                                                    <option class="text-muted" value="" disabled selected hidden>
+                                                        --select here--
+                                                    </option>
+                                                    <option value="To Do">To Do</option>
+                                                    <option value="In Progress">In Progress</option>
+                                                    <option value="Review">Review</option>
+                                                    <option value="Done">Done</option>
+                                                </select>
+                                                <span class="errorMsg"
+                                                      id="errorMsgStatus">*Status must be selected.</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary" id="submit">Submit
+                                                </button>
+                                                <button type="button" class="btn btn-primary" id="clear">Clear</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="taskDescriptionTextarea">Task Description</label>
-                                    <textarea class="form-control" rows="3"
-                                              placeholder="Describe your task briefly (15 characters max.)"
-                                              id="taskDescriptionTextarea"></textarea>
-                                    <span class="errorMsg" id="errorMsgDescription">*Must not be blank;<br>*Maximum length: 15 characters.</span>
+                                <div class="modal-footer">
                                 </div>
-                                <div class="form-group">
-                                    <label for="assignedToMultipleSelect">Assigned to [Press and hold CTRL to
-                                        select/unselect one or more choice(s)]</label>
-                                    <select multiple class="form-control" id="assignedToMultipleSelect">
-                                        <option value="Albus Dumbledore">Albus Dumbledore</option>
-                                        <option value="Bellatrix Lestrange">Bellatrix Lestrange</option>
-                                        <option value="Draco Malfoy">Draco Malfoy</option>
-                                        <option value="Harry Potter">Harry Potter</option>
-                                        <option value="Hermione Granger">Hermione Granger</option>
-                                        <option value="Marvolo Riddle">Marvolo Riddle</option>
-                                        <option value="Neville Longbottom">Neville Longbottom</option>
-                                        <option value="Ron Weasley">Ron Weasley</option>
-                                        <option value="Severus Snape">Severus Snape</option>
-                                        <option value="Sirius Black">Sirius Black</option>
-                                    </select>
-                                    <span class="errorMsg"
-                                          id="errorMsgAssignedTo">*Must select at least one person.</span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="dateInput">Due Date</label>
-                                    <input type="date" class="form-control" id="dateInput">
-                                    <span class="errorMsg" id="errorMsgDate">*Due date must not be empty.<br>*Due date must be set in the future.</span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="statusSelect">Status</label>
-                                    <select class="form-control" id="statusSelect">
-                                        <option class="text-muted" value="" disabled selected hidden>--select here--
-                                        </option>
-                                        <option value="To Do">To Do</option>
-                                        <option value="In Progress">In Progress</option>
-                                        <option value="Review">Review</option>
-                                        <option value="Done">Done</option>
-                                    </select>
-                                    <span class="errorMsg" id="errorMsgStatus">*Status must be selected.</span>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-                                    <button type="button" class="btn btn-primary" id="clear">Clear</button>
-                                </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
+                </div>
+
+                <!--Container Two-->
+                <div class="container-fluid" id="cardsContainer">
+                    <div class="col-12">
+                        <br>
+                        <h3 class="font-weight-light text-center" id="taskTitle">&#x2B07 Once added, tasks will appear
+                            here.&#x2B07</h3>
+                        <br>
+                        <div class="row justify-content-center mx-10 flex-wrap" id="legend-of-color">
+                            <a class="legend-item" href="#ToDo" id="legend-todo" style="background-color: #FFFF90;">&#x1F4CC<br>Todo</a>
+                            <a class="legend-item" href="#InProgress" id="legend-progress"
+                               style="background-color: #FCC3C9;">&#x1F4CC<br>Progress</a>
+                            <a class="legend-item" href="#Review" id="legend-review" style="background-color: #DC88DD;">&#x1F4CC<br>Review</a>
+                            <a class="legend-item" href="#Done" id="legend-done" style="background-color: #CAED9D;">&#x1F4CC<br>Done</a>
+                        </div>
+                        <h5 class="text-center font-italic" id="legend-text">
+                            Tasks cards will be ordered by status.
+                            (<span style="background-color:#FFFF90;">To do</span> > <span
+                                style="background-color:#FCC3C9;">In Progress</span>
+                            > <span style="background-color:#DC88DD;">Review</span> > <span
+                                style="background-color:#CAED9D;">Done</span>)
+                        </h5>
+                    </div>
+                    <!--Current Tasks (cards)-->
+                    <div class="row justify-content-center mx-10 flex-wrap" style="gap: 10px;" id="taskCards">
+                        <div class="row cardHolder" style="width: 100%;" id="ToDo"></div>
+                        <div class="row cardHolder" style="width: 100%;" id="InProgress"></div>
+                        <div class="row cardHolder" style="width: 100%;" id="Review"></div>
+                        <div class="row cardHolder" style="width: 100%;" id="Done"></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-<!--Container Two-->
-<div class="container-fluid" id="cardsContainer">
-    <div class="col-12">
-        <br>
-        <h3 class="font-weight-light text-center" id="taskTitle">&#x2B07 Once added, tasks will appear
-            here.&#x2B07</h3>
-        <br>
-        <div class="row justify-content-center mx-10 flex-wrap" id="legend-of-color">
-            <a class="legend-item" href="#todo-row" id="legend-todo" style="background-color: #FFFF90;">&#x1F4CC<br>Todo</a>
-            <a class="legend-item" href="#progress-row" id="legend-progress" style="background-color: #FCC3C9;">&#x1F4CC<br>Progress</a>
-            <a class="legend-item" href="#review-row" id="legend-review" style="background-color: #DC88DD;">&#x1F4CC<br>Review</a>
-            <a class="legend-item" href="#done-row" id="legend-done" style="background-color: #CAED9D;">&#x1F4CC<br>Done</a>
-        </div>
-        <h5 class="text-center font-italic" id="legend-text">
-            Tasks cards will be ordered by status. 
-            (<span style = "background-color:#FFFF90;">To do</span> > <span style = "background-color:#FCC3C9;">In Progress</span> 
-            > <span style = "background-color:#DC88DD;">Review</span> > <span style = "background-color:#CAED9D;">Done</span>)
-        </h5>
-    </div>
-    <!--Current Tasks (cards)-->
-    <div class="row justify-content-center mx-10 flex-wrap" style="gap: 10px;" id="taskCards">
-        <div class = "row" style="width: 100%;" id = "ToDo"></div>
-        <div class = "row" style="width: 100%;" id = "InProgress"></div>
-        <div class = "row" style="width: 100%;" id = "Review"></div>
-        <div class = "row" style="width: 100%;" id = "Done"></div>
-    </div>
-</div>
-        </div>
-        </div>
         <!--nav bar vertical-->
-        <div class="col-1" style = "display:flex; justify-content: center; align-items:flex-start;">
-            <ul class="nav flex-column" style = "position:sticky; top: 50%; margin-top: 0em;">            
+        <div class="col-1" style="display:flex; justify-content: center; align-items:flex-start;">
+            <ul class="nav flex-column" style="position:sticky; top: 50%; margin-top: 0;">
                 <li class="nav-item">
                     <span>Go to:</span>
-                  </li>
+                </li>
                 <li class="nav-item" style="background-color:palevioletred">
-                  <a class="nav-link active" href="#container-one">Top</a>
+                    <a class="nav-link active" href="#container-one">Top</a>
                 </li>
                 <li class="nav-item" style="background-color: #FFFF90;;">
-                  <a class="nav-link" href="#todo-row">To Do</a>
+                    <a class="nav-link" href="#ToDo">To Do</a>
                 </li>
                 <li class="nav-item" style="background-color: #FCC3C9;">
-                  <a class="nav-link" href="#progress-row">Progress</a>
+                    <a class="nav-link" href="#InProgress">Progress</a>
                 </li>
                 <li class="nav-item" style="background-color: #DC88DD;">
-                  <a class="nav-link" href="#review-row">Review</a>
+                    <a class="nav-link" href="#Review">Review</a>
                 </li>
                 <li class="nav-item" style="background-color: #CAED9D;">
-                    <a class="nav-link" href="#done-row">Done</a>
-                  </li>
-                  <li class="nav-item" style="background-color: grey;">
+                    <a class="nav-link" href="#Done">Done</a>
+                </li>
+                <li class="nav-item" style="background-color: grey;">
                     <a class="nav-link" href="#footer">Footer</a>
-                  </li>
-              </ul>
+                </li>
+            </ul>
 
         </div>
     </div>
@@ -210,9 +220,10 @@
 
 <!--filler-->
 <div class="filler">
-<!-- Footer -->
+    <!-- Footer -->
     <footer class="container-fluid" id="footer">
-        <p class="font-italic font-weight-normal text-center" style="margin-bottom:0.5em;">2022 Simple To-do List &copy;</p>
+        <p class="font-italic font-weight-normal text-center" style="margin-bottom:0.5em;">2022 Simple To-do List
+            &copy;</p>
         <a rel="noreferrer noopener" href="https://github.com/iamxinyijiang/Group-Project-One" target="_blank"
            class="text-white" id="Github-link">
             <img src="images/GitHub-Mark-Light-32px.png" style="width:1em; height: 1em;" alt="Github logo">
@@ -240,6 +251,7 @@
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"
 ></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
 </html>
