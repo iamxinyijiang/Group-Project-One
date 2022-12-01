@@ -39,21 +39,26 @@
 
 <body>
 <!-- Jumbotron -->
-<div class="jumbotron jumbotron-fluid">
-    <div class="text-center my-5" id="titleDiv">
-        <br>
-        <h1 class="font-weight-bold" id="simpleTodo">&#x2B50;Simple To-do List&#x2B50;</h1>
-        <h5 class="font-italic font-weight-bold mt-o">A simple To-do List manager for you and your group.</h5>
-        <br>
-    </div>
-    <div class="font-weight-normal text-center rounded" id="dateAndTime">
-        <p id="dateContainer"></p>
-        <p id="clockContainer"></p>
-        <p id="timezoneContainer"></p>
-    </div>
-</div>
 
-<!-- Container One-->
+    <div class="jumbotron jumbotron-fluid" style="width: 100%;">
+        <div class="text-center my-5" id="titleDiv">
+            <br>
+            <h1 class="font-weight-bold" id="simpleTodo">&#x2B50;Simple To-do List&#x2B50;</h1>
+            <h5 class="font-italic font-weight-bold mt-o">A simple To-do List manager for you and your group.</h5>
+            <br>
+        </div>
+        <div class="font-weight-normal text-center rounded" id="dateAndTime">
+            <p id="dateContainer"></p>
+            <p id="clockContainer"></p>
+            <p id="timezoneContainer"></p>
+        </div>
+    </div> 
+
+ <!--vertical nav area-->
+<div class="container-fluid" style="border: 2px solid red;">
+    <div class="row">
+        <div class="col-11">
+            <!-- Container One-->
 <div class="container-fluid" id="container-one">
     <!--Form-->
     <div class="formPara">
@@ -150,9 +155,9 @@
             here.&#x2B07</h3>
         <br>
         <div class="row justify-content-center mx-10 flex-wrap" id="legend-of-color">
-            <a class="legend-item" href="#todo-row" id="legend-todo" style="background-color: #FFFF90;">&#x1F4CC<br>To do</a>
-            <a class="legend-item" href="#progress-row" id="legend-progress" style="background-color: #FCC3C9;">&#x1F4CC<br>In progress</a>
-            <a class="legend-item" href="#review-row" id="legend-review" style="background-color: #DC88DD;">&#x1F4CC<br>Under review</a>
+            <a class="legend-item" href="#todo-row" id="legend-todo" style="background-color: #FFFF90;">&#x1F4CC<br>Todo</a>
+            <a class="legend-item" href="#progress-row" id="legend-progress" style="background-color: #FCC3C9;">&#x1F4CC<br>Progress</a>
+            <a class="legend-item" href="#review-row" id="legend-review" style="background-color: #DC88DD;">&#x1F4CC<br>Review</a>
             <a class="legend-item" href="#done-row" id="legend-done" style="background-color: #CAED9D;">&#x1F4CC<br>Done</a>
         </div>
         <h5 class="text-center font-italic" id="legend-text">
@@ -162,13 +167,40 @@
         </h5>
     </div>
     <!--Current Tasks (cards)-->
-    <div class="row justify-content-center mx-10 flex-wrap" style="gap: 5px;" id="todo">
+    <div class="row justify-content-center mx-10 flex-wrap" style="gap: 10px;" id="todo">
         <div class = "row" style="width: 100%;" id = "todo-row"></div>
         <div class = "row" style="width: 100%;" id = "progress-row"></div>
         <div class = "row" style="width: 100%;" id = "review-row"></div>
         <div class = "row" style="width: 100%;" id = "done-row"></div>
     </div>
 </div>
+        </div>
+        <!--nav bar vertical-->
+        <div class="col-1" style = "display:flex; justify-content: center; align-items:flex-start;">
+            <ul class="nav flex-column" style = "position:sticky; top: 50%; margin-top: 30em;">            
+                <li class="nav-item">
+                    <span>Go to:</span>
+                  </li>
+                <li class="nav-item" style="background-color:palevioletred">
+                  <a class="nav-link active" href="#container-one">Top</a>
+                </li>
+                <li class="nav-item" style="background-color: #FFFF90;;">
+                  <a class="nav-link" href="#todo-row">To Do</a>
+                </li>
+                <li class="nav-item" style="background-color: #FCC3C9;">
+                  <a class="nav-link" href="#progress-row">Progress</a>
+                </li>
+                <li class="nav-item" style="background-color: #DC88DD;">
+                  <a class="nav-link" href="#review-row">Review</a>
+                </li>
+                <li class="nav-item" style="background-color: #CAED9D;">
+                    <a class="nav-link" href="#done-row">Done</a>
+                  </li>
+              </ul>
+        </div>
+    </div>
+</div>
+
 <!--filler-->
 <div class="filler">
 <!--back button-->
