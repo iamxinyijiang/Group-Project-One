@@ -16,23 +16,23 @@ function dataValidate(inputs) {
         switch (input.id) {
             case 'taskNameInput':
                 subValid = input.value.trim() !== '' && input.value.length <= 8;
-                valid = valid && subValid;
+                valid = valid && input.value.trim() !== '' && input.value.length <= 8;
                 break;
             case 'taskDescriptionTextarea':
                 subValid = input.value.trim() !== '' && input.value.length <= 15;
-                valid = valid && subValid;
+                valid = valid && input.value.trim() !== '' && input.value.length <= 15;
                 break;
             case 'assignedToMultipleSelect':
                 subValid = input.selectedIndex !== -1;
-                valid = valid && subValid;
+                valid = valid && input.selectedIndex !== -1;
                 break;
             case 'dateInput':
                 subValid = input.value > formatDateStr(new Date());
-                valid = valid && subValid;
+                valid = valid && input.value > formatDateStr(new Date());
                 break;
             case 'statusSelect':
                 subValid = input.selectedIndex !== 0;
-                valid = valid && subValid;
+                valid = valid && input.selectedIndex !== 0;
                 break;
         }
 
@@ -84,14 +84,11 @@ window.addEventListener("load", () => {
     }, 500);
     //render when window load
     if (window.localStorage.getItem('tasks') !== null) {
-        const tasks_back = JSON.parse(window.localStorage.getItem('tasks'));
-        tasks.id = tasks_back._id;
-        tasks.task = tasks_back._task;
+        const tasksData = JSON.parse(window.localStorage.getItem('tasks'));
+        tasks.id = tasksData._id;
+        tasks.task = tasksData._task;
         refreshTaskCard(tasks);
     }
-    // for (let i = 0; i < tasks.task.length; i++) {
-    //     render(tasks.task[i]);
-    // }
 });
 
 document.getElementById('addBtn').addEventListener("click", () => {
@@ -149,31 +146,56 @@ document.getElementById("submit").addEventListener('click', (event) => {
 document.getElementById('clear').addEventListener('click', resetForm);
 
 //set task status to Done update local storage data render task card
-
 document.getElementById('taskCards').addEventListener("click", (event) => {
     const eventTarget = event.target.id.substring(0, event.target.id.indexOf('-'));
     const taskId = event.target.id.substring(event.target.id.indexOf('-') + 1);
     const taskIndex = tasks.task.findIndex((element) => element.id === parseInt(taskId));
 
     if (eventTarget === 'doneBtn') {
-        let markDoneConfirm = confirm('Are you sure want to mark this task as done?');
-        if (markDoneConfirm) {
-            tasks.doneTask(taskIndex);
-            // document.getElementById(`card-body-${taskId}`).style.backgroundImage = 'url(images/Sticky-Note-02-Green.svg)';
-            // event.target.style.visibility = 'hidden';
-            window.localStorage.setItem('tasks', JSON.stringify(tasks));
-            refreshTaskCard(tasks);
-        }
+        swal({
+            // title: "Alert!",
+            text: "Are you sure want to mark this task as done?",
+            icon: "info",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDone) => {
+            if (willDone) {
+                tasks.doneTask(taskIndex);
+                window.localStorage.setItem('tasks', JSON.stringify(tasks));
+                refreshTaskCard(tasks);
+                swal({
+                    icon: "success",
+                    button: false,
+                    timer: 2000,
+                });
+            }
+        });
     } else if (eventTarget === 'deleteBtn') {
-        let deleteConfirm = confirm('Are you sure you want to delete this task?');
-        if (deleteConfirm) {
-            alert('Task deleted successfully!');
-            tasks.deleteTask(taskIndex);
-            window.localStorage.setItem('tasks', JSON.stringify(tasks));
-            refreshTaskCard(tasks);
-        } else {
-            alert('Action cancelled. Task was not deleted.');
-        }
+        swal({
+            // title: "Alert!",
+            text: "Are you sure you want to delete this task?",
+            icon: "warning",
+            closeOnClickOutside: false,
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                tasks.deleteTask(taskIndex);
+                window.localStorage.setItem('tasks', JSON.stringify(tasks));
+                refreshTaskCard(tasks);
+                swal("Task deleted successfully!", {
+                    icon: "success",
+                    button: false,
+                    timer: 2000,
+                });
+            } else {
+                swal("Action cancelled. Task was not deleted.", {
+                    icon: "info",
+                    button: false,
+                    timer: 2000,
+                });
+            }
+        });
     } else if (eventTarget === 'editBtn') {
         actionCode = taskIndex;
         document.getElementById('addTaskModalTitle').innerHTML = 'Edit Task';
