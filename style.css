@@ -17,7 +17,7 @@
 */
 html, body {
     height: 100%;
-    min-width: 321px;
+    min-width: 365px;
     width: 100%;
     margin: 0;
     background-color: lightsteelblue;
@@ -130,9 +130,9 @@ footer {
 
 .legend-item {
     display: flex;
-    width: 7em;
-    height: 7em;
-    margin: 0 3em 3em;
+    width: 100px;
+    aspect-ratio: 1 / 1; 
+    margin: 0 2em 2em;
     padding: 2em;
     font-size: small;
     font-weight: bold;
@@ -179,9 +179,13 @@ footer {
     display: none;
 }
 
-#Github-link {
+#Github-link,#back-to-top-link {
     display: flex;
     justify-content: center;
+}
+#back-to-top-link{
+    color: wheat;
+    font-weight: bold;
 }
 
 .card-body {
@@ -194,3 +198,15 @@ footer {
     text-decoration: underline;
 }
 
+.nav-item{
+    border-radius: 5%;
+    width: 7em;
+    font-size: 0.6em;
+    color: darkslategray;
+    font-weight: bold;
+    margin-left: 1.5em; 
+}
+.nav-item:hover{
+    transform: scale(1.1);
+    border:1.5px solid ghostwhite;
+}
