@@ -179,9 +179,13 @@ footer {
     display: none;
 }
 
-#Github-link {
+#Github-link,#back-to-top-link {
     display: flex;
     justify-content: center;
+}
+#back-to-top-link{
+    color: wheat;
+    font-weight: bold;
 }
 
 .card-body {
