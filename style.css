@@ -58,8 +58,8 @@ html, body {
     text-shadow: 1px 1px 2px wheat;
 }
 
-#taskTitle{
-    font-family:'Lobster Two', cursive;
+#taskTitle {
+    font-family: 'Lobster Two', cursive;
 }
 
 footer {
@@ -104,12 +104,12 @@ footer {
     color: black;
     font-weight: bold;
     border-radius: 35px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #addBtn:hover {
     background-color: wheat;
-    color:orangered;
+    color: orangered;
 }
 
 .formPara {
@@ -151,7 +151,7 @@ footer {
     font-size: 21px;
 }
 
-#todo {
+#taskCards {
     padding-bottom: 20px;
     overflow: auto;
 }
@@ -194,7 +194,7 @@ footer {
     border: none;
 }
 
-#cardTaskName{
+#cardTaskName {
     text-decoration: underline;
 }
 
