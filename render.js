@@ -23,13 +23,15 @@ function createTaskHTML(task) {
             break;
     }
 
-    return `<div class="col-12 col-sm-6 col-lg-3 col-xl-2 mx-1" style="margin:2em !important;" id="cardWrapper-${task.id}">
+    return `<div class="col-12 col-sm-6 col-lg-2 mx-5" style="margin:2em !important;" id="cardWrapper-${task.id}">
                 <div class="card mx-0" style="width: 15rem; background-color: lightsteelblue; border:none; max-width:250px;">
                     <div class="card-body mx-auto" style="background-color: ${statusColor};" id="card-body-${task.id}">
                         <div id="taskDetail-${task.id}">
-                            <h5 class="card-title" id="cardTaskName">&#x1F4CC&emsp;${task.name}</h5>
-                            <p class="card-text">。${task.description}</p>
-                            <p class="card-text">。Due on:<br>&emsp;${task.dueDate}</p>
+                        <h5 class="card-title"  id="cardTaskName">&#x1F4CC&emsp;${task.name}</h5>
+                        <p class="card-text">。${task.description}</p>
+                        <p class="card-text">。Assigned to:<br>&emsp;${task.assignedTo.filter(name => name !== '').join(',<br>&emsp;')}</p>
+                        <p class="card-text">。Due on:<br>&emsp;${task.dueDate}</p>
+                        <p class="card-text">。Status:<br>&emsp;${task.status}</p>
                         </div>
                         <!-- Button trigger modal -->
                         <button type="button" class="card-button btn btn-outline-success"
