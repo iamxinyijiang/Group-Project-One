@@ -32,7 +32,7 @@ function createTaskHTML(task) {
     }
 
     return `<div class="col-12 col-sm-6 col-lg-3 col-xl-2 mx-1" style="margin:2em !important; order: ${flexOrder}" id="cardWrapper-${task.id}">    
-                <div class="card mx-0" style="width: 15rem; background-color: lightsteelblue; border:none; max-width:270px;">
+                <div class="card mx-0" style="width: 15rem; background-color: lightsteelblue; border:none; max-width:250px;">
                     <div class="card-body mx-auto" style="background-image: url(${stickyNote});" id="card-body-${task.id}">
                         <div id="taskDetail-${task.id}">
                             <h5 class="card-title"  id="cardTaskName">&#x1F4CC ${task.name}</h5>
