@@ -157,10 +157,10 @@
             here.&#x2B07</h3>
         <br>
         <div class="row justify-content-center mx-10 flex-wrap" id="legend-of-color">
-            <a class="legend-item" href="#todo-row" id="legend-todo" style="background-color: #FFFF90;">&#x1F4CC<br>Todo</a>
-            <a class="legend-item" href="#progress-row" id="legend-progress" style="background-color: #FCC3C9;">&#x1F4CC<br>Progress</a>
-            <a class="legend-item" href="#review-row" id="legend-review" style="background-color: #DC88DD;">&#x1F4CC<br>Review</a>
-            <a class="legend-item" href="#done-row" id="legend-done" style="background-color: #CAED9D;">&#x1F4CC<br>Done</a>
+            <a class="legend-item" href="#ToDo" id="legend-todo" style="background-color: #FFFF90;">&#x1F4CC<br>Todo</a>
+            <a class="legend-item" href="#InProgress" id="legend-progress" style="background-color: #FCC3C9;">&#x1F4CC<br>Progress</a>
+            <a class="legend-item" href="#Review" id="legend-review" style="background-color: #DC88DD;">&#x1F4CC<br>Review</a>
+            <a class="legend-item" href="#Done" id="legend-done" style="background-color: #CAED9D;">&#x1F4CC<br>Done</a>
         </div>
         <h5 class="text-center font-italic" id="legend-text">
             Tasks cards will be ordered by status. 
@@ -170,10 +170,10 @@
     </div>
     <!--Current Tasks (cards)-->
     <div class="row justify-content-center mx-10 flex-wrap" style="gap: 10px;" id="taskCards">
-        <div class = "row" style="width: 100%;" id = "ToDo"></div>
-        <div class = "row" style="width: 100%;" id = "InProgress"></div>
-        <div class = "row" style="width: 100%;" id = "Review"></div>
-        <div class = "row" style="width: 100%;" id = "Done"></div>
+        <div class = "row cardHolder" style="width: 100%;" id = "ToDo"></div>
+        <div class = "row cardHolder" style="width: 100%;" id = "InProgress"></div>
+        <div class = "row cardHolder" style="width: 100%;" id = "Review"></div>
+        <div class = "row cardHolder" style="width: 100%;" id = "Done"></div>
     </div>
 </div>
         </div>
@@ -188,16 +188,16 @@
                   <a class="nav-link active" href="#container-one">Top</a>
                 </li>
                 <li class="nav-item" style="background-color: #FFFF90;;">
-                  <a class="nav-link" href="#todo-row">To Do</a>
+                  <a class="nav-link" href="#ToDo">To Do</a>
                 </li>
                 <li class="nav-item" style="background-color: #FCC3C9;">
-                  <a class="nav-link" href="#progress-row">Progress</a>
+                  <a class="nav-link" href="#InProgress">Progress</a>
                 </li>
                 <li class="nav-item" style="background-color: #DC88DD;">
-                  <a class="nav-link" href="#review-row">Review</a>
+                  <a class="nav-link" href="#Review">Review</a>
                 </li>
                 <li class="nav-item" style="background-color: #CAED9D;">
-                    <a class="nav-link" href="#done-row">Done</a>
+                    <a class="nav-link" href="#Done">Done</a>
                   </li>
                   <li class="nav-item" style="background-color: grey;">
                     <a class="nav-link" href="#footer">Footer</a>

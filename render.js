@@ -113,7 +113,7 @@ function render(task) {
 }
 
 function refreshTaskCard(tasks) {
-    const cardHolders = document.getElementsByClassName('cardHolder');
+    const cardHolders = document.getElementsByClassName('row cardHolder');
     for (const cardHolder of cardHolders) {
         cardHolder.innerHTML = ''
     }
