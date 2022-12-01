@@ -1,9 +1,6 @@
-//testing code to see if main.js is linked
-console.log('main.js is running.');
-
 //import from module
-import { TaskManager } from "./taskManager.js";
-import { render, refreshTaskCard } from "./render.js";
+import {TaskManager} from "./taskManager.js";
+import {refreshTaskCard} from "./render.js";
 
 let actionCode;
 //define tasks object contain all tasks
@@ -72,7 +69,7 @@ window.addEventListener("load", () => {
         const d = new Date();
         let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         let dateReading = `&#128198 ${d.toLocaleDateString(
-            'default', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}`;
+            'default', {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'})}`;
         let timeReading = `&#8986 ${d.toLocaleTimeString('default', {
             hour12: true,
             hour: '2-digit',
@@ -90,10 +87,11 @@ window.addEventListener("load", () => {
         const tasks_back = JSON.parse(window.localStorage.getItem('tasks'));
         tasks.id = tasks_back._id;
         tasks.task = tasks_back._task;
+        refreshTaskCard(tasks);
     }
-    for (let i = 0; i < tasks.task.length; i++) {
-        render(tasks.task[i]);
-    }
+    // for (let i = 0; i < tasks.task.length; i++) {
+    //     render(tasks.task[i]);
+    // }
 });
 
 document.getElementById('addBtn').addEventListener("click", () => {
@@ -143,7 +141,7 @@ document.getElementById("submit").addEventListener('click', (event) => {
         $('body').removeClass('modal-open');
         $('.modal-backdrop').remove();
         window.localStorage.setItem('tasks', JSON.stringify(tasks));
-        refreshTaskCard();
+        refreshTaskCard(tasks);
     }
 }, false);
 
@@ -152,39 +150,33 @@ document.getElementById('clear').addEventListener('click', resetForm);
 
 //set task status to Done update local storage data render task card
 
-document.getElementById('todo').addEventListener("click", (event) => {
+document.getElementById('taskCards').addEventListener("click", (event) => {
     const eventTarget = event.target.id.substring(0, event.target.id.indexOf('-'));
     const taskId = event.target.id.substring(event.target.id.indexOf('-') + 1);
     const taskIndex = tasks.task.findIndex((element) => element.id === parseInt(taskId));
-    console.log(taskId);
-    console.log(taskIndex);
 
     if (eventTarget === 'doneBtn') {
         let markDoneConfirm = confirm('Are you sure want to mark this task as done?');
         if (markDoneConfirm) {
             tasks.doneTask(taskIndex);
-            document.getElementById(`card-body-${taskId}`).style.backgroundImage = 'url(images/Sticky-Note-02-Green.svg)';
-            event.target.style.visibility = 'hidden';
+            // document.getElementById(`card-body-${taskId}`).style.backgroundImage = 'url(images/Sticky-Note-02-Green.svg)';
+            // event.target.style.visibility = 'hidden';
             window.localStorage.setItem('tasks', JSON.stringify(tasks));
-            refreshTaskCard();
+            refreshTaskCard(tasks);
         }
     } else if (eventTarget === 'deleteBtn') {
         let deleteConfirm = confirm('Are you sure you want to delete this task?');
         if (deleteConfirm) {
             alert('Task deleted successfully!');
-            console.log(taskIndex);
-            console.log(tasks);
             tasks.deleteTask(taskIndex);
             window.localStorage.setItem('tasks', JSON.stringify(tasks));
-            refreshTaskCard();
+            refreshTaskCard(tasks);
         } else {
             alert('Action cancelled. Task was not deleted.');
         }
     } else if (eventTarget === 'editBtn') {
         actionCode = taskIndex;
         document.getElementById('addTaskModalTitle').innerHTML = 'Edit Task';
-        console.log('Edit button clicked!');
-        $("#addTaskModal").modal("show")
         document.getElementById('taskNameInput').value = tasks.task[taskIndex].name;
         document.getElementById('taskDescriptionTextarea').value = tasks.task[taskIndex].description;
         document.getElementById('dateInput').value = tasks.task[taskIndex].dueDate;
