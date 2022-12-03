@@ -1,6 +1,6 @@
 //import from module
-import {TaskManager} from "./taskManager.js";
-import {refreshTaskCard} from "./render.js";
+import { TaskManager } from "./taskManager.js";
+import { refreshTaskCard } from "./render.js";
 
 let actionCode;
 //define tasks object contain all tasks
@@ -69,7 +69,7 @@ window.addEventListener("load", () => {
         const d = new Date();
         let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         let dateReading = `&#128198 ${d.toLocaleDateString(
-            'default', {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'})}`;
+            'default', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}`;
         let timeReading = `&#8986 ${d.toLocaleTimeString('default', {
             hour12: true,
             hour: '2-digit',
@@ -209,6 +209,130 @@ document.getElementById('taskCards').addEventListener("click", (event) => {
                 options[i].selected = true;
         }
     }
+});
+
+//--------------------------------------------------------------------------beta features-----------------------------------------------------------------------------------//
+//allow local user to download a copy of their data from LS
+function downloadTaskDate(file) {
+    const link = document.createElement("a");
+    link.style.display = "none";
+    link.href = URL.createObjectURL(file);
+    link.download = file.name;
+
+    document.body.appendChild(link);
+    link.click();
+
+    setTimeout(() => {
+        URL.revokeObjectURL(link.href);
+        link.parentNode.removeChild(link);
+    }, 0);
+}
+//download as .txt
+const myFileTxt = new File([localStorage.getItem('tasks', JSON.stringify(tasks))], `tasks-${formatDateStr(new Date())}.txt`)
+document.getElementById("downloadTxt").addEventListener('click', () => {
+    downloadTaskDate(myFileTxt)
+});
+//download as .JSON
+const myFile = new File([localStorage.getItem('tasks', JSON.stringify(tasks))], `tasks-${formatDateStr(new Date())}.JSON`)
+document.getElementById("downloadJSON").addEventListener('click', () => {
+    downloadTaskDate(myFile)
+})
+
+
+//allow local user to rewrite the current task data with their own copy of task data downloaded previously from LS
+//manually copy and paste from.txt
+document.getElementById("overwrite").addEventListener('click', () => {
+    swal({
+        // title: "Alert!",
+        text: "Do you want to manually import tasks (this will overwrite all your current tasks)?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    }).then((willRestore) => {
+        if (willRestore) {
+            //localStorage.clear(); //clear to prevent mistake
+            let pasteTaskData = document.getElementById("restoreTextarea").value
+            window.localStorage.setItem('tasks', pasteTaskData);
+            $('#restoreModal').hide('hide');
+            $('body').removeClass('modal-open');
+            $('.modal-backdrop').remove();
+            swal({
+                icon: "success",
+                button: false,
+                timer: 2000,
+            });
+            setTimeout(() => {
+                window.location.reload()
+            }, 2000);
+        }
+    });
+});
+
+//upload JSON file to restore data 
+document.getElementById('file-selector').addEventListener('change', (event) => {
+    swal({
+        // title: "Alert!",
+        text: "Do you want to import tasks from JSON file(this will overwrite all your current tasks)?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+
+    }).then((willUpload) => {
+        if (willUpload) {
+            const fileList = event.target.files;
+            let getFileFromFileList = (fileList) => {
+                for (const file of fileList) {
+                    const reader = new FileReader();
+                    reader.readAsText(file);
+                    reader.addEventListener('load', (event) => {
+                        //localStorage.clear();//clear to prevent mistake
+                        window.localStorage.setItem('tasks', event.target.result);
+                    });
+                }
+            }
+            getFileFromFileList(fileList)
+            swal({
+                icon: "success",
+                button: false,
+                timer: 2000,
+            });
+            setTimeout(() => {
+                window.location.reload()
+            }, 2000);
+        }
+    })
+});
+
+// Undo Upload
+document.getElementById('undo').addEventListener("click", () => {
+    fileSelector.value = "";
+});
+
+//clear local storage
+document.getElementById('clearLS').addEventListener('click', () => {
+    swal({
+        // title: "Alert!",
+        text: "Do you want to permanently delete all tasks ?  (We suggest downloading a copy before this.)",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    }).then((willDeleteAll) => {
+        if (willDeleteAll) {
+            localStorage.clear();
+            setTimeout(() => {
+                window.location.reload()
+            }, 1000);
+            swal({
+                icon: "success",
+                button: false,
+                timer: 2000,
+            });
+            setTimeout(() => {
+                window.location.reload()
+            }, 2000);
+        }
+    });
+
 });
 
 

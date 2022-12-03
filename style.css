@@ -1,7 +1,9 @@
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -15,7 +17,8 @@
 /*
   3. Allow percentage-based heights in the application
 */
-html, body {
+html,
+body {
     height: 100%;
     min-width: 365px;
     width: 100%;
@@ -53,7 +56,8 @@ html, body {
     opacity: 0.95;
 }
 
-#taskTitle, #legend-text {
+#taskTitle,
+#legend-text {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-shadow: 1px 1px 2px wheat;
 }
@@ -93,7 +97,9 @@ footer {
     color: lime;
 }
 
-#dateContainer, #clockContainer, #timezoneContainer {
+#dateContainer,
+#clockContainer,
+#timezoneContainer {
     display: flex;
     margin: 10px;
 }
@@ -131,7 +137,7 @@ footer {
 .legend-item {
     display: flex;
     width: 100px;
-    aspect-ratio: 1 / 1; 
+    aspect-ratio: 1 / 1;
     margin: 0 2em 2em;
     padding: 2em;
     font-size: small;
@@ -179,11 +185,13 @@ footer {
     display: none;
 }
 
-#Github-link,#back-to-top-link {
+#Github-link,
+#back-to-top-link {
     display: flex;
     justify-content: center;
 }
-#back-to-top-link{
+
+#back-to-top-link {
     color: wheat;
     font-weight: bold;
 }
@@ -198,15 +206,29 @@ footer {
     text-decoration: underline;
 }
 
-.nav-item{
+.nav-item {
     border-radius: 5%;
     width: 7em;
     font-size: 0.6em;
     color: darkslategray;
     font-weight: bold;
-    margin-left: 1.5em; 
+    margin-left: 1.5em;
 }
-.nav-item:hover{
+
+.nav-item:hover {
     transform: scale(1.1);
-    border:1.5px solid ghostwhite;
+    border: 1.5px solid ghostwhite;
+}
+
+#ls-management {
+    margin-top: 3em;
+}
+
+.data-instructions {
+    padding-top: 0.5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.data-instructions:hover {
+    color: rebeccapurple;
 }
