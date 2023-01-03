@@ -29,7 +29,7 @@ function dataValidate(inputs) {
                 valid = valid && subValid;
                 break;
             case 'dateInput':
-                subValid = input.value > moment().format('YYYY-MM-DD');
+                subValid = input.value > formatDateStr(new Date());
                 valid = valid && subValid;
                 break;
             case 'statusSelect':
@@ -41,6 +41,14 @@ function dataValidate(inputs) {
         showErrorMsg(subValid, errorMsg);
     }
     return valid;
+}
+
+//transfer current date to YYYY-MM-DD string
+function formatDateStr(currentDate) {
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() < 9 ? `0${currentDate.getMonth() + 1}` : currentDate.getMonth() + 1;
+    const day = currentDate.getDate() < 9 ? `0${currentDate.getDate()}` : currentDate.getDate();
+    return `${year}-${month}-${day}`;
 }
 
 //error message function display/hide message depend on condition
@@ -106,9 +114,9 @@ document.getElementById("submit").addEventListener('click', (event) => {
         //create new task
         tasks.addTask(taskInfo);
         // hide modal after valid submission
-        // $('#addTaskModal').hide('hide');
-        // $('body').removeClass('modal-open');
-        // $('.modal-backdrop').remove();
+        $('#addTaskModal').hide('hide');
+        $('body').removeClass('modal-open');
+        $('.modal-backdrop').remove();
         window.localStorage.setItem('tasks', JSON.stringify(tasks));
 
     }
